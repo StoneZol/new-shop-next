@@ -1,0 +1,39 @@
+@import '../../../shared/colors.scss';
+
+.header {
+    width: 100%;
+    min-width: 375px;
+    height: 60px;
+    background-color: $bg-color;
+    display: flex;
+
+    section{
+        width: 50%;
+    }
+
+    .rightSide{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+
+        a{
+            padding: 0 30px 0 0;
+            color: $link-color;
+        }
+    }
+
+    .leftSide{
+        font-weight: 700;
+        font-size: 24px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        
+        a{
+            color: $logo-color;
+            padding: 10px 5px 10px 30px;
+        }
+    }
+
+
+}
