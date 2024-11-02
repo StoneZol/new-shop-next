@@ -5,7 +5,7 @@ export const baseUrlApi = `https://fakestoreapi.com` // /api // https://gdw3fstj
 //get`sы
 export const getProductUrlApi = `${baseUrlApi}/Product`
 
-export const getCategorysUrlApi = `${baseUrlApi}/Category`
+export const getCategoryUrlApi = `${baseUrlApi}/Category`
 
 export const getBannersUrlApi = `${baseUrlApi}/Banners`
 
