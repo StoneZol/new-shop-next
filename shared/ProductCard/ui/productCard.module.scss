@@ -1,8 +1,10 @@
 @import '../../colors.scss';
 .article{
+    position: relative;
+    margin: 20px;
     padding: 10px;
-    width: 170px;
-    height: 310px;
+    width: 180px;
+    height: 320px;
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -22,19 +24,47 @@
 }
 
 .article:hover{
-    box-shadow: 0px 2px red;
+    box-shadow: 0px 2px $card-accent-color;
 }
 
-.figure{
-    img{
+.figure {
+    img {
         object-fit: cover;
         border-radius: 10px;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         -ms-border-radius: 10px;
         -o-border-radius: 10px;
+    }
 }
+.header{
+    max-width: 160px;
 }
+
+.h2{
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    line-clamp: 2;
+    white-space: nowrap;
+    max-width: 170px;
+    overflow: hidden;
+}
+
+.section {
+    .totalPrice{
+        color: $price-text-color;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .oldPrice{
+        text-decoration: line-through;
+        font-size: 14px;
+        color: $notactive-text;
+    }
+}
+
 
 .footer{
     width: 100%;
@@ -51,11 +81,11 @@
         min-width: 25px;
         padding: 5px 10px;
         transition: 0.3s;
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
         -webkit-transition: 0.3s;
         -moz-transition: 0.3s;
         -ms-transition: 0.3s;
@@ -66,10 +96,39 @@
     }
 
     input{
+        border-radius: 10px;
+        border: 1px solid $card-accent-color;
         min-width: 80px;
-        border: 0;
         padding: 5px;
         text-align: center;
         margin: 0 5px;
-    }
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+}
+}
+
+.sale{
+    position: absolute;
+    top: 10px;
+    right: 4px;
+    width: 80px;
+    text-align: center;
+    padding: 5px;
+    color: $button-text-color;
+    background-color: $button-color;
+    font-weight: 700;
+    font-size: 0.7rem;
+    border-radius: 30px;
+    transform: rotate(20deg);
+    border: 1px solid $border-sale-color;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
 }
