@@ -7,16 +7,16 @@ import React from 'react'
 export default function SkeletonProductCard() {
   return (
     <article className={styles.article}>
-    <figure className={styles.figure}>
+    <figure>
         <Skeleton circle={false} height={160} width={160} />
     </figure>
-    <header className={styles.header}>
+    <header>
         <Skeleton width={160} height={21} />
     </header>
-    <section className={styles.section}>
+    <section>
         <Skeleton width={100} height={22} />
     </section>
-    <footer className={styles.footer}>
+    <footer >
         <Skeleton width={160} height={24} />
     </footer>
 </article>

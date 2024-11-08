@@ -21,6 +21,10 @@
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
+    a{
+        text-decoration: none;
+        color: $link-color;
+    }
 }
 
 .article:hover{
