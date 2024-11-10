@@ -1,10 +1,10 @@
-@import '../../../shared/colors.scss';
+@use '/shared/colors' as colors;
 
 .header {
     width: 100%;
     min-width: 375px;
     height: 60px;
-    background-color: $bg-color;
+    background-color: colors.$bg-color;
     display: flex;
 
     section{
@@ -18,7 +18,7 @@
 
         a{
             padding: 0 30px 0 0;
-            color: $link-color;
+            color: colors.$link-color;
         }
     }
 
@@ -30,7 +30,7 @@
         align-items: center;
         
         a{
-            color: $logo-color;
+            color: colors.$logo-color;
             padding: 10px 5px 10px 30px;
         }
     }

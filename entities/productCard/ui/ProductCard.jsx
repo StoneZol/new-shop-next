@@ -7,11 +7,9 @@ import Link from 'next/link'
 import { useDispatch} from 'react-redux'
 import { addToBasket, removeFromBasket } from '@/lib/slices/basketSlice'
 
-
-
 const ProductCard = memo(function ProductCard({product}) {
-    console.log('render PC', product.id);
 
+    const [isInputFocusFlag, setIsInputFocusFlag] = useState(true)
     const [isZero, setIsZero] = useState(product.count===0)
     const [count, setCount] = useState(product.count);
     const inputRef = useRef(null);
@@ -20,9 +18,8 @@ const ProductCard = memo(function ProductCard({product}) {
 
     const addBasket = () => {
         setCount((prevCount)=>{
-            const newCount = prevCount+1;
-            dispatch(addToBasket({...product, count: newCount}))
-            return newCount;
+            dispatch(addToBasket({...product, count: ++prevCount}))
+            return prevCount;
         })
         setIsZero(false)
     };
@@ -30,9 +27,8 @@ const ProductCard = memo(function ProductCard({product}) {
     const removeBasket = () => {
         if (count > 0 ){
             setCount((prevCount)=>{
-                const newCount = prevCount-1;
-                dispatch(removeFromBasket({...product, count: newCount}))
-                return newCount;
+                dispatch(removeFromBasket({...product, count: --prevCount}))
+                return prevCount;
             })
         }
         if (count===1){
@@ -47,13 +43,21 @@ const ProductCard = memo(function ProductCard({product}) {
         }
         setCount(newCount);
       };
+
     const handleSelect = (e) => {
         e.target.select();
       };
 
     useEffect(() => {
         setIsZero(count === 0);
-        if (inputRef.current && count ===1) {
+        if (count===2){
+            setIsInputFocusFlag(false)
+
+        }
+        if (count===0){
+            setIsInputFocusFlag(true)
+        }
+        if (inputRef.current && count ===1 && isInputFocusFlag) {
             inputRef.current.focus();
             inputRef.current.select();
         }
@@ -70,7 +74,7 @@ const ProductCard = memo(function ProductCard({product}) {
                 height={160}/>
             </Link>
         </figure>
-        {product.discount > 0 && <aside className={styles.sale}> Скидка!<br />{product.discount}%</aside>}
+        {product.discount > 0 && <aside className={styles.sale}> Скидка!<br />-{product.discount}%</aside>}
         <header className={styles.header}>
             <Link href={'#'}>
                 <h2 className={styles.h2}>{product.name}</h2>
