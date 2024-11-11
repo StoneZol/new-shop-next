@@ -51,7 +51,7 @@ const testData2 = [
   {
     id: "8",
     imageNames: 'Picture name',
-    name: '8Elisenlebkuchen Nürnberger',
+    name: '8ElisenlebkuchenNürnberger',
     price: 500,
     discount: 90,
     totalPrice: 50,

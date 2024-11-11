@@ -10,7 +10,7 @@ import SwiperProductCard from '@/shared/swiperProductCard/ui/SwiperProductCard'
 
 const ProductCard = memo(function ProductCard({product}) {
 
-    const [isInputFocusFlag, setIsInputFocusFlag] = useState(true)
+    // const [isInputFocusFlag, setIsInputFocusFlag] = useState(true)
     const [isZero, setIsZero] = useState(product.count===0)
     const [count, setCount] = useState(product.count);
     const inputRef = useRef(null);
@@ -51,17 +51,17 @@ const ProductCard = memo(function ProductCard({product}) {
 
     useEffect(() => {
         setIsZero(count === 0);
-        if (count===2){
-            setIsInputFocusFlag(false)
+        // if (count===2){
+        //     setIsInputFocusFlag(false)
 
-        }
-        if (count===0){
-            setIsInputFocusFlag(true)
-        }
-        if (inputRef.current && count ===1 && isInputFocusFlag) {
-            inputRef.current.focus();
-            inputRef.current.select();
-        }
+        // }
+        // if (count===0){
+        //     setIsInputFocusFlag(true)
+        // }
+        // if (inputRef.current && count ===1 && isInputFocusFlag) {
+        //     inputRef.current.focus();
+        //     inputRef.current.select();
+        // }
       }, [count]);
     
 
@@ -72,7 +72,7 @@ const ProductCard = memo(function ProductCard({product}) {
         </figure>
         <header className={styles.header}>
             <Link href={'#'}>
-                <h2 className={styles.h2}>{product.name}</h2>
+                <h2>{product.name}</h2>
             </Link>
         </header>
         {product.discount > 0 && <aside className={styles.sale}> Скидка!<br />-{product.discount}%</aside>}

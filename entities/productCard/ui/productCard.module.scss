@@ -39,18 +39,21 @@
 
 .header{
     max-width: 160px;
+    overflow-x: hidden;
+    a{
+        display: inline-block;
+        h2{
+            font-size: 1.1rem;
+            font-weight: 400;
+            text-overflow: ellipsis;
+            line-clamp: 2;
+            white-space: nowrap;
+            max-width: 160px;
+            overflow: hidden;
+        }
+    }
 }
 
-.h2{
-    display: inline-block;
-    font-size: 1.1rem;
-    font-weight: 400;
-    text-overflow: ellipsis;
-    line-clamp: 2;
-    white-space: nowrap;
-    max-width: 170px;
-    overflow: hidden;
-}
 
 .section {
     .totalPrice{
@@ -86,6 +89,7 @@
         -moz-border-radius: 10px;
         -ms-border-radius: 10px;
         -o-border-radius: 10px;
+        -webkit-tap-highlight-color: transparent;
         -webkit-transition: 0.3s;
         -moz-transition: 0.3s;
         -ms-transition: 0.3s;
@@ -135,3 +139,4 @@
     -ms-transform: rotate(20deg);
     -o-transform: rotate(20deg);
 }
+
