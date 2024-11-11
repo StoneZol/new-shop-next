@@ -6,6 +6,7 @@ import { shop } from '@/shared/shopConfig'
 import Link from 'next/link'
 import { useDispatch} from 'react-redux'
 import { addToBasket, removeFromBasket } from '@/lib/slices/basketSlice'
+import SwiperProductCard from '@/shared/swiperProductCard/ui/SwiperProductCard'
 
 const ProductCard = memo(function ProductCard({product}) {
 
@@ -67,20 +68,14 @@ const ProductCard = memo(function ProductCard({product}) {
   return (
     <article className={styles.article}>
         <figure className={styles.figure}>
-            <Link href={'#'}>
-                <Image src={'https://i.pinimg.com/736x/a7/da/f2/a7daf24393f0ba0d8282d9e720e88510.jpg'} 
-                alt={product.imageNames} 
-                width={160} 
-                height={160}/>
-            </Link>
+            <SwiperProductCard/>
         </figure>
-        {product.discount > 0 && <aside className={styles.sale}> Скидка!<br />-{product.discount}%</aside>}
         <header className={styles.header}>
             <Link href={'#'}>
                 <h2 className={styles.h2}>{product.name}</h2>
             </Link>
         </header>
-
+        {product.discount > 0 && <aside className={styles.sale}> Скидка!<br />-{product.discount}%</aside>}
         <section className={styles.section}>
             {product.discount == 0 ? 
             (<>

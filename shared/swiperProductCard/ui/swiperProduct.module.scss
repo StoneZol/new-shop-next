@@ -1,0 +1,21 @@
+@use '/shared/colors' as colors;
+.swiper{
+    user-select: none;
+    margin: 0!important;
+    position: relative;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    img{
+        object-fit: cover;
+    }
+    :global(.swiper-pagination-bullet-active){
+        background-color: colors.$bg-color;
+        border: 1px solid colors.$link-color;
+    }
+}

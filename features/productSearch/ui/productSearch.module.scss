@@ -1,1 +1,68 @@
+@use '/shared/colors' as colors;
 
+.formBox{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: colors.$bg-color;
+}
+
+.form{
+    display: flex;
+    gap: 10px;
+}
+
+
+.input , .select{
+    width: 200px;
+    height: 30px;
+    border: 0;
+    border-bottom: 1px solid colors.$logo-color;
+    border-radius: 14px;
+    outline: none;
+    padding: 0 10px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+    -o-border-radius: 14px;
+    &::placeholder{
+        user-select: none;
+    }
+}
+
+.select{
+    cursor: pointer;
+}
+
+.notactive{
+    color: colors.$notactive-text;
+}
+
+.button{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    border: 0;
+    background-color: colors.$button-color;
+    color: colors.$button-text-color;
+    transition: 0.3s;
+    border-radius: 14px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+    -o-border-radius: 14px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    &:hover{
+        background-color: colors.$button-color-hover;
+    }
+    svg{
+        fill: colors.$button-text-color;
+    }
+}

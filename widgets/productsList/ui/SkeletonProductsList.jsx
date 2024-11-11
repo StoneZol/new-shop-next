@@ -5,7 +5,7 @@ import React from 'react'
 export default function SkeletonProductsList() {
   return (
     <section className={styles.section}>
-        {Array(6).fill(null).map((_)=>(
+        {Array(6).fill(null).map(()=>(
             <SkeletonProductCard/>
         ))}
     </section>

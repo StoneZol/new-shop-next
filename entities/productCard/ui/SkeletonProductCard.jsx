@@ -6,7 +6,7 @@ import React from 'react'
 
 export default function SkeletonProductCard() {
   return (
-    <article className={styles.article}>
+    <article className={styles.skeleton}>
     <figure>
         <Skeleton circle={false} height={160} width={160} />
     </figure>
