@@ -1,0 +1,19 @@
+@use '/shared/colors' as colors;
+
+.span{
+    position: absolute;
+    text-align: center;
+    left: 61%;
+    top: 0;
+    padding: 2px 4px;
+    width: auto;
+    height: 14px;
+    background-color: colors.$button-color;
+    color: colors.$button-text-color;
+    font-size: 10px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}

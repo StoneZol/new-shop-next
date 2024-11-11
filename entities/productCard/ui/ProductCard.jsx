@@ -10,7 +10,6 @@ import SwiperProductCard from '@/shared/swiperProductCard/ui/SwiperProductCard'
 
 const ProductCard = memo(function ProductCard({product}) {
 
-    // const [isInputFocusFlag, setIsInputFocusFlag] = useState(true)
     const [isZero, setIsZero] = useState(product.count===0)
     const [count, setCount] = useState(product.count);
     const inputRef = useRef(null);
@@ -18,28 +17,22 @@ const ProductCard = memo(function ProductCard({product}) {
     const dispatch = useDispatch();
 
     const addBasket = () => {
-        setCount((prevCount)=>{
-            dispatch(addToBasket({...product, count: ++prevCount}))
-            return prevCount;
-        })
-        setIsZero(false)
+        const newCount = count + 1;
+        setCount(newCount);
+        dispatch(addToBasket({...product, count: newCount}));
     };
 
     const removeBasket = () => {
         if (count > 0 ){
-            setCount((prevCount)=>{
-                dispatch(removeFromBasket({...product, count: --prevCount}))
-                return prevCount;
-            })
-        }
-        if (count===1){
-            setIsZero(true)
+            const newCount = count - 1;
+            setCount(newCount);
+            dispatch(removeFromBasket({...product, count: newCount}));
         }
       };
 
     const handleInputBasket = (e) => {
         let newCount = e.target.value === '' ? 0 : Math.min(Math.max(parseInt(e.target.value, 10), 0), 999);
-        if (newCount==NaN){
+        if (isNaN(newCount)) {
             newCount=0;
         }
         setCount(newCount);
@@ -51,17 +44,7 @@ const ProductCard = memo(function ProductCard({product}) {
 
     useEffect(() => {
         setIsZero(count === 0);
-        // if (count===2){
-        //     setIsInputFocusFlag(false)
 
-        // }
-        // if (count===0){
-        //     setIsInputFocusFlag(true)
-        // }
-        // if (inputRef.current && count ===1 && isInputFocusFlag) {
-        //     inputRef.current.focus();
-        //     inputRef.current.select();
-        // }
       }, [count]);
     
 
@@ -75,7 +58,7 @@ const ProductCard = memo(function ProductCard({product}) {
                 <h2>{product.name}</h2>
             </Link>
         </header>
-        {product.discount > 0 && <aside className={styles.sale}> Скидка!<br />-{product.discount}%</aside>}
+        {product.discount > 0 && <aside className={styles.sale}> Скидка! -{product.discount}%</aside>}
         <section className={styles.section}>
             {product.discount == 0 ? 
             (<>

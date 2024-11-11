@@ -1,5 +1,6 @@
 @use '/shared/colors' as colors;
 .article , .skeleton{
+    overflow: hidden;
     position: relative;
     padding: 10px;
     width: 180px;
@@ -118,25 +119,19 @@
 .sale{
     z-index: 10;
     position: absolute;
-    top: 5px;
-    right: 0;
-    width: 70px;
+    top: 12px;
+    right: 12px;
+    width: 80px;
     text-align: center;
-    padding: 4px;
+    padding: 2px 4px;
     color: colors.$button-text-color;
     background-color: colors.$button-color;
     font-weight: 700;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     border-radius: 30px;
-    transform: rotate(20deg);
-    border: 1px solid colors.$border-sale-color;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;
     -o-border-radius: 30px;
-    -webkit-transform: rotate(20deg);
-    -moz-transform: rotate(20deg);
-    -ms-transform: rotate(20deg);
-    -o-transform: rotate(20deg);
 }
 
