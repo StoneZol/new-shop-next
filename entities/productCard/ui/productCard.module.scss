@@ -2,7 +2,7 @@
 .article , .skeleton{
     overflow: hidden;
     position: relative;
-    padding: 10px;
+    padding: 0px 10px 10px 10px;
     width: 180px;
     height: 290px;
     display: flex;
@@ -39,7 +39,9 @@
 
 
 .header{
+    display: flex;
     max-width: 160px;
+    height: auto;
     overflow-x: hidden;
     a{
         display: inline-block;
@@ -47,7 +49,7 @@
             font-size: 1.1rem;
             font-weight: 400;
             text-overflow: ellipsis;
-            line-clamp: 2;
+            line-clamp: 1;
             white-space: nowrap;
             max-width: 160px;
             overflow: hidden;
@@ -119,8 +121,8 @@
 .sale{
     z-index: 10;
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 5px;
+    right: 5px;
     width: 80px;
     text-align: center;
     padding: 2px 4px;

@@ -2,11 +2,12 @@
 .swiper{
     user-select: none;
     margin: 0!important;
+    padding: 10px -10px;
     position: relative;
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 180px;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 15px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
