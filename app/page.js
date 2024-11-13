@@ -5,6 +5,8 @@ import ProductsList from "@/widgets/productsList/ui/ProductsList";
 import SkeletonProductsList from "@/widgets/productsList/ui/SkeletonProductsList";
 import ProductSearch from "@/features/productSearch/ui/ProductSearch";
 import SwiperProductCard from "@/shared/swiperProductCard/ui/SwiperProductCard";
+import NutritionalValue from "@/entities/NutritionalValue/ui/NutritionalValue";
+import SkeletonNutritionalValue from "@/entities/NutritionalValue/ui/SkeletonNutritionalValue";
 
 
 const testData = {
@@ -102,9 +104,22 @@ availability: true
 },
 ]
 
+const mockNutritionalValues = {
+  protein: "5",
+  fat: "10",
+  carbohydrate: "30",
+  calories: "250"
+};
+
+
 export default function Home() {
   return (
     <div>
+      <br/>
+      <NutritionalValue values={mockNutritionalValues}/>
+      <br/>
+      <SkeletonNutritionalValue/>
+      <br/>
       <ProductSearch/>
       <SwiperProductCard/>
       <ProductsList products={testData2}/>
