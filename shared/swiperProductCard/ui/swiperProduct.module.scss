@@ -15,7 +15,7 @@
         object-fit: cover;
     }
     :global(.swiper-pagination-bullet-active) {
-        background-color: colors.$bg-color;
-        border: 1px solid colors.$link-color;
+        background-color: colors.$bg;
+        border: 1px solid colors.$link;
     }
 }

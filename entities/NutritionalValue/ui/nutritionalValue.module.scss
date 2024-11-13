@@ -1,9 +1,9 @@
 @use '/shared/colors' as colors;
 
-.section{
+.section , .skeleton{
     max-width: 340px;
     padding: 10px;
-    background-color: colors.$bg-color;
+    background-color: colors.$bg;
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
@@ -26,6 +26,7 @@
 
 .skeleton{
     margin: 10px;
+    user-select: none;
 }
 
 .value{

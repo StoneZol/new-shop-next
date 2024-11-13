@@ -9,7 +9,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: colors.$bg-color;
+    background-color: colors.$bg;
     transition: 0.3s;
     border-radius: 15px;
     -webkit-border-radius: 15px;
@@ -22,7 +22,7 @@
     -o-transition: 0.3s;
     a{
         text-decoration: none;
-        color: colors.$link-color;
+        color: colors.$link;
     }
 }
 
@@ -42,7 +42,7 @@
 }
 
 .article:hover{
-    box-shadow: 0px 2px colors.$card-accent-color;
+    box-shadow: 0px 2px colors.$card-accent;
 }
 .figure{
     width: 180px;
@@ -71,7 +71,7 @@
 
 .section {
     .totalPrice{
-        color: colors.$price-text-color;
+        color: colors.$price-text;
         font-size: 20px;
         font-weight: 700;
     }
@@ -92,8 +92,8 @@
     button{
         cursor: pointer;
         width: 100%;
-        background-color: colors.$button-color;
-        color: colors.$button-text-color;
+        background-color: colors.$button-bg;
+        color: colors.$button-text;
         border: 0;
         min-width: 25px;
         padding: 5px 10px;
@@ -110,7 +110,7 @@
         -o-transition: 0.3s;
 }
     button:hover{
-        background-color: colors.$button-color-hover;
+        background-color: colors.$button-bg-hover;
     }
 
     input{
@@ -137,8 +137,8 @@
     width: 80px;
     text-align: center;
     padding: 2px 4px;
-    color: colors.$button-text-color;
-    background-color: colors.$button-color;
+    color: colors.$sale-text;
+    background-color: colors.$sale-bg;
     font-weight: 700;
     font-size: 0.6rem;
     border-radius: 30px;

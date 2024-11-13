@@ -3,7 +3,7 @@ import styles from './nutritionalValue.module.scss'
 
 export default function SkeletonNutritionalValue({}) {
     return (
-        <section className={styles.section}>
+        <section className={styles.skeleton}>
             <h3><Skeleton/></h3>
             <div className={styles.nutritionalBox}>
                 <Skeleton width={40} height={36} className={styles.skeleton}/>  

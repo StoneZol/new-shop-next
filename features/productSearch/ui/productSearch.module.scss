@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
-    background-color: colors.$bg-color;
+    background-color: colors.$bg;
 }
 
 .form{
@@ -19,7 +19,7 @@
     width: 200px;
     height: 30px;
     border: 0;
-    border-bottom: 1px solid colors.$logo-color;
+    border-bottom: 1px solid colors.$logo;
     border-radius: 14px;
     outline: none;
     padding: 0 10px;
@@ -47,8 +47,8 @@
     justify-content: center;
     width: 100px;
     border: 0;
-    background-color: colors.$button-color;
-    color: colors.$button-text-color;
+    background-color: colors.$button-bg;
+    color: colors.$button-text;
     transition: 0.3s;
     border-radius: 14px;
     -webkit-border-radius: 14px;
@@ -60,9 +60,9 @@
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
     &:hover{
-        background-color: colors.$button-color-hover;
+        background-color: colors.$button-bg-hover;
     }
     svg{
-        fill: colors.$button-text-color;
+        fill: colors.$button-text;
     }
 }
