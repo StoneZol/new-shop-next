@@ -31,12 +31,23 @@
     &:hover{
         box-shadow: none;
     }
+    figure{
+        border-radius: 15px;
+        overflow: hidden;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+}
 }
 
 .article:hover{
     box-shadow: 0px 2px colors.$card-accent-color;
 }
-
+.figure{
+    width: 180px;
+    height: 180px;
+}
 
 .header{
     display: flex;

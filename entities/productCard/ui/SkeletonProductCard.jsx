@@ -8,7 +8,7 @@ export default function SkeletonProductCard() {
   return (
     <article className={styles.skeleton}>
     <figure>
-        <Skeleton circle={false} height={160} width={160} />
+        <Skeleton circle={false} height={180} width={180} />
     </figure>
     <header>
         <Skeleton width={160} height={21} />

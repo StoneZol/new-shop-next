@@ -121,7 +121,7 @@ export default function Home() {
       <SkeletonNutritionalValue/>
       <br/>
       <ProductSearch/>
-      <SwiperProductCard/>
+      <div style={{width: '380px', height: '380px'}}><SwiperProductCard width={380} height={380}/></div>
       <ProductsList products={testData2}/>
       <SkeletonProductsList/>
     </div>
