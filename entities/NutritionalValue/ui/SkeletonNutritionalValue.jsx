@@ -6,10 +6,10 @@ export default function SkeletonNutritionalValue({}) {
         <section className={styles.skeleton}>
             <h3><Skeleton/></h3>
             <div className={styles.nutritionalBox}>
-                <Skeleton width={40} height={36} className={styles.skeleton}/>  
-                <Skeleton width={40} height={36} className={styles.skeleton}/>
-                <Skeleton width={40} height={36} className={styles.skeleton}/>
-                <Skeleton width={40} height={36} className={styles.skeleton}/>
+                <Skeleton width={40} height={36}/>  
+                <Skeleton width={40} height={36}/>
+                <Skeleton width={40} height={36}/>
+                <Skeleton width={40} height={36}/>
             </div>
         </section>
     )

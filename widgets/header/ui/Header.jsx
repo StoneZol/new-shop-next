@@ -8,10 +8,10 @@ export default function Header() {
     return (
         <header className={styles.header}>
             <section className={styles.leftSide}>
-                <Link href={'#'}>{shop.name}</Link>
+                <Link href={'/'}>{shop.name}</Link>
             </section>
             <section className={styles.rightSide}>
-                <Link href={'#'}>Корзина<LetsIconsBasketAlt3/><PointBasketLength/></Link>
+                <Link href={'/basket'}>Корзина<LetsIconsBasketAlt3/><PointBasketLength/></Link>
             </section>
         </header>
     )
