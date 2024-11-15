@@ -1,0 +1,24 @@
+@use '/shared/colors' as colors;
+
+.more{
+display: flex;
+flex-direction: column;
+padding: 10px;
+}
+
+.moreString{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid colors.$line-aboutProduct;
+    padding: 10px 0;
+    font-size: 0.8rem;
+}
+
+.type{
+    font-weight: 700;
+}
+
+.property{
+
+}

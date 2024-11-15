@@ -7,6 +7,8 @@ import ProductSearch from "@/features/productSearch/ui/ProductSearch";
 import SwiperProductCard from "@/shared/swiperProductCard/ui/SwiperProductCard";
 import NutritionalValue from "@/entities/NutritionalValue/ui/NutritionalValue";
 import SkeletonNutritionalValue from "@/entities/NutritionalValue/ui/SkeletonNutritionalValue";
+import AboutProduct from "@/entities/aboutProduct/ui/AboutProduct";
+import SkeletonAboutProduct from "@/entities/aboutProduct/ui/SkeletonAboutProduct";
 
 
 const testData = {
@@ -116,12 +118,16 @@ export default function Home() {
   return (
     <div>
       <br/>
+      <AboutProduct/>
+      <br/>
+      <SkeletonAboutProduct/>
+      <br/>
       <NutritionalValue values={mockNutritionalValues}/>
       <br/>
       <SkeletonNutritionalValue/>
       <br/>
       <ProductSearch/>
-      <div style={{width: '380px', height: '380px'}}><SwiperProductCard width={380} height={380}/></div>
+      <div style={{width: '180px', height: '380px'}}><SwiperProductCard width={180} height={380}/></div>
       <ProductsList products={testData2}/>
       <SkeletonProductsList/>
     </div>
