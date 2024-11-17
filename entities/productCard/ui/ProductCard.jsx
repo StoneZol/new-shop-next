@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { shop } from '@/shared/shopConfig'
 import Link from 'next/link'
 import { useDispatch} from 'react-redux'
-import { addToBasket, removeFromBasket } from '@/lib/slices/basketSlice'
+import { addToBasket, handleInBasket, removeFromBasket } from '@/lib/slices/basketSlice'
 import SwiperProductCard from '@/shared/swiperProductCard/ui/SwiperProductCard'
 
 const ProductCard = memo(function ProductCard({product}) {
@@ -19,14 +19,14 @@ const ProductCard = memo(function ProductCard({product}) {
     const addBasket = () => {
         const newCount = count + 1;
         setCount(newCount);
-        dispatch(addToBasket({...product, count: newCount}));
+        dispatch(addToBasket({...product}));
     };
 
     const removeBasket = () => {
         if (count > 0 ){
             const newCount = count - 1;
             setCount(newCount);
-            dispatch(removeFromBasket({...product, count: newCount}));
+            dispatch(removeFromBasket({...product}));
         }
       };
 
@@ -36,6 +36,7 @@ const ProductCard = memo(function ProductCard({product}) {
             newCount=0;
         }
         setCount(newCount);
+        dispatch(handleInBasket({...product, count: newCount}))
       };
 
     const handleSelect = (e) => {

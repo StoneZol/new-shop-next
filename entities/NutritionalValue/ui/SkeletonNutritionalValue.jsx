@@ -1,7 +1,7 @@
 import Skeleton from 'react-loading-skeleton'
 import styles from './nutritionalValue.module.scss'
 
-export default function SkeletonNutritionalValue({}) {
+export default function SkeletonNutritionalValue() {
     return (
         <section className={styles.skeleton}>
             <h3><Skeleton/></h3>
