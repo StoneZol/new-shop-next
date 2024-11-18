@@ -60,6 +60,7 @@ const ProductCard = memo(function ProductCard({product}) {
             </Link>
         </header>
         {product.discount > 0 && <aside className={styles.sale}> Скидка! -{product.discount}%</aside>}
+        {product.promotionTag && <aside className={styles.promotionTag}>{product.promotionTag}</aside> }
         <section className={styles.section}>
             {product.discount == 0 ? 
             (<>
