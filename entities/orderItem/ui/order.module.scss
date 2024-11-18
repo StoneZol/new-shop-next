@@ -9,13 +9,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid colors.$line;
     background: colors.$bg;
     @include mixins.grandTransition();
-    @include mixins.grandBorderRadius()
 }
 
 .section{
+    border-bottom: 2px solid colors.$line;
     &:hover{
         border-bottom:  2px solid colors.$card-accent;
     }
@@ -27,6 +26,7 @@
     flex-direction: column;
     span{
         padding: 2px;
+        width: 100%;
         font-size: 0.8rem;
     }
 }
@@ -78,5 +78,13 @@
         flex-direction: column;
         gap: 5px;
         min-height: 273px;
+        @include mixins.grandBorderRadius();
+    }
+    .section{
+        border-bottom: none;
+        &:hover{
+            border-bottom:  none;
+            box-shadow: 0px 2px colors.$card-accent;
+        }
     }
 }

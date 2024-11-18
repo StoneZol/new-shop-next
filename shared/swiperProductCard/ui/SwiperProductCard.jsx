@@ -7,7 +7,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function SwiperProductCard({width, height}) {
+export default function SwiperProductCard({width, height, content}) {
     return (
         <Swiper
             pagination={{
