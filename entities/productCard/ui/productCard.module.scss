@@ -1,4 +1,6 @@
 @use '/shared/colors' as colors;
+@use '/shared/mixins' as mixins;
+
 .article , .skeleton{
     overflow: hidden;
     position: relative;
@@ -10,16 +12,8 @@
     justify-content: space-between;
     align-items: center;
     background-color: colors.$bg;
-    transition: 0.3s;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
+    @include mixins.grandBorderRadius();
+    @include mixins.grandTransition();
     a{
         text-decoration: none;
         color: colors.$link;
@@ -32,12 +26,8 @@
         box-shadow: none;
     }
     figure{
-        border-radius: 15px;
+        @include mixins.grandBorderRadius();
         overflow: hidden;
-        -webkit-border-radius: 15px;
-        -moz-border-radius: 15px;
-        -ms-border-radius: 15px;
-        -o-border-radius: 15px;
     }
 }
 
@@ -97,24 +87,14 @@
         border: 0;
         min-width: 25px;
         padding: 5px 10px;
-        transition: 0.3s;
-        border-radius: 10px;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        -ms-border-radius: 10px;
-        -o-border-radius: 10px;
-        -webkit-tap-highlight-color: transparent;
-        -webkit-transition: 0.3s;
-        -moz-transition: 0.3s;
-        -ms-transition: 0.3s;
-        -o-transition: 0.3s;
+        @include mixins.grandTransition();
+        @include mixins.grandBorderRadius(10px)
 }
     button:hover{
         background-color: colors.$button-bg-hover;
     }
 
     input{
-        border-radius: 10px;
         // border: 1px solid colors.$card-accent-color;
         border: 0;
         min-width: 80px;
@@ -122,10 +102,7 @@
         text-align: center;
         margin: 0 5px;
         outline:none;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        -ms-border-radius: 10px;
-        -o-border-radius: 10px;
+        @include mixins.grandBorderRadius(10px)
     }
 }
 
@@ -140,11 +117,7 @@
     padding: 3px 7px;
     font-weight: 700;
     font-size: 0.67rem;
-    border-radius: 30px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
+    @include mixins.grandBorderRadius(30px)
 }
 
 .sale{

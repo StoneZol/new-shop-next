@@ -1,0 +1,17 @@
+@mixin grandTransition($duration : 0.3s) {
+    transition:$duration;
+    -webkit-transition:$duration;
+    -moz-transition:$duration;
+    -ms-transition:$duration;
+    -o-transition:$duration;
+}
+// @include mixins.grandTransition();
+
+@mixin grandBorderRadius($radius : 15px) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+}
+// @include mixins.grandBorderRadius();

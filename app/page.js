@@ -9,7 +9,7 @@ import NutritionalValue from "@/entities/NutritionalValue/ui/NutritionalValue";
 import SkeletonNutritionalValue from "@/entities/NutritionalValue/ui/SkeletonNutritionalValue";
 import AboutProduct from "@/entities/aboutProduct/ui/AboutProduct";
 import SkeletonAboutProduct from "@/entities/aboutProduct/ui/SkeletonAboutProduct";
-import Order from './../entities/order/ui/Order';
+import OrderItem from "../entities/orderItem/ui/OrderItem";
 
 
 const testData = {
@@ -121,7 +121,7 @@ export default function Home() {
   return (
     <div>
       <br/>
-      <Order/>
+      <OrderItem/>
       <br/>
       <AboutProduct/>
       <br/>
