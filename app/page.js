@@ -10,6 +10,7 @@ import SkeletonNutritionalValue from "@/entities/NutritionalValue/ui/SkeletonNut
 import AboutProduct from "@/entities/aboutProduct/ui/AboutProduct";
 import SkeletonAboutProduct from "@/entities/aboutProduct/ui/SkeletonAboutProduct";
 import OrderItem from "../entities/orderItem/ui/OrderItem";
+import SkeletonOrderItem from "@/entities/orderItem/ui/SkeletonOrderItem";
 
 
 const testData = {
@@ -117,9 +118,13 @@ const mockNutritionalValues = {
 };
 
 
+
 export default function Home() {
   return (
+    
     <div>
+      <br/>
+      <SkeletonOrderItem/>
       <br/>
       <OrderItem/>
       <br/>

@@ -1,5 +1,6 @@
 import styles from './order.module.scss';
 import Link from 'next/link';
+import { shop } from '@/shared/shopConfig';
 
 export default function OrderItem({order}) {
   return (
@@ -25,6 +26,9 @@ export default function OrderItem({order}) {
         <section className={styles.contacts}>
             <span>Карабас Барабас Xthnjdsq</span>
             <span><a href={`tel:88005553535`} type='phone'>88005553535</a></span>
+        </section>
+        <section className={styles.total}>
+            <span>Итого: <b>1500</b>{shop.currency}</span>
         </section>
         <section className={styles.detail}>
             <Link href={`#`}>Подробней</Link>
