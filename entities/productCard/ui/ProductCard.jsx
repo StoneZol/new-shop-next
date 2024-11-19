@@ -19,14 +19,14 @@ const ProductCard = memo(function ProductCard({product}) {
     const addBasket = () => {
         const newCount = count + 1;
         setCount(newCount);
-        dispatch(addToBasket({...product}));
+        dispatch(addToBasket({...product , count: newCount}));
     };
 
     const removeBasket = () => {
         if (count > 0 ){
             const newCount = count - 1;
             setCount(newCount);
-            dispatch(removeFromBasket({...product}));
+            dispatch(removeFromBasket({...product,count: newCount}));
         }
       };
 

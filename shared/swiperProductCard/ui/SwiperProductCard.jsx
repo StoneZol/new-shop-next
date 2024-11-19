@@ -17,8 +17,8 @@ export default function SwiperProductCard({width, height, content}) {
             mousewheel={true}
             modules={[Pagination, Mousewheel]}
             className={styles.swiper}>
-                {content.map((imageUrl)=>(
-                    <SwiperSlide>
+                {content.map((imageUrl , index)=>(
+                    <SwiperSlide key={index}>
                         <Link href={'#'}>
                             <Image
                                 src={imageUrl}
