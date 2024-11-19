@@ -1,0 +1,112 @@
+@use '/shared/configured-styles/colors' as colors;
+@use '/shared/configured-styles/mixins' as mixins;
+
+.section, .skeleton {
+    padding: 5px;
+    min-height: 60px;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: colors.$bg;
+    @include mixins.grandTransition();
+}
+
+.section{
+    border-bottom: 2px solid colors.$line;
+    &:hover{
+        border-bottom:  2px solid colors.$card-accent;
+    }
+}
+
+.orderID, .data,.contacts, .status, .detail, .total{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    span{
+        padding: 2px;
+        width: 100%;
+        font-size: 0.8rem;
+    }
+}
+
+.orderID{
+    h2{
+        font-size: 1rem;
+        min-width: 70px;
+        text-align: center;
+    }
+}
+
+.data{
+    min-width: 174px;
+    span{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.dataData {
+    min-width: 105px;
+}
+.dataText{
+    min-width: 60px;
+}
+
+.contacts{
+    width: 120px;
+}
+
+.status {
+    width: 166px;
+    select{
+        height: 30px;
+        border: 0;
+        border-bottom: 1px solid colors.$line;
+        outline: none;
+        padding: 0 10px;
+        @include mixins.grandBorderRadius();
+        &:focus{
+            outline: 2px solid colors.$line-focus;
+        }
+    }
+}
+
+
+.total {
+    width: 130px;
+}
+
+.detail{
+    a{
+        user-select: none;
+        text-decoration:underline;
+        color: colors.$text-active;
+        @include mixins.grandTransition();
+        &:visited{
+            color: colors.$text-active;
+        }
+        &:hover{
+            color:colors.$text-hover;
+        }
+    
+    }
+}
+
+@media (max-width: 820px ){
+    .section , .skeleton{
+        width: 180px;
+        flex-direction: column;
+        gap: 5px;
+        min-height: 273px;
+        @include mixins.grandBorderRadius();
+    }
+    .section{
+        border-bottom: none;
+        &:hover{
+            border-bottom:  none;
+            box-shadow: 0px 2px colors.$card-accent;
+        }
+    }
+}

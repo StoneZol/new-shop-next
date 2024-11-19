@@ -1,17 +1,12 @@
 import styles from "./page.module.scss";
-import ProductCard from '../entities/productCard/ui/ProductCard';
-import SkeletonProductCard from "@/entities/productCard/ui/SkeletonProductCard";
-import ProductsList from "@/widgets/productsList/ui/ProductsList";
-import SkeletonProductsList from "@/widgets/productsList/ui/SkeletonProductsList";
-import ProductSearch from "@/features/productSearch/ui/ProductSearch";
-import SwiperProductCard from "@/shared/swiperProductCard/ui/SwiperProductCard";
-import NutritionalValue from "@/entities/NutritionalValue/ui/NutritionalValue";
-import SkeletonNutritionalValue from "@/entities/NutritionalValue/ui/SkeletonNutritionalValue";
-import AboutProduct from "@/entities/aboutProduct/ui/AboutProduct";
-import SkeletonAboutProduct from "@/entities/aboutProduct/ui/SkeletonAboutProduct";
-import OrderItem from "../entities/orderItem/ui/OrderItem";
-import SkeletonOrderItem from "@/entities/orderItem/ui/SkeletonOrderItem";
-import OrderList from "@/widgets/orderList/ui/OrderList";
+import ProductsList from "@/widgets/products-list/ui/products-list";
+import SkeletonProductsList from "@/widgets/products-list/ui/skeleton-products-list";
+import ProductSearch from "@/features/product-search/ui/product-search";
+import NutritionalValue from "@/entities/nutritional-value/ui/nutritional-value";
+import SkeletonNutritionalValue from "@/entities/nutritional-value/ui/skeleton-nutritional-value";
+import AboutProduct from "@/entities/about-product/ui/about-product";
+import SkeletonAboutProduct from "@/entities/about-product/ui/skeleton-about-product";
+import OrderList from "@/widgets/order-list/ui/order-list";
 
 
 const testData = {

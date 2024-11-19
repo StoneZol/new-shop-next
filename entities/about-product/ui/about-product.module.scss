@@ -1,0 +1,49 @@
+@use '/shared/configured-styles/colors' as colors;
+@use '/shared/configured-styles/mixins' as mixins;
+
+.section{
+    width: 90%;
+    max-width: 600px;
+    min-width: 340px;
+    background-color: colors.$bg;
+    padding: 10px;
+    @include mixins.grandBorderRadius()
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.navigation {
+    color: colors.$text;
+    display: flex;
+    padding: 10px;
+    width: 300px;
+    gap: 30px;
+    @include mixins.grandTransition();
+    h3{
+        cursor: pointer;
+        &:hover{
+            color: colors.$text-hover;
+        }
+    }
+}
+
+.active{
+    color: colors.$text-active;
+}
+
+.notActive {
+    user-select: none;
+}
+
+.activeZone{
+    width: 100%;
+    display: block;
+}
+
+.hiddenZone{
+    display: none;
+}

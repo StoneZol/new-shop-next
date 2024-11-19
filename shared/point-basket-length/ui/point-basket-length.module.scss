@@ -1,0 +1,16 @@
+@use '/shared/configured-styles/colors' as colors;
+@use '/shared/configured-styles/mixins' as mixins;
+
+.span{
+    position: absolute;
+    text-align: center;
+    left: 61%;
+    top: 0;
+    padding: 2px 4px;
+    width: auto;
+    height: 14px;
+    background-color: colors.$point-basket-bg;
+    color: colors.$point-basket-text;
+    font-size: 10px;
+    @include mixins.grandBorderRadius(30px)
+}

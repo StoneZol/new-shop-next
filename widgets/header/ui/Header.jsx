@@ -2,7 +2,7 @@ import { shop } from '@/shared/shopConfig'
 import Link from 'next/link'
 import React from 'react'
 import styles from './header.module.scss'
-import PointBasketLength from '@/shared/pointBasketLength/ui/PointBasketLength'
+import PointBasketLength from '@/shared/point-basket-length/ui/point-basket-length'
 
 export default function Header() {
     return (

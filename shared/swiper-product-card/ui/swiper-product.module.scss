@@ -1,0 +1,18 @@
+@use '/shared/configured-styles/colors' as colors;
+@use '/shared/configured-styles/mixins' as mixins;
+.swiper {
+    user-select: none;
+    margin: 0!important;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    @include mixins.grandBorderRadius();
+    img {
+        object-fit: cover;
+    }
+    :global(.swiper-pagination-bullet-active) {
+        background-color: colors.$bg;
+        border: 1px solid colors.$link;
+    }
+}

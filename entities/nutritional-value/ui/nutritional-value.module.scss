@@ -1,0 +1,44 @@
+@use '/shared/configured-styles/colors' as colors;
+
+.section , .skeleton{
+    max-width: 340px;
+    padding: 10px;
+    // margin: 10px;
+    background-color: colors.$bg;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    h3{
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    
+}
+
+.nutritionalBox{
+    display: flex;
+    height: 56px;
+    gap: 15px;
+    div{
+        padding: 10px;
+    }
+}
+
+.skeleton{
+    user-select: none;
+    .nutritionalBox{
+        span{
+            padding: 10px;
+        }
+    }
+}
+
+.value{
+    font-weight: 700;
+}
+
+.text{
+    font-size: 0.8rem;
+}
