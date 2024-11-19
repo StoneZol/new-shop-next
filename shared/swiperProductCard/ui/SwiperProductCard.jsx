@@ -13,7 +13,7 @@ export default function SwiperProductCard({width, height, content}) {
             pagination={{
                 dynamicBullets: true,
             }}
-            loop={true}
+            loop={content.lenght > 0 ? true : false}
             mousewheel={true}
             modules={[Pagination, Mousewheel]}
             className={styles.swiper}>

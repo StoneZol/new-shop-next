@@ -1,11 +1,10 @@
 'use client'
 import { memo,useRef, useState, useEffect} from 'react'
 import styles from './productCard.module.scss'
-import Image from 'next/image'
 import { shop } from '@/shared/shopConfig'
 import Link from 'next/link'
 import { useDispatch} from 'react-redux'
-import { addToBasket, handleInBasket, removeFromBasket } from '@/lib/slices/basketSlice'
+import { addToBasket, handleInBasket, removeFromBasket} from '@/lib/slices/basketSlice'
 import SwiperProductCard from '@/shared/swiperProductCard/ui/SwiperProductCard'
 
 const ProductCard = memo(function ProductCard({product}) {
@@ -47,7 +46,7 @@ const ProductCard = memo(function ProductCard({product}) {
         setIsZero(count === 0);
 
       }, [count]);
-    
+
 
   return (
     <article className={styles.article}>
