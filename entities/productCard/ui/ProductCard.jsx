@@ -52,7 +52,7 @@ const ProductCard = memo(function ProductCard({product}) {
   return (
     <article className={styles.article}>
         <figure className={styles.figure}>
-            <SwiperProductCard width={180} height={180}/>
+            <SwiperProductCard width={180} height={180} content={product.imageUrls}/>
         </figure>
         <header className={styles.header}>
             <Link href={`/product/${product.id}`}>

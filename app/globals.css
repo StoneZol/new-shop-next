@@ -20,9 +20,17 @@ input[type="number"]:focus {
     -moz-appearance: textfield;
 }
 
-input[type='number']::-webkit-inner-spin-button { 
+/* input[type='number']::-webkit-inner-spin-button { 
   display: none;
+} */
+
+html:has(input[type='number']:hover) {
+  overflow-y: hidden;
 }
+
+html{ 
+  scrollbar-gutter: stable;
+ }
 
 html,
 body {
