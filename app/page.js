@@ -7,6 +7,7 @@ import SkeletonNutritionalValue from "@/entities/nutritional-value/ui/skeleton-n
 import AboutProduct from "@/entities/about-product/ui/about-product";
 import SkeletonAboutProduct from "@/entities/about-product/ui/skeleton-about-product";
 import OrderList from "@/widgets/order-list/ui/order-list";
+import SwiperProductCard from "@/shared/swiper-product-card/ui/swiper-product-card";
 
 
 const testData = {
@@ -20,7 +21,11 @@ const testData = {
   description: 'Sonne',
   count: 0, 
   category: "Конфеты",
-  availability: true
+  availability: true,
+  imageUrls:['https://cdn1.ozone.ru/s3/multimedia-o/6063449232.jpg',
+  'https://wallpaper.forfun.com/fetch/74/74d2c5f8c46325771cab9ac7613fb04f.jpeg?h=900&r=0.5',
+  'https://i.pinimg.com/736x/a7/da/f2/a7daf24393f0ba0d8282d9e720e88510.jpg'
+ ] 
 }
 
 const testData2 = [
@@ -223,7 +228,7 @@ export default function Home() {
       <SkeletonNutritionalValue/>
       <br/>
       <ProductSearch/>
-      {/* <div style={{width: '180px', height: '380px'}}><SwiperProductCard width={180} height={380}/></div> */}
+      <div style={{width: '380px', height: '380px'}}><SwiperProductCard width={380} height={380} content={testData.imageUrls} imageQuality={100}/></div>
       <ProductsList products={testData2}/>
       <SkeletonProductsList/>
     </div>
