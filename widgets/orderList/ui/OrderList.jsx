@@ -1,6 +1,12 @@
+import OrderItem from '@/entities/orderItem/ui/OrderItem'
+import styles from './orderList.module.scss'
 
-export default function OrderList() {
+export default function OrderList({orders}) {
   return (
-    <div>OrderList</div>
+    <section className={styles.orderList}>
+        {orders.map((order, index)=>(
+            <OrderItem order={order} key={index}/>
+        ))}
+    </section>
   )
 }

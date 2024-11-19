@@ -11,6 +11,7 @@ import AboutProduct from "@/entities/aboutProduct/ui/AboutProduct";
 import SkeletonAboutProduct from "@/entities/aboutProduct/ui/SkeletonAboutProduct";
 import OrderItem from "../entities/orderItem/ui/OrderItem";
 import SkeletonOrderItem from "@/entities/orderItem/ui/SkeletonOrderItem";
+import OrderList from "@/widgets/orderList/ui/OrderList";
 
 
 const testData = {
@@ -132,73 +133,79 @@ const mockNutritionalValues = {
 
 const orders = [
   {
-    id: 1,
-    Basket: {
-      BasketItems: [
+    id: 11,
+    basket: {
+      basketItems: [
         {
           id: 101,
           count: 2,
-          TotalPrice: 199.99,
+          totalPrice: 199.99,
         },
         {
           id: 102,
           count: 1,
-          TotalPrice: 49.99,
+          totalPrice: 49.99,
         },
       ],
-      BasketPrice: 249.98,
+      basketPrice: 222249.98,
     },
-    Status: "Processing",
+    status: "Pending",
     clientPhone: "+1234567890",
-    clientName: "John Doe",
-    TrackId: "TRCK12345678",
+    clientName: "John Doe Барабас",
+    trackId: "TRCK12345678",
     mailData: "john.doe@example.com",
+    createdAt: '2024-11-19T10:30:00Z',
+    upddatedAt: "2024-11-19T10:30:00Z"
   },
   {
-    id: 2,
-    Basket: {
-      BasketItems: [
+    id: 2222,
+    basket: {
+      basketItems: [
         {
           id: 201,
           count: 3,
-          TotalPrice: 299.99,
+          totalPrice: 299.99,
         },
         {
           id: 202,
           count: 2,
-          TotalPrice: 99.99,
+          totalPrice: 99.99,
         },
       ],
-      BasketPrice: 399.98,
+      basketPrice: 399.98,
     },
-    Status: "Shipped",
+    status: "Shipped",
     clientPhone: "+9876543210",
-    clientName: "Jane Smith",
-    TrackId: "TRCK87654321",
+    clientName: "Jane Smith Барабасова",
+    trackId: "TRCK87654321",
     mailData: "jane.smith@example.com",
+    createdAt: '2024-11-19T10:30:00Z',
+    upddatedAt: "2024-11-19T10:30:00Z"
   },
   {
-    id: 3,
-    Basket: {
-      BasketItems: [
+    id: 333333,
+    basket: {
+      basketItems: [
         {
           id: 301,
           count: 1,
-          TotalPrice: 499.99,
+          totalPrice: 499.99,
         },
         {
           id: 302,
           count: 4,
-          TotalPrice: 199.96,
+          totalPrice: 199.96,
         },
       ],
-      BasketPrice: 699.95,
+      basketPrice: 699.95,
     },
-    Status: "Delivered",
+    status: "IncorrectData",
     clientPhone: "+1122334455",
     clientName: "Alice Brown",
-    TrackId: "TRCK11223344",
+    trackId: "TRCK11223344",
     mailData: "alice.brown@example.com",
+    createdAt: '2024-11-19T10:30:00Z',
+    upddatedAt: "2024-11-19T10:30:00Z"
   },
 ];
 
@@ -210,10 +217,7 @@ export default function Home() {
   return (
     
     <div>
-      <br/>
-      <SkeletonOrderItem/>
-      <br/>
-      <OrderItem/>
+      <OrderList orders={orders}/>
       <br/>
       <AboutProduct/>
       <br/>

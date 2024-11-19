@@ -1,15 +1,29 @@
+'use client'
 import styles from './order.module.scss';
 import Link from 'next/link';
 import { shop } from '@/shared/shopConfig';
+import { useEffect, useState } from 'react';
+import dataToISO from '@/shared/dataToISO_func/dataToISO';
 
 export default function OrderItem({order}) {
+    const [isStatus, setIsStatus] = useState(order.status)
+
+    useEffect(() => {
+        setIsStatus(order.status);
+    }, [order.status]);
+
+    const selectStatus = (e) => {
+        const newStatus = e.target.value
+        setIsStatus(newStatus)
+    }
+
   return (
     <section className={styles.section}>
         <section className={styles.orderID}>
-            <h2>№424242342</h2>
+            <h2>№{order.id}</h2>
         </section>
         <section className={styles.status}>
-            <select>
+            <select value={isStatus} onChange={selectStatus}>
                 <option value="Empty">Новый</option>
                 <option value="Pending">В работе</option>
                 <option value="Shipped">Отправлен</option>
@@ -18,20 +32,30 @@ export default function OrderItem({order}) {
                 <option value="Canseled">Отменен</option>
             </select>
         </section>
-        <section className={styles.dataSection}>
-            <span>Создан: <b>20.12.2024 23:33</b></span>
-            <span>Изменен: <b>20.12.2024 23:33</b></span>
+        <section className={styles.data}>
+            <span>
+                <span className={styles.dataText}>Создан:</span>
+                <span className={styles.dataData}>
+                    <b>{dataToISO(order.createdAt)}</b>
+                </span>
+            </span>
+            <span>
+                <span className={styles.dataText}>Изменен:</span>
+                <span className={styles.dataData}>
+                    <b>{dataToISO(order.createdAt)}</b>
+                </span>
+            </span>
         </section>
 
         <section className={styles.contacts}>
-            <span>Карабас Барабас Xthnjdsq</span>
-            <span><a href={`tel:88005553535`} type='phone'>88005553535</a></span>
+            <span>{order.clientName}</span>
+            <span><a href={`tel:${order.clientPhone}`} type='phone'>{order.clientPhone}</a></span>
         </section>
         <section className={styles.total}>
-            <span>Итого: <b>1500</b>{shop.currency}</span>
+            <span>Итого: <b>{order.basket.basketPrice}</b>{shop.currency}</span>
         </section>
         <section className={styles.detail}>
-            <Link href={`#`}>Подробней</Link>
+            <Link href={`/order/${order.id}`}>Подробней</Link>
         </section>
         
     </section>

@@ -24,7 +24,7 @@ input[type="number"]:focus {
   display: none;
 } */
 
-html:has(input[type='number']:hover) {
+html:has(input[type='number']:hover:focus) {
   overflow-y: hidden;
 }
 

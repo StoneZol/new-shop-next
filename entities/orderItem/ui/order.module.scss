@@ -4,7 +4,7 @@
 .section, .skeleton {
     padding: 5px;
     min-height: 60px;
-    width: 90%;
+    width: 100%;
     max-width: 1000px;
     display: flex;
     justify-content: space-between;
@@ -20,7 +20,7 @@
     }
 }
 
-.orderID, .dataSection,.contacts, .status, .detail, .total{
+.orderID, .data,.contacts, .status, .detail, .total{
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -34,26 +34,48 @@
 .orderID{
     h2{
         font-size: 1rem;
+        min-width: 70px;
+        text-align: center;
     }
 }
 
-.dataSection{
+.data{
     min-width: 174px;
+    span{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.dataData {
+    min-width: 105px;
+}
+.dataText{
+    min-width: 60px;
 }
 
 .contacts{
-    min-width: 120px;
+    width: 120px;
 }
 
 .status {
+    width: 166px;
     select{
         height: 30px;
         border: 0;
-        border-bottom: 1px solid colors.$logo;
+        border-bottom: 1px solid colors.$line;
         outline: none;
         padding: 0 10px;
-        @include mixins.grandBorderRadius()
+        @include mixins.grandBorderRadius();
+        &:focus{
+            outline: 2px solid colors.$line-focus;
+        }
     }
+}
+
+
+.total {
+    width: 130px;
 }
 
 .detail{
