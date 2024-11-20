@@ -1,7 +1,7 @@
 'use client'
 import { memo,useRef, useState, useEffect} from 'react'
 import styles from './product-card.module.scss'
-import { shop } from '@/shared/shopConfig'
+import { shop } from '@/shared/shop.сonfig'
 import Link from 'next/link'
 import { useDispatch} from 'react-redux'
 import { addToBasket, handleInBasket, removeFromBasket} from '@/store-redux/slices/basket-slice'

@@ -1,7 +1,7 @@
 'use client'
 import styles from './order-item.module.scss';
 import Link from 'next/link';
-import { shop } from '@/shared/shopConfig';
+import { shop } from '@/shared/shop.сonfig';
 import { useEffect, useState } from 'react';
 import dataToISO from '@/shared/data-to-iso/data-to-iso';
 

@@ -2,7 +2,7 @@ import localFont from "next/font/local";
 // import './favicon.ico'
 import "./globals.css";
 import StoreProvider from "@/store-redux/store-provider";
-import { shop } from "@/shared/shopConfig";
+import { shop } from "@/shared/shop.сonfig";
 import Header from "@/widgets/header/ui/header";
 
 const geistSans = localFont({
