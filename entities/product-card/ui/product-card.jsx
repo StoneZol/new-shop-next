@@ -1,49 +1,16 @@
 'use client'
-import { memo,useRef, useState, useEffect} from 'react'
+import { memo} from 'react'
 import styles from './product-card.module.scss'
 import { shop } from '@/shared/shop.сonfig'
 import Link from 'next/link'
-import { useDispatch} from 'react-redux'
-import { addToBasket, handleInBasket, removeFromBasket} from '@/store-redux/slices/basket-slice'
 import SwiperProductCard from '@/shared/swiper-product-card/ui/swiper-product-card'
 import handleSelect from '@/shared/public-func/handle-select'
+import { useBasket } from '@/shared/custom-hooks/use-basket'
+import LetsIconsBasketAlt3 from '@/shared/icons/lets-icons-basket-alt3'
 
 const ProductCard = memo(function ProductCard({product}) {
 
-    const [isZero, setIsZero] = useState(product.count===0)
-    const [count, setCount] = useState(product.count);
-    const inputRef = useRef(null);
-
-    const dispatch = useDispatch();
-
-    const addBasket = () => {
-        const newCount = count + 1;
-        setCount(newCount);
-        dispatch(addToBasket({...product , count: newCount}));
-    };
-
-    const removeBasket = () => {
-        if (count > 0 ){
-            const newCount = count - 1;
-            setCount(newCount);
-            dispatch(removeFromBasket({...product,count: newCount}));
-        }
-      };
-
-    const handleInputBasket = (e) => {
-        let newCount = e.target.value === '' ? 0 : Math.min(Math.max(parseInt(e.target.value, 10), 0), 999);
-        if (isNaN(newCount)) {
-            newCount=0;
-        }
-        setCount(newCount);
-        dispatch(handleInBasket({...product, count: newCount}))
-      };
-
-    useEffect(() => {
-        setIsZero(count === 0);
-
-      }, [count]);
-
+    const { count, isZero, inputRef, addBasket, removeBasket, handleInputBasket } = useBasket(product);
 
   return (
     <article className={styles.article}>
@@ -72,7 +39,7 @@ const ProductCard = memo(function ProductCard({product}) {
         </section>
         <footer className={styles.footer}>
             {isZero ?
-            (<button onClick={addBasket}> Купить</button>)
+            (<button onClick={addBasket}> <LetsIconsBasketAlt3/> Купить </button>)
             :
             (<>
                 <button aria-label="Уменьшить 1" onClick={removeBasket}>-</button>
