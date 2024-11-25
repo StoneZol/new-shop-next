@@ -1,0 +1,20 @@
+.pageBox{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     gap: 10px;
+}
+
+.sliderBox{
+    width: 300px;
+    height: 300px;
+}
