@@ -9,6 +9,7 @@ import SkeletonAboutProduct from "@/entities/about-product/ui/skeleton-about-pro
 import OrderList from "@/widgets/order-list/ui/order-list";
 import SwiperProductCard from "@/shared/swiper-product-card/ui/swiper-product-card";
 import BuyPageBlock from "@/entities/buy-page-block/ui/buy-page-block";
+import SkeletonBuyPageBlock from "@/entities/buy-page-block/ui/skeleton-buy-page-block";
 
 
 const testData = {
@@ -223,6 +224,8 @@ export default function Home() {
       <AboutProduct/>
       <br/>
       <BuyPageBlock product={testData2[2]}/>
+      <br/>
+      <SkeletonBuyPageBlock/>
       <br/>
       <SkeletonAboutProduct/>
       <br/>
