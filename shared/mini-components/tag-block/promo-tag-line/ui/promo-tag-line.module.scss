@@ -1,0 +1,15 @@
+@use '/shared/configured-styles/colors' as colors;
+@use '/shared/configured-styles/mixins' as mixins;
+
+.promotionTag {
+    user-select: none;
+    width: auto;
+    max-width: 160px;
+    text-align: center;
+    padding: 3px 7px;
+    font-weight: 700;
+    font-size: 0.67rem;
+    @include mixins.grandBorderRadius(30px);
+    color: colors.$promo-text;
+    background-color: colors.$promo-bg;
+}

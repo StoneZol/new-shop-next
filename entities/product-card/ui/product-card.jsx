@@ -7,6 +7,9 @@ import SwiperProductCard from '@/shared/swiper-product-card/ui/swiper-product-ca
 import handleSelect from '@/shared/public-func/handle-select'
 import { useBasket } from '@/shared/custom-hooks/use-basket'
 import LetsIconsBasketAlt3 from '@/shared/icons/lets-icons-basket-alt3'
+import TagBlock from '@/shared/mini-components/tag-block/ui/tag-block'
+import DiscountTagLine from '@/shared/mini-components/tag-block/discount-tag-line/ui/discount-tag-line'
+import PromoTagLine from '@/shared/mini-components/tag-block/promo-tag-line/ui/promo-tag-line'
 
 const ProductCard = memo(function ProductCard({product}) {
 
@@ -22,8 +25,10 @@ const ProductCard = memo(function ProductCard({product}) {
                 <h2>{product.name}</h2>
             </Link>
         </header>
-        {product.discount > 0 && <aside className={styles.sale}> Скидка! -{product.discount}%</aside>}
-        {product.promotionTag && <aside className={styles.promotionTag}>{product.promotionTag}</aside> }
+        <TagBlock>
+            <DiscountTagLine discount={product.discount}/>
+            <PromoTagLine promoTag={product.promotionTag}/>
+        </TagBlock>
         <section className={styles.section}>
             {product.discount == 0 ? 
             (<>

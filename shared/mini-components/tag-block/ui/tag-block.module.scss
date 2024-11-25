@@ -1,0 +1,12 @@
+.tagBlock{
+    z-index: 10;
+    overflow: hidden;
+    height: auto;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 4px;
+    top: 4px;
+    right: 4px;
+}

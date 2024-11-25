@@ -116,29 +116,3 @@
     }
 }
 
-.sale ,.promotionTag {
-    user-select: none;
-    z-index: 10;
-    position: absolute;
-    right: 4px;
-    width: auto;
-    max-width: 160px;
-    text-align: center;
-    padding: 3px 7px;
-    font-weight: 700;
-    font-size: 0.67rem;
-    @include mixins.grandBorderRadius(30px)
-}
-
-.sale{
-    top: 4px;
-    color: colors.$sale-text;
-    background-color: colors.$sale-bg;
-}
-
-.promotionTag{
-    top: 25px;
-    color: colors.$promo-text;
-    background-color: colors.$promo-bg;
-}
-
