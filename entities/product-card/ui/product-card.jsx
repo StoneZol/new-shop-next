@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useDispatch} from 'react-redux'
 import { addToBasket, handleInBasket, removeFromBasket} from '@/store-redux/slices/basket-slice'
 import SwiperProductCard from '@/shared/swiper-product-card/ui/swiper-product-card'
+import handleSelect from '@/shared/public-func/handle-select'
 
 const ProductCard = memo(function ProductCard({product}) {
 
@@ -36,10 +37,6 @@ const ProductCard = memo(function ProductCard({product}) {
         }
         setCount(newCount);
         dispatch(handleInBasket({...product, count: newCount}))
-      };
-
-    const handleSelect = (e) => {
-        e.target.select();
       };
 
     useEffect(() => {
