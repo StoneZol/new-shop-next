@@ -3,7 +3,7 @@ import styles from './order-item.module.scss';
 import Link from 'next/link';
 import { shop } from '@/shared/shop.сonfig';
 import { useEffect, useState } from 'react';
-import dataToISO from '@/shared/data-to-iso/data-to-iso';
+import dataToISO from '@/shared/public-func/data-to-iso';
 
 export default function OrderItem({order}) {
     const [isStatus, setIsStatus] = useState(order.status)
