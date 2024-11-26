@@ -6,7 +6,7 @@ import LetsIconsBasketAlt3 from '@/shared/icons/lets-icons-basket-alt3';
 import Link from 'next/link';
 
 
-export default function BuyPageBlock({product}) {
+export default function BuyPageBlock({product, link=false}) {
 
 const { count, isZero, inputRef, addBasket, removeBasket, handleInputBasket } = useBasket(product);
 
@@ -16,7 +16,7 @@ const { count, isZero, inputRef, addBasket, removeBasket, handleInputBasket } = 
     (<button onClick={addBasket}> <LetsIconsBasketAlt3/> Купить</button>)
     :
     (<div className={styles.ifInBasket}>
-        <Link href={'/basket'}>В корзину</Link>
+        {link ? (<Link href={'/basket'}>В корзину</Link>):(<></>)}
         <button aria-label="Уменьшить 1" onClick={removeBasket}>-</button>
         <input 
         ref={inputRef}
