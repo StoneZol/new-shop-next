@@ -45,9 +45,9 @@ const ProductPage = ({ params }) => {
         <div className={styles.sliderBox}>
             <SwiperProductCard width={300} height={300} imageQuality={100} content={testData.imageUrls}/>
             <TagBlock>
-            <DiscountTagLine discount={testData.discount}/>
-            <PromoTagLine promoTag={testData.promotionTag}/>
-        </TagBlock>
+                <DiscountTagLine discount={testData.discount}/>
+                <PromoTagLine promoTag={testData.promotionTag}/>
+            </TagBlock>
         </div>
       <AboutProduct/>
       <NutritionalValue values={mockNutritionalValues}/>

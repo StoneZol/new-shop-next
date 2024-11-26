@@ -39,9 +39,12 @@ const basketSlice = createSlice({
                     }
             }
             else return
-        }
+        },
+        removeALLBasket: (state, _)=>{
+            state.basket = [];
+        },
     }
 })
 
-export const {addToBasket, removeFromBasket,handleInBasket} = basketSlice.actions;
+export const {addToBasket, removeFromBasket,handleInBasket, removeALLBasket} = basketSlice.actions;
 export default basketSlice.reducer;
