@@ -6,6 +6,7 @@ import TagBlock from '@/shared/mini-components/tag-block/ui/tag-block'
 import DiscountTagLine from '@/shared/mini-components/tag-block/discount-tag-line/ui/discount-tag-line'
 import PromoTagLine from '@/shared/mini-components/tag-block/promo-tag-line/ui/promo-tag-line'
 import BuyPageBlock from '@/entities/buy-page-block/ui/buy-page-block'
+import PriceModule from '@/entities/price-module/ui/price-module'
 
 function ProductCard({product}) {
   return (
@@ -23,17 +24,7 @@ function ProductCard({product}) {
             <PromoTagLine promoTag={product.promotionTag}/>
         </TagBlock>
         <section className={styles.section}>
-            {product.discount == 0 ? 
-            (<>
-                <span className={styles.totalPrice}>{product.totalPrice}{shop.currency}</span>
-                <span>/{product.units}</span>
-            </>)
-            :
-            (<>
-                <span className={styles.oldPrice}>{product.price}{shop.currency} </span> 
-                <span className={styles.totalPrice}>{product.totalPrice}{shop.currency}</span>
-                <span>/{product.units}</span>
-            </>)}
+            <PriceModule units={product.units} discount={product.discount} price={product.price} totalPrice = {product.totalPrice}/>
         </section>
         <footer className={styles.footer}>
             <BuyPageBlock product={product}/>

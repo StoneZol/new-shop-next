@@ -39,11 +39,11 @@
             justify-content: center;
             align-items: center;
             color: colors.$button-text;
-            width: 100px;
+            width: 140px;
+            height: 100%;
             background-color: colors.$button-basket-link;
             @include mixins.grandTransition();
             @include mixins.grandBorderRadius(10px);
-            margin-right: 10px;
             &:hover{
                 background-color: colors.$button-basket-link-hover;
             }
@@ -59,7 +59,8 @@
         input{
             font-size:100%;
             border: 0;
-            width: 50%;
+            max-width: 50%;
+            height: 100%;
             padding:  5px;
             text-align: center;
             margin: 0 5px;

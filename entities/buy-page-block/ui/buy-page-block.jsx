@@ -4,6 +4,8 @@ import styles from './buy-page-block.module.scss'
 import handleSelect from '@/shared/public-func/handle-select';
 import LetsIconsBasketAlt3 from '@/shared/icons/lets-icons-basket-alt3';
 import Link from 'next/link';
+import IconPlus from '@/shared/icons/plus-icon';
+import IconMinus from '@/shared/icons/minus-icon';
 
 
 export default function BuyPageBlock({product, link=false}) {
@@ -17,7 +19,7 @@ const { count, isZero, inputRef, addBasket, removeBasket, handleInputBasket } = 
     :
     (<div className={styles.ifInBasket}>
         {link ? (<Link href={'/basket'}>В корзину</Link>):(<></>)}
-        <button aria-label="Уменьшить 1" onClick={removeBasket}>-</button>
+        <button aria-label="Уменьшить 1" onClick={removeBasket}><IconMinus/></button>
         <input 
         ref={inputRef}
         type="number"
@@ -26,7 +28,7 @@ const { count, isZero, inputRef, addBasket, removeBasket, handleInputBasket } = 
         max={999}
         onChange={handleInputBasket}
         onClick={handleSelect}/>
-        <button aria-label="Добавить 1" onClick={addBasket}>+</button>
+        <button aria-label="Добавить 1" onClick={addBasket}><IconPlus/></button>
     </div>)}
 </section>
   )

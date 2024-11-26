@@ -1,0 +1,18 @@
+@use '/shared/configured-styles/colors' as colors;
+
+.div {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    position: relative;
+    .totalPrice{
+        color: colors.$price-text;
+        font-weight: 700;
+    }
+    .oldPrice{
+        color: colors.$notactive-text;
+        text-decoration:line-through;
+        margin-right: 5px;
+        padding-bottom: 6px;
+    }
+}

@@ -60,16 +60,7 @@
 
 
 .section {
-    .totalPrice{
-        color: colors.$price-text;
-        font-size: 20px;
-        font-weight: 700;
-    }
-    .oldPrice{
-        text-decoration: line-through;
-        font-size: 14px;
-        color: colors.$notactive-text;
-    }
+    height: 30px;
 }
 
 

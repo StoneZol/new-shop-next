@@ -1,0 +1,25 @@
+@use '/shared/configured-styles/colors' as colors;
+@use '/shared/configured-styles/mixins' as mixins;
+.section {
+    width: 340px;
+    height: 128px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: colors.$bg;
+    @include mixins.grandBorderRadius();
+}
+
+.price{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons{
+    width: 320px;
+    height: 40px;
+}

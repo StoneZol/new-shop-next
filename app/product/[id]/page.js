@@ -7,6 +7,7 @@ import BuyPageBlock from '@/entities/buy-page-block/ui/buy-page-block';
 import TagBlock from '@/shared/mini-components/tag-block/ui/tag-block';
 import DiscountTagLine from '@/shared/mini-components/tag-block/discount-tag-line/ui/discount-tag-line';
 import PromoTagLine from '@/shared/mini-components/tag-block/promo-tag-line/ui/promo-tag-line';
+import BuyPriceWidget from '@/widgets/buy-price-widget/ui/buy-price-widget';
 
 
 const ProductPage = ({ params }) => {
@@ -51,7 +52,7 @@ const ProductPage = ({ params }) => {
         </div>
       <AboutProduct/>
       <NutritionalValue values={mockNutritionalValues}/>
-      <BuyPageBlock product={testData}/>
+      <BuyPriceWidget product={testData}/>
       </section>
     </div>
   );
