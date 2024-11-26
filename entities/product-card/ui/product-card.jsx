@@ -1,4 +1,3 @@
-import { memo} from 'react'
 import styles from './product-card.module.scss'
 import { shop } from '@/shared/shop.сonfig'
 import Link from 'next/link'
