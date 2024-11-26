@@ -28,7 +28,7 @@ export default function SwiperProductCard({width, height, content, imageQuality,
             pagination={{
                 dynamicBullets: true,
             }}
-            loop={content.length > 0 ? true : false}
+            loop={content.length > 1 ? true : false}
             mousewheel={true}
             modules={[Pagination, Mousewheel]}
             className={styles.swiper}>
@@ -42,7 +42,6 @@ export default function SwiperProductCard({width, height, content, imageQuality,
                                 quality={imageQuality ? imageQuality : 75}
                                 width={width}
                                 height={height}/>
-                                
                         </Link>
                     </SwiperSlide>
                 ))}

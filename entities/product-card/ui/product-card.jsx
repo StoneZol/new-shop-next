@@ -38,8 +38,7 @@ function ProductCard({product}) {
         </section>
         <footer className={styles.footer}>
             <BuyPageBlock product={product}/>
-        </footer>
-        
+        </footer> 
     </article>
   )
 }
