@@ -1,0 +1,19 @@
+@use '/shared/configured-styles/colors' as colors;
+@use '/shared/configured-styles/mixins' as mixins;
+
+.footer{
+    width: 100%;
+    background-color: colors.$bg;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    padding-bottom: 30px;
+}
+
+.map{
+    max-width: 360px;
+    img{
+        object-fit: cover;
+        color: #0077ff
+    }
+}

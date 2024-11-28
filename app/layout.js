@@ -4,6 +4,7 @@ import "./globals.css";
 import StoreProvider from "@/store-redux/store-provider";
 import { shop } from "@/shared/shop.сonfig";
 import Header from "@/widgets/header/ui/header";
+import Footer from "@/widgets/footer/ui/footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,12 +28,13 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" type="image/x-icon" href="./icon.ico"/>
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <StoreProvider>
-          <Header/>
-            {children}
+          <body className={`${geistSans.variable} ${geistMono.variable}`}>
+           <Header/>
+            <main>{children}</main>
+            <Footer/>
+          </body>
         </StoreProvider>
-      </body>
     </html>
   );
 }
