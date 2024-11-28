@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-export const Vk = React.memo(function Vk({url, props}) {
+export default function Vk({url, props}) {
     return (
         <Link href={url}>
             <svg
@@ -16,4 +16,4 @@ export const Vk = React.memo(function Vk({url, props}) {
             </svg>
         </Link>
     );
-})
+}
