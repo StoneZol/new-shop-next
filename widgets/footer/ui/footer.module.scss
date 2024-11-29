@@ -40,7 +40,13 @@
     p{
         padding: 5px 10px;
         font-weight: 700;
-        color: colors.$link
+        a{
+            color: colors.$contacts;
+            @include mixins.grandTransition();
+            &:hover{
+                color: colors.$contacts-hover;
+            }
+        }
     }
 }
 

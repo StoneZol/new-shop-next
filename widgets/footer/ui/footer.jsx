@@ -35,7 +35,7 @@ export default function Footer() {
                 <section className={styles.map}>
                     <h4>{shopLocation.addres}</h4>
                     <Link href={shopLocation.maplink}>
-                        <Image src={'/map.png'} width={340} height={140} quality={100}/>
+                        <Image src={'/map.png'} width={340} height={140} quality={100} alt='Map'/>
                     </Link>
                 </section>
             </div>
