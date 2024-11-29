@@ -2,12 +2,12 @@
 @use '/shared/configured-styles/mixins' as mixins;
 .section {
     width: 340px;
-    height: 112px;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 10px;
     background-color: colors.$bg;
     @include mixins.grandBorderRadius();
 }
@@ -22,4 +22,7 @@
 .buttons{
     width: 320px;
     height: 40px;
+}
+.childrens{
+    
 }

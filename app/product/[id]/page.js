@@ -16,7 +16,7 @@ const ProductPage = ({ params }) => {
   const testData = {
     id: "8",
     imageNames: 'Picture name',
-    name: '8ElisenlebkuchenNürnberger',
+    name: '8 Elisenlebkuchen Nürnberger',
     price: 500,
     discount: 90,
     totalPrice: 50,
@@ -28,7 +28,37 @@ const ProductPage = ({ params }) => {
     availability: true,
     imageUrls:['https://cdn1.ozone.ru/s3/multimedia-o/6063449232.jpg',
     'https://i.pinimg.com/736x/a7/da/f2/a7daf24393f0ba0d8282d9e720e88510.jpg'
-   ] 
+   ],
+    description: {
+      characteristic: [
+        {
+          name: "Weight",
+          value: "1kg"
+        },
+        {
+          name: "Color",
+          value: "Red"
+        },
+        {
+          name: "Color",
+          value: "Red"
+        },
+        {
+          name: "Color",
+          value: "Red"
+        },        {
+          name: "Color",
+          value: "Red"
+        },
+        {
+          name: "Color",
+          value: "Red"
+        }
+      ],
+      about: "**Lorem ipsum dolor**  \n sit amet, consectetur adipiscing elit.  \n\t- Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \n\t- Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+      food: true
+    }
+
   }
 
   const mockNutritionalValues = {
@@ -40,19 +70,21 @@ const ProductPage = ({ params }) => {
 
   return (
     <div className={styles.pageBox}>
-      <h2>Страница продукта ID: {id}</h2>
-      <p>Информация о продукте с ID {id}...</p>
       <section className={styles.page}>
         <div className={styles.sliderBox}>
-            <SwiperProductCard width={300} height={300} imageQuality={100} content={testData.imageUrls}/>
+            <SwiperProductCard width={340} height={340} imageQuality={100} content={testData.imageUrls}/>
             <TagBlock>
                 <DiscountTagLine discount={testData.discount}/>
                 <PromoTagLine promoTag={testData.promotionTag}/>
             </TagBlock>
         </div>
-      <AboutProduct/>
-      <NutritionalValue values={mockNutritionalValues}/>
-      <BuyPriceWidget product={testData}/>
+        <section className={styles.aboutBox}>
+        <AboutProduct data={testData.description}/>
+        <NutritionalValue values={mockNutritionalValues}/>
+        </section>
+          <BuyPriceWidget product={testData}>
+              <h2 className={styles.h2}>{testData.name}</h2>
+          </BuyPriceWidget>
       </section>
     </div>
   );
