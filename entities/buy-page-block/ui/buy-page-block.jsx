@@ -6,11 +6,23 @@ import LetsIconsBasketAlt3 from '@/shared/icons/lets-icons-basket-alt3';
 import Link from 'next/link';
 import IconPlus from '@/shared/icons/plus-icon';
 import IconMinus from '@/shared/icons/minus-icon';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 
 export default function BuyPageBlock({product, link=false}) {
 
-const { count, isZero, inputRef, addBasket, removeBasket, handleInputBasket } = useBasket(product);
+const { count,setCount , isZero, inputRef, addBasket, removeBasket, handleInputBasket } = useBasket(product);
+
+const basket = useSelector(state=>state.basket.basket)
+
+ useEffect(() => {
+   const current = basket.find((item)=>item.id ===product.id)
+   if (current){
+    setCount(current.count)
+   }
+ }, [basket, product.id])
+ 
 
   return (
     <section className={styles.section}>

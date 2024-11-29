@@ -217,26 +217,9 @@ const orders = [
 
 export default function Home() {
   return (
-    
     <div>
-      <OrderList orders={orders}/>
-      <br/>
-      <AboutProduct/>
-      <br/>
-      <BuyPageBlock product={testData2[2]}/>
-      <br/>
-      <SkeletonBuyPageBlock/>
-      <br/>
-      <SkeletonAboutProduct/>
-      <br/>
-      <NutritionalValue values={mockNutritionalValues}/>
-      <br/>
-      <SkeletonNutritionalValue/>
-      <br/>
       <ProductSearch/>
-      <div style={{width: '380px', height: '380px'}}><SwiperProductCard width={380} height={380} content={testData.imageUrls} imageQuality={100}/></div>
       <ProductsList products={testData2}/>
-      <SkeletonProductsList/>
     </div>
   );
 }

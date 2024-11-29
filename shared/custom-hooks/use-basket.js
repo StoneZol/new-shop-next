@@ -39,6 +39,6 @@ export const useBasket = (product) =>{
       }, [count]);
 
       return{
-        count,isZero, inputRef,addBasket, removeBasket,handleInputBasket
+        count,setCount,isZero, inputRef,addBasket, removeBasket,handleInputBasket
       }
 }
