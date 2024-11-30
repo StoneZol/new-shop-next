@@ -4,19 +4,19 @@ import Skeleton from "react-loading-skeleton";
 import styles from './page.module.scss'
 import SkeletonBuyPriceWidget from "@/widgets/buy-price-widget/ui/skeleton-buy-price-widget";
 
-export default function loading() {
+export default function TestPage() {
     return (
-        <div className={styles.pageBox}>
-            <section className={styles.page}>
+              <div className={styles.pageBox}>
+              <section className={styles.page}>
                 <div className={styles.sliderBox}>
                     <Skeleton width={340} height={340}/>
                 </div>
                 <section className={styles.aboutBox}>
-                    <SkeletonAboutProduct/>
-                    <SkeletonNutritionalValue/>
+                  <SkeletonAboutProduct/>
+                  <SkeletonNutritionalValue/>
                 </section>
                 <SkeletonBuyPriceWidget/>
-            </section>
-        </div>
+              </section>
+            </div>
     )
-}
+  }

@@ -1,24 +1,22 @@
 .section{
     padding: 10px;
-    width: 1200px;
+    width: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15%, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(6, auto);
+    gap: 8px;
     flex-wrap: wrap;
 }
 
 @media (max-width: 1199px){
     .section{
-        width: 800px;
-        grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+        grid-template-columns: repeat(4, auto);
     }
 }
 
 @media (max-width: 799px){
     .section{
         padding: 5px;
-        width: 375px;
-        grid-template-columns: repeat(auto-fit, minmax(49%, 1fr));
+        grid-template-columns: repeat(2, auto);
         gap: 5px;
     }
 }

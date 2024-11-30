@@ -1,16 +1,6 @@
 import styles from "./page.module.scss";
 import ProductsList from "@/widgets/products-list/ui/products-list";
-import SkeletonProductsList from "@/widgets/products-list/ui/skeleton-products-list";
 import ProductSearch from "@/features/product-search/ui/product-search";
-import NutritionalValue from "@/entities/nutritional-value/ui/nutritional-value";
-import SkeletonNutritionalValue from "@/entities/nutritional-value/ui/skeleton-nutritional-value";
-import AboutProduct from "@/entities/about-product/ui/about-product";
-import SkeletonAboutProduct from "@/entities/about-product/ui/skeleton-about-product";
-import OrderList from "@/widgets/order-list/ui/order-list";
-import SwiperProductCard from "@/shared/swiper-product-card/ui/swiper-product-card";
-import BuyPageBlock from "@/entities/buy-page-block/ui/buy-page-block";
-import SkeletonBuyPageBlock from "@/entities/buy-page-block/ui/skeleton-buy-page-block";
-
 
 const testData = {
   id: "6",
@@ -217,7 +207,7 @@ const orders = [
 
 export default function Home() {
   return (
-    <div>
+    <div className={styles.indexPage}>
       <ProductSearch/>
       <ProductsList products={testData2}/>
     </div>
