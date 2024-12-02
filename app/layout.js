@@ -5,7 +5,6 @@ import StoreProvider from "@/store-redux/store-provider";
 import { shop } from "@/shared/shop.сonfig";
 import Header from "@/widgets/header/ui/header";
 import Footer from "@/widgets/footer/ui/footer";
-import Head from "next/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

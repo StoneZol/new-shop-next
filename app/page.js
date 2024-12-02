@@ -22,7 +22,7 @@ const testData = {
 
 const testData2 = [
     {
-        id: "6",
+        id: 6,
         imageNames: 'Picture name',
         name: '6Elisenlebkuchen Nürnberger',
         price: 500,
@@ -39,7 +39,7 @@ const testData2 = [
        ] 
     },
     {
-      id: "7",
+      id: 7,
       imageNames: 'Picture name',
       name: '7Elisenlebkuchen Nürnberger',
       price: 500,
@@ -55,7 +55,7 @@ const testData2 = [
      ] 
   },
   {
-    id: "8",
+    id: 8,
     imageNames: 'Picture name',
     name: '8ElisenlebkuchenNürnberger',
     price: 500,
@@ -72,7 +72,7 @@ const testData2 = [
    ] 
 },
 {
-  id: "9",
+  id: 9,
   imageNames: 'Picture name',
   name: '6Elisenlebkuchen Nürnberger',
   price: 500,
@@ -87,7 +87,7 @@ const testData2 = [
   imageUrls:['https://cdn1.ozone.ru/s3/multimedia-o/6063449232.jpg'] 
 },
 {
-id: "10",
+id: 10,
 imageNames: 'Picture name',
 name: '7Elisenlebkuchen Nürnberger',
 price: 500,
@@ -101,7 +101,7 @@ availability: true,
 imageUrls:['https://cdn1.ozone.ru/s3/multimedia-o/6063449232.jpg'] 
 },
 {
-id: "11",
+id: 11,
 imageNames: 'Picture name',
 name: '8Elisenlebkuchen Nürnberger',
 price: 500,

@@ -1,37 +1,58 @@
+import formatForSEO from "@/shared/public-func/format-seo";
+
 export const revalidate = 360
 
 export async function generateMetadata({ params }) {
   const { id } = params;
   const res = await fetch(`https://ztrz483g-5267.euw.devtunnels.ms/Product/${id}`);
+  if (!res.ok) {
+    notFound();
+ }
   const productData = await res.json();
 
   if (productData.message === `ID: ${id} not found!`) {
     return { title: 'Товар не найден', description: 'Страница товара не найдена.' };
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": productData.name,
+    "image": productData.imageUrls[0],
+    "description": formatForSEO(productData.description.about),
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "RUB",
+      "price": productData.totalPrice.toString(),
+      "availability": productData.inStock
+        ? "https://schema.org/InStock"
+        : "https://schema.org/OutOfStock"
+    }
+  };
+
+
   return {
     title: productData.name,
-    description: productData.description,
+    description: formatForSEO(productData.description.about),
     openGraph: {
       title: productData.name,
-      description: productData.description.about,
+      description: formatForSEO(productData.description.about),
       images: [productData.imageUrls[0]],
     },
-    keywords: productData.category,
+    jsonLd,
   };
 }
 
 export default async function Layout({ children, params}) {
-  const { id } = params;
-  const res = await fetch(`https://ztrz483g-5267.euw.devtunnels.ms/Product/${id}`);
-  const productData = await res.json();
-  if (productData.message ==`ID: ${id} not found!`) {
-      notFound();
-  }
-
-  console.log('layout data ', productData);
+  const metadata = await generateMetadata({ params });
   return (
     <>
+     {metadata.jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(metadata.jsonLd) }}
+        />
+      )}
         {children}
     </>
   );

@@ -6,11 +6,14 @@ import PromoTagLine from '@/shared/mini-components/tag-block/promo-tag-line/ui/p
 import AboutProduct from '@/entities/about-product/ui/about-product';
 import NutritionalValue from '@/entities/nutritional-value/ui/nutritional-value';
 import BuyPriceWidget from '@/widgets/buy-price-widget/ui/buy-price-widget';
-import { getData } from '@/shared/fetch-methods/fetch-methods';
 import { notFound } from 'next/navigation';
+
 
 export async function generateStaticParams() {
     const response = await fetch('https://ztrz483g-5267.euw.devtunnels.ms/Product?Page=1&PageLimit=50');
+    if (!response.ok) {
+        notFound();
+     }
     const products = await response.json();
     return products.items.map(product => ({
         id: product.id.toString(),
@@ -19,11 +22,11 @@ export async function generateStaticParams() {
 
 export default async function ProductPage({ params }) {
     const { id } = params;
-    const res = await fetch(`https://ztrz483g-5267.euw.devtunnels.ms/Product/${id}`);
-    const productData = await res.json();
-    if (productData.message ==`ID: ${id} not found!`) {
-        notFound();
-    }
+        const res = await fetch(`https://ztrz483g-5267.euw.devtunnels.ms/Product/${id}`);
+        if (!res.ok) {
+           notFound();
+        }
+        const productData = await res.json();
 
     return (
         <div className={styles.pageBox}>
