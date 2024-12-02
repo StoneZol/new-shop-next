@@ -21,7 +21,8 @@ export async function generateStaticParams() {
 }
 
 export default async function ProductPage({ params }) {
-    const { id } = params;
+    const resolvedParams = await params;
+    const { id } = resolvedParams;
         const res = await fetch(`https://ztrz483g-5267.euw.devtunnels.ms/Product/${id}`);
         if (!res.ok) {
            notFound();

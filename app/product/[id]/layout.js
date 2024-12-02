@@ -1,9 +1,11 @@
 import formatForSEO from "@/shared/public-func/format-seo";
+import { notFound } from "next/navigation";
 
 export const revalidate = 360
 
 export async function generateMetadata({ params }) {
-  const { id } = params;
+  const resolvedParams = await params; // Дожидаемся разрешения
+  const { id } = resolvedParams; // Теперь можно использовать id
   const res = await fetch(`https://ztrz483g-5267.euw.devtunnels.ms/Product/${id}`);
   if (!res.ok) {
     notFound();
