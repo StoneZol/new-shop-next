@@ -12,7 +12,7 @@ export default function AboutProduct({data={}}) {
                     <About data={data.about}/>
                 </div>
                 <div id="more" className={styles.hiddenZone}>
-                    <More data={data.characteristic}/>
+                    <More data={data.characterisitcs}/>
                 </div>
             </section>
         </section>

@@ -2,9 +2,11 @@ import { nutritionalText } from '@/shared/shop.сonfig'
 import styles from './nutritional-value.module.scss'
 
 export default function NutritionalValue({values}) {
-    if (Object.keys(values).length === 0) {
-        return  null
-    }
+    // if (Object.keys(values).length === 0) {
+    //     return  null
+    // }
+
+    if(values !==null && values !==undefined){
     return (
         <section className={styles.section}>
             <h3>{nutritionalText.head}</h3>
@@ -23,9 +25,10 @@ export default function NutritionalValue({values}) {
                 </div>
                 <div>
                     <span className={styles.value}>{values.calories}</span><br/>
-                    <span className={styles.text}>{nutritionalText.calories}</span>
+                    <span className={styles.text}>{nutritionalText.calories}</span> 
                 </div>
             </div>
         </section>
     )
+} else return null
 }

@@ -22,14 +22,14 @@ import Link from 'next/link';
  * 
  * @returns {JSX.Element} Возвращает JSX.
  */
-export default function SwiperProductCard({width, height, content, imageQuality, productID}) {
+export default function SwiperProductCard({width, height, content, imageQuality, productID, mousewheel=false}) {
     return (
         <Swiper
             pagination={{
                 dynamicBullets: true,
             }}
             loop={content.length > 1 ? true : false}
-            mousewheel={true}
+            mousewheel={mousewheel}
             modules={[Pagination, Mousewheel]}
             className={styles.swiper}>
                 {content.map((imageUrl , index)=>(

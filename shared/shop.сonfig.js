@@ -1,6 +1,7 @@
 export const  shop = {
     currency: '₽',
     name: 'Наши вкусняшки',
+    shortName: 'Наши кусняшки', 
     description: 'Магазин кондитерских изделий',
 }
 

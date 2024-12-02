@@ -203,12 +203,14 @@ const orders = [
 
 
 
-
-
 export default function Home() {
+  // const res = await fetch('https://ztrz483g-5267.euw.devtunnels.ms/Product?Page=1&PageLimit=24', { cache: 'no-store' });
+  // const data = await res.json();
+  // console.log(data);
   return (
     <div className={styles.indexPage}>
       <ProductSearch/>
+      {/* <ProductsList products={data.items}/> */}
       <ProductsList products={testData2}/>
     </div>
   );
