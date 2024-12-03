@@ -20,6 +20,7 @@ export async function generateMetadata({ params }) {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": productData.name,
+    "sku" : productData.sku || '',
     "image": productData.imageUrls[0],
     "description": formatForSEO(productData.description.about),
     "offers": {

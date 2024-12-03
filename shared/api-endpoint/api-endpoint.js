@@ -1,6 +1,6 @@
 //!Ссылки эндпоинтов для API
 //основной API
-export const baseUrlApi = `https://fakestoreapi.com` // /api // https://gdw3fstj-5063.euw.devtunnels.ms/api // https://fakestoreapi.com/
+export const baseUrlApi = `https://ztrz483g-5267.euw.devtunnels.ms` // /api // https://ztrz483g-5267.euw.devtunnels.ms // https://fakestoreapi.com/
 
 //get`sы
 export const getProductUrlApi = `${baseUrlApi}/Product`

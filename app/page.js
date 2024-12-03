@@ -1,6 +1,7 @@
 import styles from "./page.module.scss";
 import ProductsList from "@/widgets/products-list/ui/products-list";
 import ProductSearch from "@/features/product-search/ui/product-search";
+import GetterData from './../features/getter-data/ui/getter-data';
 
 const testData = {
   id: "6",
@@ -204,14 +205,14 @@ const orders = [
 
 
 export default function Home() {
-  // const res = await fetch('https://ztrz483g-5267.euw.devtunnels.ms/Product?Page=1&PageLimit=24', { cache: 'no-store' });
-  // const data = await res.json();
-  // console.log(data);
   return (
     <div className={styles.indexPage}>
       <ProductSearch/>
       {/* <ProductsList products={data.items}/> */}
-      <ProductsList products={testData2}/>
+        <GetterData>
+          <ProductsList/>
+        </GetterData>
+      {/* <ProductsList products={testData2}/> */}
     </div>
   );
 }

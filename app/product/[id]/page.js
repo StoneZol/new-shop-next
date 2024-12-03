@@ -7,10 +7,12 @@ import AboutProduct from '@/entities/about-product/ui/about-product';
 import NutritionalValue from '@/entities/nutritional-value/ui/nutritional-value';
 import BuyPriceWidget from '@/widgets/buy-price-widget/ui/buy-price-widget';
 import { notFound } from 'next/navigation';
+import { getProductUrlApi } from '@/shared/api-endpoint/api-endpoint';
+
 
 
 export async function generateStaticParams() {
-    const response = await fetch('https://ztrz483g-5267.euw.devtunnels.ms/Product?Page=1&PageLimit=50');
+    const response = await fetch(`${getProductUrlApi}?Page=1&PageLimit=50`);
     if (!response.ok) {
         notFound();
      }
@@ -23,11 +25,11 @@ export async function generateStaticParams() {
 export default async function ProductPage({ params }) {
     const resolvedParams = await params;
     const { id } = resolvedParams;
-        const res = await fetch(`https://ztrz483g-5267.euw.devtunnels.ms/Product/${id}`);
-        if (!res.ok) {
-           notFound();
-        }
-        const productData = await res.json();
+    const res = await fetch(`${getProductUrlApi}/${id}`);
+    if (!res.ok) {
+        notFound();
+    }
+    const productData = await res.json();
 
     return (
         <div className={styles.pageBox}>
