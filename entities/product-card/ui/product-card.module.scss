@@ -8,6 +8,7 @@
     width: 180px;
     height: 290px;
     display: flex;
+    margin: 4px;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -70,5 +71,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 799px){
+    .article , .skeleton{
+        margin: 2px;
+    }
 }
 

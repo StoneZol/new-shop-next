@@ -1,6 +1,6 @@
 'use client'
+import ProductsList from '@/features/products-list/ui/products-list'
 import BasketCount from '@/shared/basket-count/ui/basket-count'
-import ProductsList from '@/widgets/products-list/ui/products-list'
 import React, {useEffect, useState} from 'react'
 import {useSelector} from 'react-redux'
 

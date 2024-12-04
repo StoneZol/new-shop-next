@@ -9,7 +9,7 @@ const PriceModule = memo(function PriceModule({ units,discount,price,totalPrice,
     (<>
         <span className={styles.totalPrice} 
                 style={{fontSize :`${fontSize+6}px`}}>
-                    {totalPrice}{shop.currency}
+                    {Math.round(totalPrice* 100) / 100}{shop.currency}
         </span>
         <span className={styles.units} 
                 style={{fontSize :`${fontSize-1}px`}}>
@@ -24,7 +24,7 @@ const PriceModule = memo(function PriceModule({ units,discount,price,totalPrice,
         </span> 
         <span className={styles.totalPrice} 
             style={{fontSize :`${fontSize+6}px`}}>
-                {totalPrice}{shop.currency}
+                 {Math.round(totalPrice* 100) / 100}{shop.currency}
         </span>
         <span className={styles.units}
             style={{fontSize :`${fontSize-1}px`}}>

@@ -1,23 +1,17 @@
 @use '/shared/configured-styles/colors' as colors;
 @use '/shared/configured-styles/mixins' as mixins;
 
-.formBox{
+.searchBox{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px;
-    background-color: colors.$bg;
+    gap: 5px;
+    padding: 5px;
 }
 
-.form{
-    display: flex;
-    gap: 10px;
-}
-
-
-.input , .select{
-    width: 200px;
+.input{
+    width: 100%;
     height: 30px;
     border: 0;
     border-bottom: 1px solid colors.$logo;
@@ -28,22 +22,14 @@
         user-select: none;
     }
 }
-
-.select{
-    cursor: pointer;
-}
-
-.notactive{
-    color: colors.$notactive-text;
-}
-
 .button{
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
+    width: auto;
     border: 0;
+    padding: 3px;
     background-color: colors.$button-bg;
     color: colors.$button-text;
     @include mixins.grandTransition();

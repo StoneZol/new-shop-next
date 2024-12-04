@@ -2,7 +2,7 @@
 import { useBasket } from '@/shared/custom-hooks/use-basket';
 import styles from './buy-page-block.module.scss'
 import handleSelect from '@/shared/public-func/handle-select';
-import LetsIconsBasketAlt3 from '@/shared/icons/lets-icons-basket-alt3';
+import LetsIconsBasketAlt3 from '@/shared/icons/navigation/lets-icons-basket-alt3';
 import Link from 'next/link';
 import IconPlus from '@/shared/icons/plus-icon';
 import IconMinus from '@/shared/icons/minus-icon';

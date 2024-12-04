@@ -34,7 +34,7 @@
     max-width: 690px;
 }
 
-@media (max-width: 1130px){
+@media (max-width: 1400px){
     .page{
         flex-wrap: wrap;
         align-items:start;
@@ -47,5 +47,6 @@
 @media (max-width: 784px){
     .aboutBox{
         width: 340px;
+        flex-direction: column-reverse;
     }
 }

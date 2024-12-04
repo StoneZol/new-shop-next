@@ -3,6 +3,7 @@ import { getData } from "../fetch-methods/fetch-methods";
 import { getProductUrlApi } from "../api-endpoint/api-endpoint";
 import { useDispatch, useSelector } from "react-redux";
 import { loadProducts } from "@/store-redux/slices/products-slice";
+import scrollOnBootom from "../public-func/scroll-on-bottom";
 
 export const useGetData = () => {
 
@@ -14,7 +15,7 @@ export const useGetData = () => {
 
     useEffect(() => {
         if (fetching) {
-            getData(`${getProductUrlApi}?Page=${currentPage}&PageLimit=24`).then(result => {
+            getData(`${getProductUrlApi}?Page=${currentPage}&PageLimit=6`).then(result => {
                 dispatch(loadProducts(result.items));
                 setTotalPages(result.totalPages);
                 setCurrentPage(prevState=> prevState+1)
@@ -24,26 +25,17 @@ export const useGetData = () => {
         });}
     }, [fetching]);
 
-
     useEffect(() => {
-        document.addEventListener("scroll", scrollHandler);
+        const handleScroll = (e) =>
+        scrollOnBootom(e,
+            () => setFetching(true),
+            () => currentPage <= totalPages && !fetching
+        );
+        document.addEventListener("scroll", handleScroll);
         return () => {
-            document.removeEventListener("scroll", scrollHandler);
+            document.removeEventListener("scroll", handleScroll);
         };
     }, [currentPage, setFetching]);
 
-    const scrollHandler = (e) => {
-        const scrollOffset =
-            e.target.documentElement.scrollHeight -
-            (e.target.documentElement.scrollTop + window.innerHeight);
-            console.log(scrollOffset);
-
-        if (scrollOffset < 10 && currentPage <= totalPages  && fetching) {
-            setFetching(true);
-        } 
-    };
-
-
     return { products, setCurrentPage, setFetching };
 };
-

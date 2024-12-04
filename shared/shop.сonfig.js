@@ -5,6 +5,10 @@ export const  shop = {
     description: 'Магазин кондитерских изделий',
 }
 
+export const shopSearchText ={
+    text: 'Найти во вкусняшках'
+}
+
 export const shopContacts = {
     phone: '8 800 555 35 35',
     email: 'test@test.test',

@@ -3,7 +3,7 @@
     width: auto;
     display: grid;
     grid-template-columns: repeat(6, auto);
-    gap: 8px;
+    // gap: 8px;
     flex-wrap: wrap;
 }
 
@@ -17,6 +17,5 @@
     .section{
         padding: 5px;
         grid-template-columns: repeat(2, auto);
-        gap: 5px;
     }
 }
