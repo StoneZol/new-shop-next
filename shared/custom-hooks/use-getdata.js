@@ -7,35 +7,37 @@ import scrollOnBootom from "../public-func/scroll-on-bottom";
 
 export const useGetData = () => {
 
-    const products = useSelector((state) => state.products.products); 
+    const fetchFlag = useSelector((state) => state.products.fetchFlag); 
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(2)
-    const [fetching, setFetching] = useState(true);
+    // const [fetching, setFetching] = useState(true);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (fetching) {
+        if (fetchFlag) {
             getData(`${getProductUrlApi}?Page=${currentPage}&PageLimit=6`).then(result => {
                 dispatch(loadProducts(result.items));
                 setTotalPages(result.totalPages);
                 setCurrentPage(prevState=> prevState+1)
                 return result;})
         .finally(() => {
-            setFetching(false);
+            dispatch(loadProducts(false))
+            // setFetching(false);
         });}
-    }, [fetching]);
+    }, [fetchFlag]);
 
     useEffect(() => {
         const handleScroll = (e) =>
         scrollOnBootom(e, 10,
-            () => setFetching(true),
+            // () => setFetching(true),
+            () => dispatch(loadProducts(true)),
             () => currentPage <= totalPages && !fetching
         );
         document.addEventListener("scroll", handleScroll);
         return () => {
             document.removeEventListener("scroll", handleScroll);
         };
-    }, [currentPage, setFetching]);
+    }, [currentPage, fetchFlag ]);
 
-    return { products, setCurrentPage, setFetching };
+    return { products, setCurrentPage };
 };

@@ -2,8 +2,11 @@
 @use '/shared/configured-styles/mixins' as mixins;
 
 .searchBox{
+    z-index: 10;
     position: relative;
     width: 100%;
+    min-width: 365px;
+    max-width: 1140px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,5 +46,42 @@
     }
     svg{
         fill: colors.$button-text;
+    }
+}
+
+.bg{
+    overflow: hidden;
+    z-index: 9;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    top: 0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(3, 8, 13, .32);
+}
+
+.content{
+    z-index: 10;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    padding: 5px;
+    max-height: calc(100vh - 200px);
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background: #000;
+    gap: 5px;
+}
+
+@media (max-width: 770px) {
+    .content{
+        width: 100%;
+        max-width: none;
     }
 }

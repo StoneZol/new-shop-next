@@ -8,9 +8,9 @@ import PointBasketLength from '@/shared/point-basket-length/ui/point-basket-leng
 export default function MobileNavigator() {
   return (
     <section className={styles.navigator}>
-        <div><Link href={'/'}><IconHome/></Link></div>
-        <div><Link href={'#'}><IconUser/></Link></div>
-        <div><Link href={'/basket'}><LetsIconsBasketAlt3/></Link><PointBasketLength/></div>
+        <div><Link href={'/'} aria-label='На главную'><IconHome/></Link></div>
+        {/* <div><Link href={'#'}aria-label=''><IconUser/></Link></div> */}
+        <div><Link href={'/basket'} aria-label='В корзину'><LetsIconsBasketAlt3/></Link><PointBasketLength/></div>
     </section>
   )
 }

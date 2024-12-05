@@ -1,10 +1,9 @@
 'use client';
 import ProductsList from '@/features/products-list/ui/products-list';
-import { useGetData } from '@/shared/custom-hooks/use-getdata';
-import React from 'react';
+import { useSelector } from 'react-redux';
 
 export default function GetterStartData({ children }) {
-    const { products } = useGetData();
+    const products = useSelector((state) => state.products.products); 
 
     return (
         <>
