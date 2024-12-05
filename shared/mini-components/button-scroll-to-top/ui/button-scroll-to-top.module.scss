@@ -1,0 +1,53 @@
+@use '/shared/configured-styles/colors' as colors;
+@use '/shared/configured-styles/mixins' as mixins;
+
+.button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        @include mixins.grandTransition();
+        @include mixins.grandBorderRadius(50px);
+    color: colors.$button-bg;
+    position: fixed;
+    bottom: 30px;
+    left: 15px;
+    border: 0;
+    background: colors.$bg;
+        svg{
+        width: 48px;
+        height: 48px;
+        }
+    &:hover{
+        color: colors.$button-bg-hover;
+    }
+    animation: 0.3s show ease;
+    -webkit-animation: 0.3s show ease;
+}
+
+.hidden {
+    visibility: hidden;   
+    animation: 0.3s hide ease;
+    -webkit-animation: 0.3s hide ease;
+}
+
+
+@media (max-width: 770px) {
+    .button{
+        bottom: 70px;
+        svg{
+            width: 36px;
+            height: 36px;
+        }
+    }
+}
+
+@keyframes show {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes hide {
+    from { opacity: 1; }
+    to {  opacity: 0; }
+  }

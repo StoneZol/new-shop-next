@@ -2,6 +2,7 @@
 @use '/shared/configured-styles/mixins' as mixins;
 
 .searchBox{
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -12,28 +13,31 @@
 
 .input{
     width: 100%;
-    height: 30px;
+    font-size: 1.2rem;
+    height: 40px;
     border: 0;
     border-bottom: 1px solid colors.$logo;
     outline: none;
-    padding: 0 10px;
-    @include mixins.grandBorderRadius();
+    padding: 0 45px 0 15px;
+    @include mixins.grandBorderRadius(50px);
     &::placeholder{
         user-select: none;
     }
 }
 .button{
+    position: absolute;
+    // width: 54px;
+    right: 9px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: auto;
     border: 0;
-    padding: 3px;
+    padding: 5px;
     background-color: colors.$button-bg;
     color: colors.$button-text;
     @include mixins.grandTransition();
-    @include mixins.grandBorderRadius();
+    @include mixins.grandBorderRadius(50px);
     &:hover{
         background-color: colors.$button-bg-hover;
     }

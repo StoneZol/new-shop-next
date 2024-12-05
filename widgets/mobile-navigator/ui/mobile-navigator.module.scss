@@ -1,0 +1,27 @@
+@use '/shared/configured-styles/colors' as colors;
+
+.navigator{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    background-color: colors.$bg;
+    div{
+        position: relative;
+        padding: 10px;
+    }
+    a{
+        color:colors.$link;
+    }
+
+}
+
+
+@media (max-width: 770px) {
+    .navigator{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}

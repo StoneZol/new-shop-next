@@ -27,7 +27,7 @@ export const useGetData = () => {
 
     useEffect(() => {
         const handleScroll = (e) =>
-        scrollOnBootom(e,
+        scrollOnBootom(e, 10,
             () => setFetching(true),
             () => currentPage <= totalPages && !fetching
         );
