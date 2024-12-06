@@ -2,6 +2,7 @@
 @use '/shared/configured-styles/mixins' as mixins;
 
 .button {
+    z-index: 999;
     cursor: pointer;
     display: flex;
     justify-content: center;
