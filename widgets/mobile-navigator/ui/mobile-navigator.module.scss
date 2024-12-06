@@ -20,8 +20,17 @@
 
 @media (max-width: 770px) {
     .navigator{
+        z-index: 999;
         display: flex;
         justify-content: space-around;
         align-items: center;
+        a{
+            svg{
+                &:active{
+                    color: colors.$button-bg
+                }
+            }
+        }
     }
+
 }

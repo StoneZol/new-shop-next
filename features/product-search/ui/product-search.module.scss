@@ -29,8 +29,9 @@
 }
 .button{
     position: absolute;
-    // width: 54px;
-    right: 9px;
+    width: 45px;
+    height: 45px;
+    right: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -46,6 +47,9 @@
     }
     svg{
         fill: colors.$button-text;
+        width: 43px;
+        height: 43px;
+
     }
 }
 
@@ -69,13 +73,13 @@
     top: 75px;
     left: 0;
     padding: 5px;
+    width: 100%;
     max-height: calc(100vh - 200px);
     padding: 0 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    background: #000;
     gap: 5px;
 }
 

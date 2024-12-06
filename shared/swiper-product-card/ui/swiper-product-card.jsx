@@ -22,7 +22,7 @@ import Link from 'next/link';
  * 
  * @returns {JSX.Element} Возвращает JSX.
  */
-export default function SwiperProductCard({width, height, content, imageQuality, productID, mousewheel=false}) {
+export default function SwiperProductCard({width, height, content, imageQuality, productLink, mousewheel=false}) {
     return (
         <Swiper
             pagination={{
@@ -34,8 +34,8 @@ export default function SwiperProductCard({width, height, content, imageQuality,
             className={styles.swiper}>
                 {content.map((imageUrl , index)=>(
                     <SwiperSlide key={index}>
-                        <Link href={productID ? `/product/${productID}` : '#'} 
-                                onClick={(e) => {!productID && e.preventDefault();}}>
+                        <Link href={productLink ? `${productLink}` : '#'} 
+                                onClick={(e) => {!productLink && e.preventDefault();}}>
                             <Image
                                 src={imageUrl}
                                 alt={''}

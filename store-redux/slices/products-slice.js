@@ -15,11 +15,11 @@ const productsSlice = createSlice({
         refreshProduct: (state, action)=>{
             state.products = [action.payload]
         },
-        loadProduct: (state, action)=> {
+        loadStatus: (state, action)=> {
             state.fetchFlag = action.payload;
         }
     }
 }) 
 
-export const {loadProducts,refreshProduct,loadProduct} = productsSlice.actions
+export const {loadProducts,refreshProduct,loadStatus} = productsSlice.actions
 export default productsSlice.reducer;
