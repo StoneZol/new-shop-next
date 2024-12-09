@@ -1,19 +1,20 @@
 .section{
-    margin: 10px;
-    padding: 0 10px;
     width: 100%;
-    max-width: 1140px;
-    height: 300px;
+    max-width: 1120px;
+    height: 140px;
 }
 
 @media (max-width: 1199px){
     .section{
-        max-width: 763px;
+        max-width: 743px;
     }
 }
 
 @media (max-width: 770px){
     .section{
-        height: 300px;
+        padding: 5px;
+        max-width: 375px;
+        height: auto;
+        aspect-ratio: 16 / 9;
     }
 }

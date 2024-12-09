@@ -6,10 +6,33 @@ import {Pagination, Mousewheel} from 'swiper/modules';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 
-export default function SwiperPromoActions({width, height, content, redirect = true}) {
+export default function SwiperPromoActions({content, redirect = true}) {
+
+    const [width, setWidth] = useState(1140); // Начальная ширина
+    const [height, setHeight] = useState(140); 
+
+    useEffect(() => {
+        function checkWidth() {
+          const newWidth = window.innerWidth;
+          if (newWidth < 770) {
+            setWidth(375);
+            setHeight(210);
+          } else {
+            setWidth(1140);
+            setHeight(140);
+          }
+        }
+
+        checkWidth();
+        window.addEventListener('resize', checkWidth);
+        return () => {
+          window.removeEventListener('resize', checkWidth);
+        };
+      }, []);
+
     if (!content ){
         return null
     }
@@ -19,6 +42,7 @@ export default function SwiperPromoActions({width, height, content, redirect = t
                 dynamicBullets: true
             }}
             loop={content.length > 1 ? true : false}
+            // slidesPerView= {2}
             mousewheel={true}
             modules={[Pagination, Mousewheel]}
             className={styles.swiper}>
@@ -31,7 +55,7 @@ export default function SwiperPromoActions({width, height, content, redirect = t
                                 !redirect && e.preventDefault();
                             }}>
                             <Image
-                                src={content.imageModalUrl}
+                                src={width > 769 ? content.imageBlockOutUrl : content.imageModalUrl}
                                 alt={content.name}
                                 quality={100}
                                 width={width}

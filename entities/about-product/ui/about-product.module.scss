@@ -8,7 +8,16 @@
     min-width: 340px;
     background-color: colors.$bg;
     padding: 10px;
-    @include mixins.grandBorderRadius()
+    @include mixins.grandBorderRadius();
+    pre{
+        text-align: justify;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+        code {
+            // white-space: pre-wrap;
+            // word-wrap: break-word;
+        }
 }
 
 .content{
