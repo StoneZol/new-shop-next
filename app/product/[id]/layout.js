@@ -39,6 +39,7 @@ export async function generateMetadata({ params }) {
   return {
     title: productData.name,
     description: formatForSEO(productData.description.about),
+    canonical: `${getProductUrlApi}/${id}`,
     openGraph: {
       title: productData.name,
       description: formatForSEO(productData.description.about),

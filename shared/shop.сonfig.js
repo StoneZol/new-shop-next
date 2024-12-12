@@ -1,3 +1,5 @@
+export const shopUrl ='yfibdrecyzirb.rf'
+
 export const  shop = {
     currency: '₽',
     name: 'Наши вкусняшки',

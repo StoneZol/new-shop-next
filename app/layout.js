@@ -2,7 +2,7 @@ import localFont from "next/font/local";
 // import './favicon.ico'
 import "./globals.css";
 import StoreProvider from "@/store-redux/store-provider";
-import { shop } from "@/shared/shop.сonfig";
+import { shop, shopUrl } from "@/shared/shop.сonfig";
 import Header from "@/widgets/header/ui/header";
 import Footer from "@/widgets/footer/ui/footer";
 import MobileNavigator from "@/widgets/mobile-navigator/ui/mobile-navigator";
@@ -25,6 +25,7 @@ export const metadata = {
     template:`${shop.shortName}- %s`
   },
   description: shop.description,
+  canonical: `${shopUrl}`,
 };
 
 export default function RootLayout({ children }) {
