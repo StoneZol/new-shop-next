@@ -1,6 +1,7 @@
 import GetterStartData from "@/widgets/getter-start-data/ui/getter-start-data";
 import styles from "./page.module.scss";
 import PromoBanners from "@/widgets/promo-banners/ui/promo-banners";
+import SkeletonPromoBanners from "@/widgets/promo-banners/ui/skeleton-promo-banners";
 
 export default function Home() {
   return (

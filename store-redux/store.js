@@ -14,7 +14,17 @@ const basketPersistConfig = {
 const prouctsPersistConfig = {
     key: 'products',
     storage,
-    blacklist: ['products','fetchFlag']
+    blacklist: [
+        'products',
+        'searchProducts',
+        'fetchFlag',
+        'loaderFlag',
+        'currentProductPage',
+        'totalProductPages',
+        'currentSearchPage',
+        'totalSerchPages',
+    ],
+    
 }
 
 const persistedBasket = persistReducer(basketPersistConfig, basketSlice);

@@ -11,6 +11,7 @@ export async function generateMetadata({ params }) {
   if (!res.ok) {
     notFound();
  }
+
   const productData = await res.json();
 
   if (productData.message === `ID: ${id} not found!`) {

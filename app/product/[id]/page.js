@@ -14,13 +14,14 @@ import { getProductUrlApi } from '@/shared/api-endpoint/api-endpoint';
 export async function generateStaticParams() {
     const response = await fetch(`${getProductUrlApi}?Page=1&PageLimit=50`);
     if (!response.ok) {
-        notFound();
+        throw new Error('Failed to fetch data from API');
      }
     const products = await response.json();
     return products.items.map(product => ({
         id: product.id.toString(),
     }));
 }
+
 
 export default async function ProductPage({ params }) {
     const resolvedParams = await params;

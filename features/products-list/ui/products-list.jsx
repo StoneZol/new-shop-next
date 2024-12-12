@@ -5,7 +5,7 @@ import SkeletonProductsList from './skeleton-products-list';
 
 export default function ProductsList({products}) {
   if (!products || products.length === 0) {
-    return <></>;
+    return <SkeletonProductsList/>;
 }
   return (
     <section className={styles.section} aria-label='Список товаров'>

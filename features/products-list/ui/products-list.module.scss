@@ -3,7 +3,7 @@
     width: auto;
     display: grid;
     grid-template-columns: repeat(6, auto);
-    // gap: 8px;
+    gap: 8px;
     flex-wrap: wrap;
 }
 
@@ -15,7 +15,8 @@
 
 @media (max-width: 770px){
     .section{
-        padding: 5px;
+        gap: 0;
+        padding: 3px;
         grid-template-columns: repeat(2, auto);
     }
 }

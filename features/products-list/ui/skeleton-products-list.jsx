@@ -2,10 +2,10 @@ import SkeletonProductCard from '@/entities/product-card/ui/skeleton-product-car
 import styles from './products-list.module.scss'
 import React from 'react'
 
-export default function SkeletonProductsList() {
+export default function SkeletonProductsList({array = 12}) {
   return (
     <section className={styles.section}>
-        {Array(12).fill(null).map((data,index)=>(
+        {Array(array).fill(null).map((data,index)=>(
             <SkeletonProductCard key={index}/>
         ))}
     </section>

@@ -1,7 +1,9 @@
 @use '/shared/configured-styles/colors' as colors;
 
 .header {
-    position: relative;
+    // z-index: 999;
+    // position: sticky;
+    // top: 0;
     width: 100%;
     min-width: 375px;
     height: 60px;
