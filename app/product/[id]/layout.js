@@ -5,8 +5,8 @@ import { getProductUrlApi } from '@/shared/api-endpoint/api-endpoint';
 export const revalidate = 360
 
 export async function generateMetadata({ params }) {
-  const resolvedParams = await params; // Дожидаемся разрешения
-  const { id } = resolvedParams; // Теперь можно использовать id
+  const resolvedParams = await params;
+  const { id } = resolvedParams;
   const res = await fetch(`${getProductUrlApi}/${id}`);
   if (!res.ok) {
     notFound();

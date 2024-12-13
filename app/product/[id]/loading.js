@@ -6,16 +6,18 @@ import SkeletonBuyPriceWidget from "@/widgets/buy-price-widget/ui/skeleton-buy-p
 
 export default function loading() {
     return (
-        <div className={styles.pageBox}>
+        <div className={styles.page_box}>
             <section className={styles.page}>
-                <div className={styles.sliderBox}>
+                <div className={styles.right_side}>
                     <Skeleton width={340} height={340}/>
                 </div>
-                <section className={styles.aboutBox}>
+                <div className={styles.center_side}>
                     <SkeletonAboutProduct/>
+                </div>
+                <div className={styles.right_side}>
+                    <SkeletonBuyPriceWidget/>
                     <SkeletonNutritionalValue/>
-                </section>
-                <SkeletonBuyPriceWidget/>
+                </div>
             </section>
         </div>
     )

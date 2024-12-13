@@ -5,16 +5,16 @@ import NavigationInAboutProduct from './navigation-about-product';
 
 export default function AboutProduct({data={}}) {
     return (
-        <section className={styles.section}>
+        <div className={styles.block}>
             <NavigationInAboutProduct/>
-            <section className={styles.content}>
+            <div className={styles.content}>
                 <div id="about" className={styles.activeZone}>
                     <About data={data.about}/>
                 </div>
                 <div id="more" className={styles.hiddenZone}>
                     <More data={data.characterisitcs}/>
                 </div>
-            </section>
-        </section>
+            </div>
+        </div>
     );
 }

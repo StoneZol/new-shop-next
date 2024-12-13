@@ -15,19 +15,15 @@ export const useGetData = () => {
     const currentSearchPage = useSelector((state)=> state.products.currentSearchPage);
     const totalSerchPages = useSelector((state)=> state.products.totalSerchPages);
 
-    // const [currentPage, setCurrentPage] = useState(1);
-    // const [totalPages, setTotalPages] = useState(1);
     const dispatch = useDispatch();
 
     useEffect(() => {
         if (fetchFlag) {
-            getData(`${getProductUrlApi}?&Page=${currentProductPage}&PageLimit=18`)
+            getData(`${getProductUrlApi}?&Page=${currentProductPage}&PageLimit=24`)
             .then(result => {
                 dispatch(loadProducts(result.items));
                 dispatch(setTotalProductPages(result.totalPages));
                 dispatch(setCurrentProductPage(currentProductPage+1));
-                // setTotalPages(result.totalPages);
-                // setCurrentPage(prevState=> prevState+1);
                 return result;})
             .finally(() => {
                 dispatch(setFetchFlag(false))
@@ -36,7 +32,7 @@ export const useGetData = () => {
 
     useEffect(() => {
         const handleScroll = (e) =>
-        scrollOnBootom(e, 1000,
+        scrollOnBootom(e,
             () => dispatch(setFetchFlag(true)),
             () => currentProductPage <= totalProductPages && !fetchFlag
         );
@@ -54,5 +50,3 @@ export const useGetData = () => {
 
     return { products, loaderFlag };
 };
-
-// () => currentPage < totalPages && !fetchFlag

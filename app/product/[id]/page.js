@@ -6,26 +6,25 @@ import PromoTagLine from '@/shared/mini-components/tag-block/promo-tag-line/ui/p
 import AboutProduct from '@/entities/about-product/ui/about-product';
 import NutritionalValue from '@/entities/nutritional-value/ui/nutritional-value';
 import BuyPriceWidget from '@/widgets/buy-price-widget/ui/buy-price-widget';
-import { notFound } from 'next/navigation';
-import { getProductUrlApi } from '@/shared/api-endpoint/api-endpoint';
-
-
+import {notFound} from 'next/navigation';
+import {getProductUrlApi} from '@/shared/api-endpoint/api-endpoint';
 
 export async function generateStaticParams() {
     const response = await fetch(`${getProductUrlApi}?Page=1&PageLimit=50`);
     if (!response.ok) {
-        throw new Error('Failed to fetch data from API');
-     }
+        throw new Error('Error fetch data')
+    }
     const products = await response.json();
-    return products.items.map(product => ({
-        id: product.id.toString(),
-    }));
+    return products
+        .items
+        .map(product => ({
+            id: product.id.toString()
+        }));
 }
 
-
-export default async function ProductPage({ params }) {
+export default async function ProductPage({params}) {
     const resolvedParams = await params;
-    const { id } = resolvedParams;
+    const {id} = resolvedParams;
     const res = await fetch(`${getProductUrlApi}/${id}`);
     if (!res.ok) {
         notFound();
@@ -33,28 +32,29 @@ export default async function ProductPage({ params }) {
     const productData = await res.json();
 
     return (
-        <div className={styles.pageBox}>
+        <div className={styles.page_box}>
             <section className={styles.page}>
-                <div className={styles.sliderBox}>
+                <div className={styles.left_side}>
                     <SwiperProductCard
                         width={340}
                         height={340}
                         imageQuality={100}
                         content={productData.imageUrls}
-                        mousewheel={true}
-                    />
+                        mousewheel={true}/>
                     <TagBlock>
-                        <DiscountTagLine discount={productData.discount} />
-                        <PromoTagLine promoTag={productData.promotionTag} />
+                        <DiscountTagLine discount={productData.discount}/>
+                        <PromoTagLine promoTag={productData.promotionTag}/>
                     </TagBlock>
                 </div>
-                <section className={styles.aboutBox}>
-                    <AboutProduct data={productData.description} />
-                    <NutritionalValue values={productData.description.foodValue} />
-                </section>
-                <BuyPriceWidget product={productData}>
-                    <h2 className={styles.h2}>{productData.name}</h2>
-                </BuyPriceWidget>
+                <div className={styles.center_side}>
+                    <AboutProduct data={productData.description}/>
+                </div>
+                <div className={styles.right_side}>
+                    <BuyPriceWidget product={productData}>
+                        <h2 className={styles.h2}>{productData.name}</h2>
+                    </BuyPriceWidget>
+                    <NutritionalValue values={productData.description.foodValue}/>
+                </div>
             </section>
         </div>
     );

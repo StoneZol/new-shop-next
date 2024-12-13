@@ -22,20 +22,20 @@ export default function NavigationInAboutProduct() {
 
     return (
         <div className={styles.navigation}>
-            <h3
-                onClick={() => handleTabClick('about')}
-                className={active === 'about'
-                    ? styles.active
-                    : styles.notActive}>
-                Описание
-            </h3>
-            <h3
-                onClick={() => handleTabClick('more')}
-                className={active === 'more'
-                    ? styles.active
-                    : styles.notActive}>
-                Подробнее
-            </h3>
+                <h3
+                    onClick={() => handleTabClick('about')}
+                    className={active === 'about'
+                        ? styles.active
+                        : styles.notActive}>
+                    Описание
+                </h3>
+                <h3
+                    onClick={() => handleTabClick('more')}
+                    className={active === 'more'
+                        ? styles.active
+                        : styles.notActive}>
+                    Подробнее
+                </h3>
         </div>
     );
 }

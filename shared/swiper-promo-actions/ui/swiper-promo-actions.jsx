@@ -59,7 +59,8 @@ export default function SwiperPromoActions({content, redirect = true}) {
                                 alt={content.name}
                                 quality={100}
                                 width={width}
-                                height={height}/>
+                                height={height}
+                                loading='eager'/>
                         </Link>
                     </SwiperSlide>
                 ))

@@ -1,4 +1,4 @@
-.pageBox{
+.page_box{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -15,7 +15,7 @@
      gap: 10px;
 }
 
-.sliderBox{
+.left_side{
     position: relative;
     width: 340px;
     height: 340px;
@@ -26,12 +26,18 @@
     word-wrap: break-word;
 }
 
-.aboutBox{
+.center_side{
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
     max-width: 690px;
+}
+
+.right_side{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 @media (max-width: 1400px){
@@ -40,13 +46,12 @@
         align-items:start;
         justify-content: center;
     }
-    .aboutBox{
+    .center_side{
         order: 1;
     }
 }
 @media (max-width: 784px){
-    .aboutBox{
+    .center_side{
         width: 340px;
-        flex-direction: column-reverse;
     }
 }

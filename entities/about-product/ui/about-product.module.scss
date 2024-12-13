@@ -1,7 +1,7 @@
 @use '/shared/configured-styles/colors' as colors;
 @use '/shared/configured-styles/mixins' as mixins;
 
-.section{
+.block{
     width: 100%;
     flex:1;
     max-width: 690px;
@@ -14,16 +14,36 @@
         white-space: pre-wrap;
         word-wrap: break-word;
     }
-        code {
-            // white-space: pre-wrap;
-            // word-wrap: break-word;
-        }
 }
 
 .content{
     display: flex;
     flex-direction: row;
     padding: 10px;
+    div{
+        h1,h2,h3,h4,h5,h6{
+            margin-bottom: 5px;
+        }
+        p{
+            display: inline-block;
+            line-height: 1.5;
+            font-size: 1rem;
+            text-indent: 40px;
+            text-align: justify;
+            width: 100%;
+            margin: 5px 0;
+        }
+        p:has(img){
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        img{
+            width: 100%;
+            object-fit: cover;
+            @include mixins.grandBorderRadius();
+        }
+    }
 }
 
 .navigation {
