@@ -1,30 +1,35 @@
 @use '/shared/configured-styles/colors' as colors;
 @use '/shared/configured-styles/mixins' as mixins;
 
-.block{
+.block {
     width: 100%;
-    flex:1;
+    flex: 1;
     max-width: 690px;
     min-width: 340px;
     background-color: colors.$bg;
     padding: 10px;
     @include mixins.grandBorderRadius();
-    pre{
+    pre {
         text-align: justify;
         white-space: pre-wrap;
         word-wrap: break-word;
     }
 }
 
-.content{
+.content {
     display: flex;
     flex-direction: row;
     padding: 10px;
-    div{
-        h1,h2,h3,h4,h5,h6{
+    div {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             margin-bottom: 5px;
         }
-        p{
+        p {
             display: inline-block;
             line-height: 1.5;
             font-size: 1rem;
@@ -33,12 +38,12 @@
             width: 100%;
             margin: 5px 0;
         }
-        p:has(img){
+        p:has(img) {
             display: flex;
             justify-content: center;
             padding: 10px 0;
         }
-        img{
+        img {
             width: 100%;
             object-fit: cover;
             @include mixins.grandBorderRadius();
@@ -52,16 +57,16 @@
     padding: 10px;
     width: 300px;
     gap: 15px;
-    h3{
-        @include mixins.grandTransition();
+    h3 {
+        @include mixins.grandTransition('color');
         cursor: pointer;
-        &:hover{
+        &:hover {
             color: colors.$text-hover;
         }
     }
 }
 
-.active{
+.active {
     color: colors.$text-active;
 }
 
@@ -69,23 +74,23 @@
     user-select: none;
 }
 
-.activeZone{
+.activeZone {
     width: 100%;
     display: block;
 }
 
-.hiddenZone{
+.hiddenZone {
     display: none;
 }
 
-@media (max-width: 1130px){
-    .section{
+@media (max-width: 1130px) {
+    .section {
         width: 690px;
     }
 }
 
-@media (max-width: 784px){
-    .section{
+@media (max-width: 784px) {
+    .section {
         width: 100%;
         max-width: 340px;
     }

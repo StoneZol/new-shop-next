@@ -1,15 +1,17 @@
 @use '/shared/configured-styles/colors' as colors;
 @use '/shared/configured-styles/mixins' as mixins;
 
-.footer{
+.footer {
     width: 100%;
     background-color: colors.$bg;
     display: flex;
     justify-content: space-around;
-    padding: 10px 10px 30px 10px;
+    padding: 10px 10px 30px;
 }
 
-.map, .contacts,.socials{
+.contacts,
+.map,
+.socials {
     width: 100%;
     max-width: 340px;
     min-width: 260px;
@@ -18,31 +20,32 @@
     justify-content: center;
     align-items: start;
     padding: 5px;
-    h4{
+    h4 {
         padding: 10px 0;
     }
 }
 
-.map{
-    img{
+.map {
+    img {
         object-fit: cover;
-        color: #ff7300
+        color: #ff7300;
     }
 }
 
-.leftSide , .rightSide{
+.leftSide,
+.rightSide {
     display: flex;
     justify-content: center;
 }
 
-.contacts{
-    p{
+.contacts {
+    p {
         padding: 5px 10px;
         font-weight: 700;
-        a{
+        a {
             color: colors.$contacts;
             @include mixins.grandTransition();
-            &:hover{
+            &:hover {
                 color: colors.$contacts-hover;
             }
         }
@@ -52,7 +55,7 @@
 .icons {
     display: flex;
     height: 52px;
-    a{
+    a {
         display: block;
         height: auto;
         margin: 5px;
@@ -61,17 +64,19 @@
 }
 
 @media (max-width: 900px) {
-    .leftSide{
+    .leftSide {
         display: flex;
         flex-direction: column-reverse;
     }
-    .map, .contacts,.socials{
+    .contacts,
+    .map,
+    .socials {
         width: 100%;
     }
 }
 
 @media (max-width: 770px) {
-    .footer{
+    .footer {
         margin-bottom: 60px;
         flex-direction: column;
         justify-content: center;

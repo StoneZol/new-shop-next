@@ -1,45 +1,45 @@
 @use '/shared/configured-styles/colors' as colors;
 
-.section , .skeleton{
+.section,
+.skeleton {
     width: 340px;
     padding: 10px;
     height: 112px;
-    // margin: 10px;
     background-color: colors.$bg;
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
-    h3{
+    h3 {
         font-size: 0.9rem;
         padding: 10px;
     }
-    
+
 }
 
-.nutritionalBox{
+.nutritionalBox {
     display: flex;
     height: 56px;
     gap: 15px;
-    div{
+    div {
         padding: 10px;
     }
 }
 
-.skeleton{
+.skeleton {
     user-select: none;
-    .nutritionalBox{
-        span{
+    .nutritionalBox {
+        span {
             padding: 10px;
         }
     }
 }
 
-.value{
+.value {
     font-weight: 700;
 }
 
-.text{
+.text {
     font-size: 0.8rem;
 }

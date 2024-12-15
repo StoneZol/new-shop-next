@@ -1,9 +1,6 @@
 @use '/shared/configured-styles/colors' as colors;
 
 .header {
-    // z-index: 999;
-    // position: sticky;
-    // top: 0;
     width: 100%;
     min-width: 375px;
     height: 60px;
@@ -11,65 +8,64 @@
     display: flex;
     justify-content: space-between;
 
-    section{
+    section {
         width: 50%;
     }
 
-    .center{
+    .center {
         display: flex;
         justify-content: center;
         align-items: center;
         max-width: 1140px;
     }
 
-    .rightSide{
+    .rightSide {
         width: 240px;
         display: flex;
         justify-content: end;
         align-items: center;
 
-        a{
+        a {
             position: relative;
             padding: 10px;
             color: colors.$link;
             display: flex;
             align-items: center;
             justify-content: center;
-            svg{
+            svg {
                 color: colors.$link;
             }
         }
     }
 
-    .leftSide{
+    .leftSide {
         width: 240px;
         font-weight: 700;
         font-size: 1.5rem;
         display: flex;
         justify-content: start;
         align-items: center;
-        
-        a{
+
+        a {
             color: colors.$logo;
             padding: 10px;
         }
     }
 
-
 }
 
 @media (max-width: 770px) {
-    .header{
+    .header {
         justify-content: center;
-        .center{
+        .center {
             width: 100%;
             padding: 0 10px;
             min-width: 375px;
         }
-        .rightSide{
+        .rightSide {
             display: none;
         }
-        .leftSide{
+        .leftSide {
             display: none;
         }
     }

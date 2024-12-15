@@ -1,10 +1,11 @@
-@mixin grandTransition($duration : 0.3s) {
-    transition:$duration;
-    -webkit-transition:$duration;
-    -moz-transition:$duration;
-    -ms-transition:$duration;
-    -o-transition:$duration;
+@mixin grandTransition($properties: "all", $duration: 0.3s) {
+    transition: #{$properties} $duration;
+    -webkit-transition: #{$properties} $duration;
+    -moz-transition: #{$properties} $duration;
+    -ms-transition: #{$properties} $duration;
+    -o-transition: #{$properties} $duration;
 }
+
 // @include mixins.grandTransition();
 
 @mixin grandBorderRadius($radius : 15px) {

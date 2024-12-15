@@ -1,13 +1,13 @@
 @use '/shared/configured-styles/colors' as colors;
 
-.more{
+.more {
     width: 100%;
-display: flex;
-flex-direction: column;
-padding: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
 }
 
-.moreString{
+.moreString {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -16,6 +16,6 @@ padding: 10px;
     font-size: 0.8rem;
 }
 
-.type{
+.type {
     font-weight: 700;
 }

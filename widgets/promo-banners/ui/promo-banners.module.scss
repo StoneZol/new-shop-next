@@ -1,5 +1,5 @@
 @use '/shared/configured-styles/mixins' as mixins;
-.section{
+.section {
     width: 100%;
     max-width: 1180px;
     padding: 10px;
@@ -8,19 +8,19 @@
     @include mixins.grandBorderRadius();
 }
 
-.skeleton{
+.skeleton {
     height: 100%;
     @include mixins.grandBorderRadius();
 }
 
-@media (max-width: 1199px){
-    .section{
+@media (max-width: 1199px) {
+    .section {
         max-width: 788px;
     }
 }
 
-@media (max-width: 770px){
-    .section{
+@media (max-width: 770px) {
+    .section {
         padding: 4px;
         max-width: 375px;
         height: auto;

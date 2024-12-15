@@ -10,7 +10,7 @@
     justify-content: space-between;
     align-items: center;
     background: colors.$bg;
-    @include mixins.grandTransition();
+    @include mixins.grandTransition('border-bottom');
 }
 
 .section{
@@ -83,7 +83,7 @@
         user-select: none;
         text-decoration:underline;
         color: colors.$text-active;
-        @include mixins.grandTransition();
+        @include mixins.grandTransition('color');
         &:visited{
             color: colors.$text-active;
         }
