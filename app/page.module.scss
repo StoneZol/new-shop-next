@@ -1,8 +1,109 @@
+@use '/shared/configured-styles/colors' as colors;
+@use '/shared/configured-styles/mixins' as mixins;
 
-.indexPage{
-    width:100%;
+.indexPage {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.not_found {
+    min-width: 375px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.not_found__left_side {
+    font-size: 4rem;
+    background-color: colors.$bg-not-found;
+    color: colors.$text-reverse;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mixins.grandBorderRadius(100px);
+}
+
+.not_found__right_side {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: end;
+    a {
+        min-width: 190px;
+        cursor: pointer;
+        font-size: 1rem;
+        text-decoration: underline;
+        @include mixins.grandBorderRadius(50px);
+        padding: 5px 10px;
+        border: 0;
+        color: colors.$button-bg;
+        background: colors.$bg;
+    }
+}
+
+.error{
+    min-width: 375px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.error__right_side{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    a, button{
+        min-width: 190px;
+        cursor: pointer;
+        font-size: 1rem;
+        text-decoration: underline;
+        @include mixins.grandBorderRadius(50px);
+        padding: 5px 10px;
+        border: 0;
+        color: colors.$button-bg;
+        background: colors.$bg;
+    }
+}
+
+.error__left_side{
+    svg{
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 770px) {
+    .not_found, .error{
+        flex-direction: column;
+        gap: 20px;
+        padding: 20vh 5px;
+    }
+    .not_found__right_side {
+        align-items: center;
+    }
+
+    .error__right_side{
+        a, button{
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+    }
 }

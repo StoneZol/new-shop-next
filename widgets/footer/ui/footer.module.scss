@@ -3,6 +3,7 @@
 
 .footer {
     width: 100%;
+    min-width: 375px;
     background-color: colors.$bg;
     display: flex;
     justify-content: space-around;

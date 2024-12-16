@@ -7,24 +7,30 @@ import AboutProduct from "@/entities/about-product/ui/about-product";
 import Breadcrumbs from "@/features/breadcrumbs/ui/breadcrumbs";
 
 export default function TestPage() {
-  const data = {
- about: "## **Лимонный тарт с меренгой**  \nЛимонный тарт – это изысканное сочетание кислинки лимонного крема и сладкой воздушной меренги."+
- "Хрустящая основа из песочного теста идеально дополняет текстурную композицию. ![Alt text](https://random-image-pepebigotes.vercel.app/api/skeleton-random-image) Каждый кусочек дарит бодрящее послевкусие и легкость."+
- " ![Alt text](https://random-image-pepebigotes.vercel.app/api/skeleton-random-image) Подходит как для легкого перекуса, так и для особенных случаев."}
+    const data = {
+        about: "## **Лимонный тарт с меренгой**  \nЛимонный тарт – это изысканное сочетание ки" +
+                "слинки лимонного крема и сладкой воздушной меренги.Хрустящая основа из песочно" +
+                "го теста идеально дополняет текстурную композицию. ![Alt text](https://random-" +
+                "image-pepebigotes.vercel.app/api/skeleton-random-image) Каждый кусочек дарит б" +
+                "одрящее послевкусие и легкость. ![Alt text](https://random-image-pepebigotes.v" +
+                "ercel.app/api/skeleton-random-image) Подходит как для легкого перекуса, так и " +
+                "для особенных случаев."
+    }
     return (
-              <div className={styles.pageBox}>
-              <section className={styles.page}>
+        <div className={styles.pageBox}>
+            <section className={styles.page}>
                 <div className={styles.sliderBox}>
                     <Skeleton width={340} height={340}/>
                 </div>
                 <section className={styles.aboutBox}>
-                  <SkeletonAboutProduct/>
-                  <SkeletonNutritionalValue/>
+                    <SkeletonAboutProduct/>
+                    <SkeletonNutritionalValue/>
                 </section>
                 <SkeletonBuyPriceWidget/>
-              </section>
-              <Breadcrumbs/>
-              <AboutProduct data={data}/>
-            </div>
+            </section>
+            <Breadcrumbs/>
+            <button onClick={()=> {throw new Error('error')}}></button>
+            <AboutProduct data={data}/>
+        </div>
     )
-  }
+}

@@ -36,3 +36,16 @@ export const nutritionalText={
     carbohydrate:'углеводы',
     calories: 'ккал'
 } 
+
+export const shop404={
+    text: 'Страница не найдена',
+    link: '/',
+    linkText: 'Вернуться на главную'
+}
+
+export const shopError={
+    text:'Упс! Что-то пошло не так.',
+    buttonResetText: 'Попробовать снова',
+    link: '/',
+    linkText: 'Вернутся на главную',
+}
