@@ -1,12 +1,15 @@
 .basket{
-    padding: 60px 0;
+    padding: 10px 0;
     width: 90%;
     height: 100%;
+    min-height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1;
 }
 
 .h2{
     text-align: center;
 }
+

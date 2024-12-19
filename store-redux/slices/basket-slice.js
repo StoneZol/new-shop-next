@@ -43,8 +43,15 @@ const basketSlice = createSlice({
         removeALLBasket: (state, _)=>{
             state.basket = [];
         },
+        updateItemBasket: (state, action) => {
+            state.basket = state.basket.map(item =>
+                item.id === action.payload.id 
+                    ? { ...action.payload, count: item.count } 
+                    : item
+            );
+        }        
     }
 })
 
-export const {addToBasket, removeFromBasket,handleInBasket, removeALLBasket} = basketSlice.actions;
+export const {addToBasket, removeFromBasket,handleInBasket, removeALLBasket, updateItemBasket} = basketSlice.actions;
 export default basketSlice.reducer;

@@ -2,9 +2,10 @@
 import SomethingWrong from '@/shared/icons/loaders/something-wrong';
 import styles from './page.module.scss'
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Error({error, reset}) {
-    console.error(error.message)
+    const path = usePathname()
     return (
         <div className={styles.error}>
             <div className={styles.error__left_side}>
@@ -14,8 +15,9 @@ export default function Error({error, reset}) {
                 <h2>Упс! Что-то пошло не так.</h2>
                 <div>
                     <button onClick={reset}>Попробовать снова</button>
-                    <span> или </span>
-                    <Link href={'/'}>Вернутся на главную</Link>
+                    {path !=='/' ? (<>
+                        <span> или </span>
+                    <Link href={'/'}>Вернутся на главную</Link></>):(null)}
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ import { loadProducts,setCurrentProductPage, setFetchFlag, setLoaderFlag, setTot
 import scrollOnBootom from "../public-func/scroll-on-bottom";
 
 export const useGetData = () => {
+    const [isError, setIsError] = useState(false)
     const products = useSelector((state) => state.products.products); 
     const fetchFlag = useSelector((state) => state.products.fetchFlag); 
     const loaderFlag = useSelector((state)=> state.products.loaderFlag);
@@ -18,17 +19,26 @@ export const useGetData = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (fetchFlag) {
+        if (fetchFlag && !isError) {
             getData(`${getProductUrlApi}?&Page=${currentProductPage}&PageLimit=24`)
             .then(result => {
                 dispatch(loadProducts(result.items));
                 dispatch(setTotalProductPages(result.totalPages));
                 dispatch(setCurrentProductPage(currentProductPage+1));
                 return result;})
+            .catch(error => {setIsError(true)})
             .finally(() => {
                 dispatch(setFetchFlag(false))
             });}
-    }, [fetchFlag]);
+    }, [fetchFlag,]);
+
+    useEffect(() => {
+        if (!isError) {
+            dispatch(setFetchFlag(true))
+        }
+    }, [isError]);
+
+
 
     useEffect(() => {
         const handleScroll = (e) =>
@@ -48,5 +58,5 @@ export const useGetData = () => {
         };
     }, [currentProductPage, fetchFlag]);
 
-    return { products, loaderFlag };
+    return { products, loaderFlag,  isError, setIsError };
 };

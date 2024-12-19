@@ -11,6 +11,7 @@
 .skeleton {
     height: 100%;
     @include mixins.grandBorderRadius();
+    overflow: hidden;
 }
 
 @media (max-width: 1199px) {
