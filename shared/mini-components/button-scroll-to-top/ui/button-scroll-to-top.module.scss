@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @include mixins.grandTransition('color');
+    @include mixins.grandTransition();
     @include mixins.grandBorderRadius(50px);
     color: colors.$button-bg;
     position: fixed;

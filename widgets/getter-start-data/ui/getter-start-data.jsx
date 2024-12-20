@@ -1,12 +1,12 @@
 'use client';
 import ProductsList from '@/features/products-list/ui/products-list';
 import SkeletonProductsList from '@/features/products-list/ui/skeleton-products-list';
-import { useGetData } from '@/shared/custom-hooks/use-getdata';
+import { useProductData } from '@/shared/custom-hooks/use-product-data';
 import { useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
 export default function GetterStartData({ children }) {
-    const { products, loaderFlag, isError } = useGetData();
+    const { products, loaderFlag, isError } = useProductData();
 
     if (isError) {
         throw new Error("Не удалось загрузить продукты");

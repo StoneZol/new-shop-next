@@ -3,8 +3,10 @@
     width: auto;
     display: grid;
     grid-template-columns: repeat(6, auto);
-    gap: 8px;
     flex-wrap: wrap;
+    article{
+        margin: 8px;
+    }
 }
 
 @media (max-width: 1199px) {
@@ -18,5 +20,8 @@
         gap: 0;
         padding: 3px;
         grid-template-columns: repeat(2, auto);
+        article{
+            margin: 4px;
+        }
     }
 }

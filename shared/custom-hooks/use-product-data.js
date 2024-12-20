@@ -5,16 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadProducts,setCurrentProductPage, setFetchFlag, setLoaderFlag, setTotalProductPages } from "@/store-redux/slices/products-slice";
 import scrollOnBootom from "../public-func/scroll-on-bottom";
 
-export const useGetData = () => {
+export const useProductData = () => {
     const [isError, setIsError] = useState(false)
+    
     const products = useSelector((state) => state.products.products); 
     const fetchFlag = useSelector((state) => state.products.fetchFlag); 
     const loaderFlag = useSelector((state)=> state.products.loaderFlag);
-    
     const currentProductPage  = useSelector((state)=> state.products.currentProductPage);
     const totalProductPages = useSelector((state)=> state.products.totalProductPages);
-    const currentSearchPage = useSelector((state)=> state.products.currentSearchPage);
-    const totalSerchPages = useSelector((state)=> state.products.totalSerchPages);
 
     const dispatch = useDispatch();
 

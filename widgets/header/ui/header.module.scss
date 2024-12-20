@@ -1,12 +1,16 @@
 @use '/shared/configured-styles/colors' as colors;
 
 .header {
+    z-index: 999;
+    position: sticky;
+    top: 0;
     width: 100%;
     min-width: 375px;
     height: 60px;
     background-color: colors.$bg;
     display: flex;
     justify-content: space-between;
+    box-shadow: 5px 0 5px black;
 
     section {
         width: 50%;

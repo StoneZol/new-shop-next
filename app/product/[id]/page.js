@@ -27,8 +27,7 @@ export async function generateStaticParams() {
 }
 
 export default async function ProductPage({params}) {
-    const resolvedParams = await params;
-    const {id} = resolvedParams;
+    const {id} = await params
     const res = await fetch(`${getProductUrlApi}/${id}`);
     if (!res.ok) {
         notFound();

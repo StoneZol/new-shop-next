@@ -2,13 +2,10 @@ const {createSlice} = require("@reduxjs/toolkit")
 
 const initialState = {
     products: [],
-    searchProducts: [],
     fetchFlag: true,
     loaderFlag: false,
     currentProductPage: 1,
     totalProductPages: 1,
-    currentSearchPage: 1,
-    totalSerchPages: 1,
 }
 
 const productsSlice = createSlice({
@@ -36,12 +33,6 @@ const productsSlice = createSlice({
         setTotalProductPages: (state, action) => {
             state.totalProductPages = action.payload;
         },
-        setCurrentSearchPage: (state, action) => {
-            state.currentSearchPage = action.payload;
-        },
-        setTotalSerchages: (state, action) => {
-            state.totalSerchPages = action.payload;
-        }
     }
 })
 
@@ -52,7 +43,5 @@ export const {
     setLoaderFlag,
     setCurrentProductPage,
     setTotalProductPages,
-    setCurrentSearchPage,
-    setTotalSerchages
 } = productsSlice.actions
 export default productsSlice.reducer;
