@@ -3,7 +3,7 @@ import About from './about'
 import More from './more'
 import NavigationInAboutProduct from './navigation-about-product';
 
-export default function AboutProduct({data={}}) {
+export default function AboutProduct({data={}, category=''}) {
     return (
         <div className={styles.block}>
             <NavigationInAboutProduct/>
@@ -12,7 +12,7 @@ export default function AboutProduct({data={}}) {
                     <About data={data.about}/>
                 </div>
                 <div id="more" className={styles.hiddenZone}>
-                    <More data={data.characterisitcs}/>
+                    <More data={data.characterisitcs} category={category}/>
                 </div>
             </div>
         </div>

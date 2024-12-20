@@ -50,7 +50,7 @@ export default async function ProductPage({params}) {
                     </TagBlock>
                 </div>
                 <div className={styles.center_side}>
-                    <AboutProduct data={productData.description}/>
+                    <AboutProduct data={productData.description} category={productData.category}/>
                 </div>
                 <div className={styles.right_side}>
                     <BuyPriceWidget product={productData}>
