@@ -1,5 +1,5 @@
-.section {
-    padding: 10px;
+.section, .skeleton{
+    padding: 0 10px;
     width: auto;
     display: grid;
     grid-template-columns: repeat(6, auto);
@@ -8,6 +8,10 @@
         margin: 8px;
     }
 }
+
+// .skeleton{
+//     padding-top: 0;
+// }
 
 @media (max-width: 1199px) {
     .section {
