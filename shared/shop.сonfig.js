@@ -28,8 +28,8 @@ export const shopSocialContacts = {
 }
 
 export const shopLocation ={
-    addres: 'улица Сакко и Ванцетти, 28/3, Новороссийск, Краснодарский край, 353901',
-    maplink: 'https://yandex.ru/maps/970/novorossiysk/house/ulitsa_sakko_i_vantsetti_28_3/Z04YcQ9iTUIBQFpufXt1dXxqYA==/?ll=37.783018%2C44.744025&z=18.46'
+    addres: 'Красная улица',
+    maplink: 'https://yandex.ru/maps/35/krasnodar/?ll=38.974406%2C45.035835&mode=whatshere&whatshere%5Bpoint%5D=38.974471%2C45.036133&whatshere%5Bzoom%5D=17.83&z=17.63'
     //изображение карты менят в public/ не изменяя имени
 }
 
