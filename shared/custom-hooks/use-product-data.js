@@ -6,7 +6,7 @@ import { loadProducts,setCurrentProductPage, setFetchFlag, setLoaderFlag, setTot
 import scrollOnBootom from "../public-func/scroll-on-bottom";
 
 export const useProductData = () => {
-    
+
     const [isError, setIsError] = useState(false)
     
     const products = useSelector((state) => state.products.products); 
@@ -55,7 +55,6 @@ export const useProductData = () => {
             document.removeEventListener("scroll", handleScroll);
         };
     }, [currentProductPage, fetchFlag]);
-    console.log('хук отрабьотал на главной]')
 
     return { products, loaderFlag,  isError, setIsError };
 };

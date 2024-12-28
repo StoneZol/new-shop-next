@@ -1,4 +1,4 @@
-import { loadSearchProducts, setCurrentSearchPage, setSearchFetchFlag, setSearchLoaderFlag, setTotalSearchPages } from "@/store-redux/slices/search-products-slice";
+import { loadSearchProducts, setCurrentSearchPage, setSearchFetchFlag, setSearchLoaderFlag, setTotalSearchPages, zeroStateSearch } from "@/store-redux/slices/search-products-slice";
 import { getProductUrlApi } from "../api-endpoint/api-endpoint";
 import { getData } from "../fetch-methods/fetch-methods";
 import scrollOnBootom from "../public-func/scroll-on-bottom";
@@ -8,9 +8,8 @@ import { usePathname } from "next/navigation";
 
 export const useSearchProductData = () => {
     const [isError, setIsError] = useState(false)
-    // const [searchParams, setSearchParams] = useState('')
+    
     const path = usePathname();
-    // const searchQuery = path.replace('/search/', '');
 
     const searchProducts = useSelector((state) => state.searchProducts.searchProducts); 
     const searchFetchFlag = useSelector((state) => state.searchProducts.searchFetchFlag); 
@@ -35,6 +34,11 @@ export const useSearchProductData = () => {
     }, [searchFetchFlag]);
 
     useEffect(() => {
+      dispatch(zeroStateSearch())
+    }, [path])
+    
+
+    useEffect(() => {
         if (!isError) {
             dispatch(setSearchFetchFlag(true))
         }
@@ -57,6 +61,5 @@ export const useSearchProductData = () => {
             document.removeEventListener("scroll", handleScroll);
         };
     }, [currentSearchPage, searchFetchFlag]);
-    console.log('хук отработал]')
     return { searchProducts, searchLoaderFlag,  isError, setIsError};
 };

@@ -5,11 +5,18 @@ import SymbolsSearch from '@/shared/icons/symbol-search'
 import { shopSearchText } from '@/shared/shop.сonfig'
 import Skeleton from 'react-loading-skeleton'
 import { usePathname, useRouter } from 'next/navigation'
+import { useDispatch, useSelector } from 'react-redux'
+import { zeroStateSearch } from '@/store-redux/slices/search-products-slice'
 
 
 export default function ProductSearch() {
     const [visibleBG, setVisibleBG] = useState(false)
     const [searchQuery, setSearchQuery] = useState('');
+
+    const searchProducts = useSelector((state) => state.searchProducts.searchProducts); 
+
+    const dispatch = useDispatch();
+
     const inputRef = useRef(null)
     const path = usePathname();
     
@@ -27,7 +34,10 @@ export default function ProductSearch() {
         inputRef.current.value = ''
         setSearchQuery('')
       }
-
+      if (path.indexOf('/search/') > -1) {
+        inputRef.current.value = decodeURIComponent(path.replace('/search/', ''))
+        setSearchQuery(decodeURIComponent(path.replace('/search/', '')))
+      }
     }, [path])
     
 

@@ -29,6 +29,13 @@ const searchProductsSlice = createSlice({
         },
         setTotalSearchPages: (state, action) => {
             state.totalSearchPages = action.payload;
+        },
+        zeroStateSearch: (state) => {
+            state.searchProducts = [];
+            state.searchFetchFlag = true;
+            state.searchLoaderFlag = false;
+            state.currentSearchPage = 1;
+            state.totalSearchPages = 1;
         }
     }
 })
@@ -39,6 +46,7 @@ export const {
     setSearchLoaderFlag,
     setCurrentSearchPage,
     setTotalSearchPages,
+    zeroStateSearch,
 
 } = searchProductsSlice.actions
 

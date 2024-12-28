@@ -29,7 +29,7 @@ export default function TestPage() {
                 <SkeletonBuyPriceWidget/>
             </section>
             <Breadcrumbs/>
-            <button onClick={()=> {throw new Error('error')}}></button>
+            {/* <button onClick={()=> {throw new Error('error')}}></button> */}
             <AboutProduct data={data}/>
         </div>
     )
