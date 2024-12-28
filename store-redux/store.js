@@ -33,7 +33,7 @@ const searchProductsPersistConfig = {
         'serchFetchFlag',
         'serchLoaderFlag',
         'currentSearchPage',
-        'totalSerchPages'
+        'totalSerchPages',
     ]
 }
 

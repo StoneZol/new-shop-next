@@ -24,7 +24,8 @@ export const useProductData = () => {
                 dispatch(setTotalProductPages(result.totalPages));
                 dispatch(setCurrentProductPage(currentProductPage+1));
                 return result;})
-            .catch(error => {setIsError(true)})
+            .catch(error => {setIsError(true)
+                    throw new Error(error)})
             .finally(() => {
                 dispatch(setFetchFlag(false))
             });}
@@ -55,6 +56,7 @@ export const useProductData = () => {
             document.removeEventListener("scroll", handleScroll);
         };
     }, [currentProductPage, fetchFlag]);
+    console.log('хук отрабьотал на главной]')
 
     return { products, loaderFlag,  isError, setIsError };
 };

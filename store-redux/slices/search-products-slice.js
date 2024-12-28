@@ -15,20 +15,20 @@ const searchProductsSlice = createSlice({
         loadSearchProducts: (state, action) => {
             const newProducts = action
                 .payload
-                .filter((product) => !state.products.find((p) => p.id === product.id));
+                .filter((product) => !state.searchProducts.find((p) => p.id === product.id));
             state.searchProducts.push(...newProducts)
         },
         setSearchFetchFlag: (state, action) => {
-            state.fetchFlag = action.payload;
+            state.searchFetchFlag = action.payload;
         },
         setSearchLoaderFlag: (state, action) => {
-            state.serchLoaderFlag = action.payload;
+            state.searchLoaderFlag = action.payload;
         },
         setCurrentSearchPage: (state, action) => {
             state.currentSearchPage = action.payload;
         },
         setTotalSearchPages: (state, action) => {
-            state.totalSerchPages = action.payload;
+            state.totalSearchPages = action.payload;
         }
     }
 })

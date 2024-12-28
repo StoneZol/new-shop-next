@@ -4,34 +4,34 @@ import { getData } from "../fetch-methods/fetch-methods";
 import scrollOnBootom from "../public-func/scroll-on-bottom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { usePathname } from "next/navigation";
 
-export const useProductData = () => {
-
-    const [category, setCategory] = useState('')
-    const [productName, setProductName] = useState('')
+export const useSearchProductData = () => {
     const [isError, setIsError] = useState(false)
+    // const [searchParams, setSearchParams] = useState('')
+    const path = usePathname();
+    // const searchQuery = path.replace('/search/', '');
 
     const searchProducts = useSelector((state) => state.searchProducts.searchProducts); 
-    const serchFetchFlag = useSelector((state) => state.searchProducts.serchFetchFlag); 
-    const serchLoaderFlag = useSelector((state)=> state.searchProducts.serchLoaderFlag);
+    const searchFetchFlag = useSelector((state) => state.searchProducts.searchFetchFlag); 
+    const searchLoaderFlag = useSelector((state)=> state.searchProducts.searchLoaderFlag);
     const currentSearchPage  = useSelector((state)=> state.searchProducts.currentSearchPage);
-    const totalSerchPages = useSelector((state)=> state.searchProducts.totalSerchPages);
+    const totalSearchPages = useSelector((state)=> state.searchProducts.totalSearchPages);
 
     const dispatch = useDispatch();
-
     useEffect(() => {
-        if (serchFetchFlag && !isError) {
+        if (searchFetchFlag && !isError) {
             getData(`${getProductUrlApi}?&Page=${currentSearchPage}&PageLimit=24`)
             .then(result => {
                 dispatch(loadSearchProducts(result.items));
                 dispatch(setTotalSearchPages(result.totalPages));
-                dispatch(setCurrentSearchPage(currentSearchPage+1));
-                return result;})
-            .catch(error => {setIsError(true)})
+                dispatch(setCurrentSearchPage(currentSearchPage+1));})
+            .catch(error => {setIsError(true)
+                    throw new Error(error)})
             .finally(() => {
                 dispatch(setSearchFetchFlag(false))
             });}
-    }, [serchFetchFlag,]);
+    }, [searchFetchFlag]);
 
     useEffect(() => {
         if (!isError) {
@@ -45,19 +45,19 @@ export const useProductData = () => {
         const handleScroll = (e) =>
         scrollOnBootom(e,
             () => dispatch(setSearchFetchFlag(true)),
-            () => currentSearchPage <= totalSerchPages && !serchFetchFlag
+            () => currentSearchPage <= totalSearchPages && !searchFetchFlag
         );
-        if(currentSearchPage > 1 && serchFetchFlag){
+        if(currentSearchPage > 1 && searchFetchFlag){
             dispatch(setSearchLoaderFlag(true))
         }
-        if(currentSearchPage > totalSerchPages && !serchFetchFlag){
+        if(currentSearchPage > totalSearchPages && !searchFetchFlag){
             dispatch(setSearchLoaderFlag(false))
         }
         document.addEventListener("scroll", handleScroll);
         return () => {
             document.removeEventListener("scroll", handleScroll);
         };
-    }, [currentSearchPage, serchFetchFlag]);
-
-    return { searchProducts, serchLoaderFlag,  isError, setIsError };
+    }, [currentSearchPage, searchFetchFlag]);
+    console.log('хук отработал]')
+    return { searchProducts, searchLoaderFlag,  isError, setIsError};
 };
