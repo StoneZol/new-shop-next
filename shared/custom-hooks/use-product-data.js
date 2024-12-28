@@ -6,6 +6,7 @@ import { loadProducts,setCurrentProductPage, setFetchFlag, setLoaderFlag, setTot
 import scrollOnBootom from "../public-func/scroll-on-bottom";
 
 export const useProductData = () => {
+    
     const [isError, setIsError] = useState(false)
     
     const products = useSelector((state) => state.products.products); 
@@ -36,8 +37,6 @@ export const useProductData = () => {
             dispatch(setFetchFlag(true))
         }
     }, [isError]);
-
-
 
     useEffect(() => {
         const handleScroll = (e) =>

@@ -19,9 +19,10 @@ export const useSearchProductData = () => {
     const totalSearchPages = useSelector((state)=> state.searchProducts.totalSearchPages);
 
     const dispatch = useDispatch();
+
     useEffect(() => {
         if (searchFetchFlag && !isError) {
-            getData(`${getProductUrlApi}?&Page=${currentSearchPage}&PageLimit=24`)
+            getData(`${getProductUrlApi}?Name=${path.replace('/search/', '')}&Sort=0&Page=${currentSearchPage}&PageLimit=24`)
             .then(result => {
                 dispatch(loadSearchProducts(result.items));
                 dispatch(setTotalSearchPages(result.totalPages));
@@ -38,8 +39,6 @@ export const useSearchProductData = () => {
             dispatch(setSearchFetchFlag(true))
         }
     }, [isError]);
-
-
 
     useEffect(() => {
         const handleScroll = (e) =>
