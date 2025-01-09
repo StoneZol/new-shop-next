@@ -1,10 +1,10 @@
 import Swal from "sweetalert2";
 
-const prototypeToast = Swal.mixin({
+const prototypeToasts = Swal.mixin({
     toast: true,
-    position: 'top-end',
+    position: 'bottom-end',
     showConfirmButton: false,
-    timer:3000,
+    timer:1500,
     timerProgressBar: true,
     didOpen:(toast)=>{
         toast.onmouseenter = Swal.stopTimer;
@@ -13,7 +13,9 @@ const prototypeToast = Swal.mixin({
 })
 
 /**
- * @param {any} icon if 0 = "info"
+ * @param {string} icon one of "success", "error", "info", "warning", "question"
+ * @param {string} title The message to display
+ * @param {boolean} load Whether to show a loading spinner
  */
 const Toast = (icon, title, load) => {
     if (load) {

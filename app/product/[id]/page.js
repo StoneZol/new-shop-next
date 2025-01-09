@@ -8,6 +8,8 @@ import NutritionalValue from '@/entities/nutritional-value/ui/nutritional-value'
 import BuyPriceWidget from '@/widgets/buy-price-widget/ui/buy-price-widget';
 import {notFound} from 'next/navigation';
 import {getProductUrlApi} from '@/shared/api-endpoint/api-endpoint';
+import Breadcrumbs from '@/features/breadcrumbs/ui/breadcrumbs';
+import SkeletonBreadcrumbs from '@/features/breadcrumbs/ui/skeleton-breadcrumbs';
 
 export async function generateStaticParams() {
     try {
@@ -36,6 +38,7 @@ export default async function ProductPage({params}) {
 
     return (
         <div className={styles.page_box}>
+             <Breadcrumbs category={productData.category} sku={productData.sku}/>
             <section className={styles.page}>
                 <div className={styles.left_side}>
                     <SwiperProductCard

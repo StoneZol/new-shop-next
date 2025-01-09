@@ -1,0 +1,73 @@
+@use '/shared/configured-styles/colors' as colors;
+@use '/shared/configured-styles/mixins' as mixins;
+
+.breadcrumbs, .skeleton {
+    padding: 40px 0;
+    width: 90%;
+    max-width: 1390px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: colors.$breadcrumbs;
+    span {
+        @include mixins.grandTransition('color');
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        font-size: 1rem;
+        a {
+            color: currentColor;
+        }
+        svg {
+            width: 0.9rem;
+            height: 0.9rem;
+        }
+        &:hover {
+            color: colors.$breadcrumbs-hover;
+        }
+    }
+
+}
+.left_side {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    svg {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .breadcrumbs, .skeleton {
+        max-width: 690px;
+    }
+}
+@media (max-width: 784px) {
+    .breadcrumbs, .skeleton {
+        padding: 10px 0;
+        max-width: 340px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        span {
+            gap: 2px;
+            font-size: 0.9rem;
+            svg {
+                width: 0.7rem;
+                height: 0.7rem;
+            }
+
+        }
+    }
+    .left_side {
+        padding: 5px 0;
+    }
+    .right_side {
+        padding: 5px 0;
+        display: flex;
+        justify-content: center;
+    }
+}
+

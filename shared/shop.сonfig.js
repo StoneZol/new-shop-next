@@ -1,6 +1,7 @@
-export const shopUrl ='yfibdrecyzirb.rf'
+export const shopUrl ='http://localhost:3000'
 
 export const  shop = {
+    lang:'ru',
     currency: '₽',
     name: 'Наши вкусняшки',
     shortName: 'Наши кусняшки', 
@@ -52,4 +53,12 @@ export const shopError={
     buttonResetText: 'Попробовать снова',
     link: '/',
     linkText: 'Вернутся на главную',
+}
+
+export const shopBreadcrumbs = {
+    homePage: 'Главная',
+    skuName: 'Артикул: ',
+    sharedName: 'Поделиться ссылкой',
+    skuCopy: 'Артикул скопирован!',
+    linkCopy: 'Ссылка скопирована!'
 }

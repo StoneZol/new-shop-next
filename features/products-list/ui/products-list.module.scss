@@ -14,13 +14,13 @@
 // }
 
 @media (max-width: 1199px) {
-    .section {
+    .section,.skeleton {
         grid-template-columns: repeat(4, auto);
     }
 }
 
 @media (max-width: 770px) {
-    .section {
+    .section ,.skeleton{
         gap: 0;
         padding: 3px;
         grid-template-columns: repeat(2, auto);
