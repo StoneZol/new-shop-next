@@ -18,7 +18,7 @@ export const useProductData = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (fetchFlag && !isError) {
+        if (fetchFlag && currentProductPage<= totalProductPages && !isError) {
             getData(`${getProductUrlApi}?&Page=${currentProductPage}&PageLimit=24`)
             .then(result => {
                 dispatch(loadProducts(result.items));
@@ -30,6 +30,7 @@ export const useProductData = () => {
             .finally(() => {
                 dispatch(setFetchFlag(false))
             });}
+            dispatch(setFetchFlag(false))
     }, [fetchFlag,]);
 
     useEffect(() => {
