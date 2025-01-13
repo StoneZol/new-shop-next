@@ -9,6 +9,6 @@ import Breadcrumbs from "@/features/breadcrumbs/ui/breadcrumbs";
 export default function TestPage() {
 
     return (
-        <></>
+        <><Breadcrumbs category={'Ijhrjkf'} sku="343434343"/></>
     )
 }

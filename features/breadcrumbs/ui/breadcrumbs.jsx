@@ -1,7 +1,6 @@
 'use client'
 import React from 'react'
 import styles from './breadcrumbs.module.scss'
-import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { shopBreadcrumbs, shopUrl } from '@/shared/shop.сonfig'
 import { IconShareBreadcrumbs } from '@/shared/icons/breadcrumbs/share'
@@ -19,15 +18,17 @@ export default function Breadcrumbs({category, sku = ''}) {
   return (
     <div className={styles.breadcrumbs}>
       <div className={styles.left_side}>
-        <span><IconHomeBreadcrumbs/><Link href={'/'}>{shopBreadcrumbs.homePage}</Link></span>
+        <Link className={styles.crumbs_buttons} href={'/'}><IconHomeBreadcrumbs/>{shopBreadcrumbs.homePage}</Link>
         <IconPointBreadcrumbs/>
-        <span><IconCategoryBreadcrumbs/><Link href={`/category/${category}`}>{category}</Link></span>
+        <Link className={styles.crumbs_buttons} href={`/category/${category}`}><IconCategoryBreadcrumbs/>{category}</Link>
         <IconPointBreadcrumbs/>
-        <span onClick={() => copy(sku, shopBreadcrumbs.skuCopy)}><IconCopyBreadcrumbs/>{shopBreadcrumbs.skuName}{sku}</span>
+        <button className={styles.crumbs_buttons} onClick={() => copy(sku, shopBreadcrumbs.skuCopy)}><IconCopyBreadcrumbs/>{shopBreadcrumbs.skuName}{sku}</button>
       </div>
       <div className={styles.right_side}>
-        <span onClick = {()=> copy(fullUrl, shopBreadcrumbs.linkCopy)}><IconShareBreadcrumbs/> Поделиться</span>
+        <button className={styles.crumbs_buttons} onClick = {()=> copy(fullUrl, shopBreadcrumbs.linkCopy)}><IconShareBreadcrumbs/> Поделиться</button>
       </div>
     </div>
   )
 }
+
+//!заменит ьспаны на ссылки и кнопки 
