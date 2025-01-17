@@ -22,10 +22,10 @@
 @media (max-width: 770px) {
     .section ,.skeleton{
         gap: 0;
-        padding: 3px;
+        padding: 1px;
         grid-template-columns: repeat(2, auto);
         article{
-            margin: 4px;
+            margin: 3px;
         }
     }
 }
