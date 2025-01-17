@@ -5,6 +5,9 @@ import { getData, updateItem } from '@/shared/fetch-methods/fetch-methods'
 import { updateItemBasket } from '@/store-redux/slices/basket-slice'
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { shopBasket } from './../../../shared/shop.сonfig';
+import Link from 'next/link'
+import styles from './basket-widget.module.scss'
 
 export default function BasketWidget() {
     const basket = useSelector((state) => state.basket.basket);
@@ -36,12 +39,15 @@ export default function BasketWidget() {
     
     
 
-    if (!isMounted) return <h3>Корзина пуста :&#40;</h3>;
+    if (!isMounted) return <div className={styles.widget_compose}><h3>{shopBasket.basketIsNull}</h3></div>;
 
     return (
-        <>
+        <div className={styles.widget_compose}>
             {basket.length > 0 ? <ProductsList products={basket} /> : null}
-            <BasketCount basket={basket} />
-        </>
+            <div className={styles.static}>
+                <BasketCount basket={basket} zeroStateTaxt={shopBasket.basketIsNull}/>
+                {basket.length > 0 ? <Link  className={styles.create_order} href='/basket/create-order'>{shopBasket.basketCreateOrderText}</Link> : null}
+            </div>
+        </div>
     );
 }

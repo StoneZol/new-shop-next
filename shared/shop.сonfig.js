@@ -8,6 +8,12 @@ export const  shop = {
     description: 'Магазин кондитерских изделий',
 }
 
+export const shopBasket ={
+    basketName: 'Корзина',
+    basketCreateOrderText: 'Оформить заказ',
+    basketIsNull: 'Корзина пуста :('
+}
+
 export const shopSearchText ={
     text: 'Найти во вкусняшках'
 }

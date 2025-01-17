@@ -1,0 +1,50 @@
+@use '/shared/configured-styles/colors' as colors;
+@use '/shared/configured-styles/mixins' as mixins;
+
+.widget_compose{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0 40px 0;
+}
+
+.create_order {
+    @include mixins.grandTransition('background-color');
+    @include mixins.grandBorderRadius();
+    text-align: center;
+    max-width: 280px;
+    background-color: colors.$button-bg;
+    color: colors.$button-text;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    &:hover {
+        background-color: colors.$button-bg-hover;
+    }
+}
+
+.static{
+    background-color: colors.$bg-default;
+    z-index: 11;
+    position: sticky;
+    bottom: 0;
+    padding: 10px 0 20px 0;
+    width: 100%;
+    display: flex;
+    gap: 10;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 770px){
+    .static{
+        bottom: 59px;
+        padding: 5px 0 10px 0;
+    }
+    .create_order {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+}
