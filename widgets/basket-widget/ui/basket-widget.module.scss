@@ -23,8 +23,11 @@
         background-color: colors.$button-bg-hover;
     }
 }
-
+.static_null{
+    flex: 1;
+}
 .static{
+    flex: 1;
     background-color: colors.$bg-default;
     z-index: 11;
     position: sticky;
