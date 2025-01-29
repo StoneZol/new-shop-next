@@ -9,13 +9,12 @@
     }
 }
 
-// .skeleton{
-//     padding-top: 0;
-// }
-
 @media (max-width: 1199px) {
     .section,.skeleton {
         grid-template-columns: repeat(4, auto);
+        article{
+            margin: 3px;
+        }
     }
 }
 

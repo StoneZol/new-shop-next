@@ -2,7 +2,7 @@
 import React from 'react'
 import styles from './breadcrumbs.module.scss'
 import Link from 'next/link'
-import { shopBreadcrumbs, shopUrl } from '@/shared/shop.сonfig'
+import { shopBreadcrumbs} from '@/shared/shop.сonfig'
 import { IconShareBreadcrumbs } from '@/shared/icons/breadcrumbs/share'
 import { IconCopyBreadcrumbs } from '@/shared/icons/breadcrumbs/copy'
 import { IconHomeBreadcrumbs } from '@/shared/icons/breadcrumbs/home'
@@ -30,5 +30,3 @@ export default function Breadcrumbs({category, sku = ''}) {
     </div>
   )
 }
-
-//!заменит ьспаны на ссылки и кнопки 

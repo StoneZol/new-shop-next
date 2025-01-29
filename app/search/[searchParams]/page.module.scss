@@ -1,0 +1,30 @@
+.search_result_text{
+    width: 100%;
+    max-width: 1200px;
+    font-size: 1.2rem;
+    padding: 15px 10px 10px 10px;
+    span{
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+}
+
+@media (max-width: 1199px) {
+    .search_result_text{
+        max-width: 800px;
+        font-size: 1.1rem;
+        span{
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@media (max-width: 770px) {
+    .search_result_text{
+        max-width: 375px;
+        font-size: 1rem;
+        span{
+            font-size: 1.1rem;
+        }
+    }
+}

@@ -21,7 +21,7 @@
     border: 0;
     border-bottom: 1px solid colors.$logo;
     outline: none;
-    padding: 0 45px 0 15px;
+    padding: 0 55px 0 15px;
     @include mixins.grandBorderRadius(50px);
     &::placeholder{
         user-select: none;
