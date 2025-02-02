@@ -1,0 +1,16 @@
+@use '/shared/configured-styles/colors' as colors;
+@use '/shared/configured-styles/mixins' as mixins;
+
+.story_link{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: colors.$link;
+    padding: 10px 10px;
+    @include mixins.grandTransition();
+    @include mixins.grandBorderRadius();
+    &:hover{
+        background-color: colors.$bg;
+    }
+}
