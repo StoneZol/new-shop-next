@@ -24,6 +24,15 @@
 @media (max-width: 770px) {
     .section,.skeleton {
         padding: 4px;
+        max-width: 560px;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+@media (max-width: 570px) {
+    .section,.skeleton {
+        padding: 4px;
         max-width: 375px;
         height: auto;
         aspect-ratio: 16 / 9;
