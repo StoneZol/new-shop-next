@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { zeroStateSearch } from '@/store-redux/slices/search-products-slice'
 import { addQueries, removeAllQueries, removeOneQuery } from '@/store-redux/slices/search-queries-slice'
 import ProductSearchStory from '../product-search-story/ui/product-search-story'
+import { DeleteInputText } from '@/shared/icons/delete-input-text'
 
 
 export default function ProductSearch() {
@@ -37,6 +38,13 @@ export default function ProductSearch() {
         dispatch(addQueries([query]))
     }
 
+    const nullInput = () =>{
+        inputRef.current.value = ''
+        setSearchQuery('')
+        inputRef.current?.focus()
+        setVisibleBG(true)
+    }
+
     useEffect(() => {
       if (path !=='/search'){
         inputRef.current.value = ''
@@ -63,6 +71,13 @@ export default function ProductSearch() {
                     onClick={handleSearch}>
                         <SymbolsSearch/>
             </button>
+            {
+                searchQuery.length > 0  &&
+                    <button className={styles.button_input_delete}
+                            onClick={nullInput}>
+                    <DeleteInputText/>
+                </button>
+            }
             {visibleBG && searchQueries.length > 0 &&  
                 <ProductSearchStory 
                     data={searchQueries.slice().reverse()} 
