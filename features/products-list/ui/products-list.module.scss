@@ -23,19 +23,11 @@
         gap: 0;
         padding: 1px;
         grid-template-columns: repeat(3, auto);
-        article{
-            margin: 3px;
-        }
     }
 }
 
 @media (max-width: 570px) {
     .section ,.skeleton{
-        gap: 0;
-        padding: 1px;
         grid-template-columns: repeat(2, auto);
-        article{
-            margin: 3px;
-        }
     }
 }
