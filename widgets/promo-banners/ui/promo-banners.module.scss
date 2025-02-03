@@ -6,6 +6,7 @@
     height: 140px;
     padding: 10px;
     @include mixins.grandBorderRadius();
+    overflow: hidden;
 }
 
 .skeleton {
@@ -15,13 +16,13 @@
 }
 
 @media (max-width: 1199px) {
-    .section {
-        max-width: 788px;
+    .section,.skeleton {
+        max-width: 764px;
     }
 }
 
 @media (max-width: 770px) {
-    .section {
+    .section,.skeleton {
         padding: 4px;
         max-width: 375px;
         height: auto;

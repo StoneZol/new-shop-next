@@ -20,12 +20,20 @@ const searchQueriesSlice = createSlice({
                 }
             });
         },
+        removeAllQueries: (state, _) => {
+            state.searchQueries = [];
+        },
+        removeOneQuery: (state, action) => {
+            state.searchQueries = state.searchQueries.filter(query => query !== action.payload)
+        }
         
     },
 });
 
 export const {
     addQueries,
+    removeAllQueries,
+    removeOneQuery,
 } = searchQueriesSlice.actions
 
 export default searchQueriesSlice.reducer;

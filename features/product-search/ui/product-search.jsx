@@ -7,8 +7,8 @@ import Skeleton from 'react-loading-skeleton'
 import { usePathname, useRouter } from 'next/navigation'
 import { useDispatch, useSelector } from 'react-redux'
 import { zeroStateSearch } from '@/store-redux/slices/search-products-slice'
-import { addQueries } from '@/store-redux/slices/search-queries-slice'
-import ProductSearchStory from './product-search-story/ui/product-search-story';
+import { addQueries, removeAllQueries, removeOneQuery } from '@/store-redux/slices/search-queries-slice'
+import ProductSearchStory from '../product-search-story/ui/product-search-story'
 
 
 export default function ProductSearch() {
@@ -38,7 +38,7 @@ export default function ProductSearch() {
     }
 
     useEffect(() => {
-      if (path ==='/'){
+      if (path !=='/search'){
         inputRef.current.value = ''
         setSearchQuery('')
       }
@@ -51,25 +51,29 @@ export default function ProductSearch() {
     return (
         <>
         <div className={styles.search_box}>
-                <input
-                    type="text"
-                    ref={inputRef}
-                    className={styles.input}
-                    placeholder={shopSearchText.text}
-                    aria-label={shopSearchText.text}
-                    onChange={(e) => setSearchQuery(e.target.value)} 
-                    onClick={()=>setVisibleBG(true)}/>
-                <button className={styles.button} onClick={handleSearch}><SymbolsSearch/></button>
-                {visibleBG &&  
-                    <div className={styles.content}>
-                    {searchQueries.slice().reverse().map((content, index)=>(
-                        <ProductSearchStory data={content} func={handleLinkClick} key={index}/>
-                    ))}
-                    </div>
-                }
+            <input
+                type="text"
+                ref={inputRef}
+                className={styles.input}
+                placeholder={shopSearchText.text}
+                aria-label={shopSearchText.text}
+                onChange={(e) => setSearchQuery(e.target.value)} 
+                onClick={()=>setVisibleBG(true)}/>
+            <button className={styles.button} 
+                    onClick={handleSearch}>
+                        <SymbolsSearch/>
+            </button>
+            {visibleBG && searchQueries.length > 0 &&  
+                <ProductSearchStory 
+                    data={searchQueries.slice().reverse()} 
+                    func={handleLinkClick}
+                    delfunc={(query)=>dispatch(removeOneQuery(query))}
+                    delAllfunc={()=> dispatch(removeAllQueries())}/>
+            }
         </div>
         {visibleBG && 
-            <div className={styles.bg} onClick={()=>{setVisibleBG(false)}}></div>}
+            <div className={styles.bg} onClick={()=>{setVisibleBG(false)}}></div>
+        }
         </>
     )
 }

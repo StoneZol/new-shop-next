@@ -2,7 +2,7 @@
 @use '/shared/configured-styles/mixins' as mixins;
 
 .search_box{
-    z-index: 10;
+    z-index: 1001;
     position: relative;
     width: 100%;
     min-width: 365px;
@@ -23,6 +23,9 @@
     outline: none;
     padding: 0 55px 0 15px;
     @include mixins.grandBorderRadius(50px);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     &::placeholder{
         user-select: none;
     }
@@ -55,7 +58,7 @@
 
 .bg{
     overflow: hidden;
-    z-index: 9;
+    z-index: 1000;
     position: fixed;
     display: flex;
     justify-content: center;
@@ -65,23 +68,6 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(3, 8, 13, 0.514);
-}
-
-.content{
-    z-index: 10;
-    position: absolute;
-    top: 65px;
-    left: 0;
-    width: 100%;
-    max-height: calc(100vh - 200px);
-    padding: 10px 10px;
-    background-color: colors.$bg-default;
-    @include mixins.grandBorderRadius();
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    gap: 5px;
 }
 
 @media (max-width: 770px) {

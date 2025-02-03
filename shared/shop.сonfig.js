@@ -16,7 +16,9 @@ export const shopBasket ={
 
 export const shopSearchText ={
     text: 'Найти во вкусняшках',
-    resultText: 'Результат поиска по запросу:'
+    resultText: 'Результат поиска по запросу:',
+    history: 'История',
+    historyClean: 'Очистить всё'
 }
 
 export const shopSomeTranslate ={
