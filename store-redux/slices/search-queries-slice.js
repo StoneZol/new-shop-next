@@ -14,10 +14,10 @@ const searchQueriesSlice = createSlice({
                 if (index !== -1) {
                     state.searchQueries.splice(index, 1); // Удаляем старый элемент
                 }
-                state.searchQueries.push(query);
-                if (state.searchQueries.length > 10) {
-                    state.searchQueries.pop();
+                if (state.searchQueries.length >= 10) {
+                    state.searchQueries.shift();
                 }
+                state.searchQueries.push(query);
             });
         },
         removeAllQueries: (state, _) => {

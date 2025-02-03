@@ -21,6 +21,16 @@
 
 @media (max-width: 770px) {
     .search_result_text{
+        max-width: 560px;
+        font-size: 1rem;
+        span{
+            font-size: 1.1rem;
+        }
+    }
+}
+
+@media (max-width: 570px) {
+    .search_result_text{
         max-width: 375px;
         font-size: 1rem;
         span{
