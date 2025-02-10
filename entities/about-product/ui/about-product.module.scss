@@ -70,16 +70,16 @@
     color: colors.$text-active;
 }
 
-.notActive {
+.not_active {
     user-select: none;
 }
 
-.activeZone {
+.active_zone {
     width: 100%;
     display: block;
 }
 
-.hiddenZone {
+.hidden_zone {
     display: none;
 }
 

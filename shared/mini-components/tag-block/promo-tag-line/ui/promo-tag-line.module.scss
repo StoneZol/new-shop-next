@@ -1,7 +1,7 @@
 @use '/shared/configured-styles/colors' as colors;
 @use '/shared/configured-styles/mixins' as mixins;
 
-.promotionTag {
+.promotion_tag {
     user-select: none;
     width: auto;
     max-width: 160px;

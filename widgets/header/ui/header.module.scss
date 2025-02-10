@@ -23,7 +23,7 @@
         max-width: 1140px;
     }
 
-    .rightSide {
+    .right_side {
         width: 240px;
         display: flex;
         justify-content: end;
@@ -42,7 +42,7 @@
         }
     }
 
-    .leftSide {
+    .left_side {
         width: 240px;
         font-weight: 700;
         font-size: 1.5rem;
@@ -66,10 +66,10 @@
             padding: 0 10px;
             min-width: 375px;
         }
-        .rightSide {
+        .right_side {
             display: none;
         }
-        .leftSide {
+        .left_side {
             display: none;
         }
     }

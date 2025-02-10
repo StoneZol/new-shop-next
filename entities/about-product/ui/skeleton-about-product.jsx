@@ -7,7 +7,7 @@ export default function SkeletonAboutProduct() {
     <div className={styles.navigation}>
       <Skeleton  height={22} width={280}/></div>
     <section className={styles.content}>
-        <div className={styles.activeZone}>
+        <div className={styles.active_zone}>
             <Skeleton  height={134}/>
         </div>
     </section>

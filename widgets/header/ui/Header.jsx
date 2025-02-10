@@ -9,14 +9,14 @@ import ProductSearch from '@/features/product-search/ui/product-search'
 export default function Header() {
     return (
         <header className={styles.header}>
-            <section className={styles.leftSide}>
+            <section className={styles.left_side}>
                 <Link href={'/'}>{shop.name}</Link>
             </section>
             <section className={styles.center}>
                 <ProductSearch/>
             </section>
-            <section className={styles.rightSide}>
-                <Link href={'/basket'}>Корзина<LetsIconsBasketAlt3/><PointBasketLength/></Link>
+            <section className={styles.right_side}>
+                <Link href={'/basket'}>{shop.basketLinkText}<LetsIconsBasketAlt3/><PointBasketLength/></Link>
             </section>
         </header>
     )

@@ -4,7 +4,7 @@ import PromoBanners from "@/widgets/promo-banners/ui/promo-banners";
 
 export default function Home() {
   return (
-    <div className={styles.indexPage}>
+    <div className={styles.index_page}>
       <PromoBanners/>
       <GetterStartData/>
     </div>

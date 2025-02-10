@@ -3,7 +3,7 @@ import styles from './order-list.module.scss'
 
 export default function OrderList({orders}) {
   return (
-    <section className={styles.orderList}>
+    <section className={styles.order_list}>
         {orders.map((order, index)=>(
             <OrderItem order={order} key={index}/>
         ))}

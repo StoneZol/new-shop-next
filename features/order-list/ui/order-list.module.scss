@@ -1,5 +1,5 @@
 @use '/shared/configured-styles/mixins' as mixins;
-.orderList{
+.order_list{
     padding: 5px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
@@ -10,7 +10,7 @@
 }
 
 @media (max-width: 820px ){
-    .orderList{
+    .order_list{
         grid-template-columns: repeat(auto-fit, minmax(49%, 1fr));
         gap: 5px;
         width: 375px;

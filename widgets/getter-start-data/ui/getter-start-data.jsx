@@ -8,7 +8,7 @@ export default function GetterStartData({ children }) {
     const { products, loaderFlag, isError } = useProductData();
 
     if (isError) {
-        throw new Error("Не удалось загрузить продукты");
+        throw new Error("Error");
     }
     
     return (

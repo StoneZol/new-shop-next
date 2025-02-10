@@ -6,12 +6,20 @@ export const  shop = {
     name: 'Наши вкусняшки',
     shortName: 'Наши кусняшки', 
     description: 'Магазин кондитерских изделий',
+    basketLinkText: 'Корзина'
+}
+
+export const shopMobileNav ={
+    onGeneralLabel: 'На главную',
+    inBasketLabel: 'В корзину',
+    inProfileLabel: 'В личный кабинет'
 }
 
 export const shopBasket ={
     basketName: 'Корзина',
     basketCreateOrderText: 'Оформить заказ',
-    basketIsNull: 'Корзина пуста :('
+    basketIsNull: 'Корзина пуста :(',
+    summary: 'Итого'
 }
 
 export const shopSearchText ={
@@ -26,8 +34,12 @@ export const shopSomeTranslate ={
 }
 
 export const shopContacts = {
+    ourContacts: 'Наши контакты',
+    phoneText: 'Телефон',
     phone: '8 800 555 35 35',
+    emailText: 'email',
     email: 'test@test.test',
+    visitOur: 'Следите за нами в соцсетях!'
 }
 
 export const shopSocialContacts = {
@@ -62,6 +74,7 @@ export const shopError={
     buttonResetText: 'Попробовать снова',
     link: '/',
     linkText: 'Вернутся на главную',
+    or: 'или',
 }
 
 export const shopBreadcrumbs = {
@@ -71,3 +84,39 @@ export const shopBreadcrumbs = {
     skuCopy: 'Артикул скопирован!',
     linkCopy: 'Ссылка скопирована!'
 }
+
+export const shopNavAboutProduct = {
+    description: 'Описание',
+    moreAbout: 'Подробнее',
+}
+
+export const shopBuyBlock = {
+    inBasket: 'В корзину',
+    buy: 'Купить',
+    addOne: 'Добавить 1',
+    removeOne: 'Уменьшить 1',
+}
+
+export const shopStatusOptions = {
+    Empty: "Новый",
+    Pending: "В работе",
+    Shipped: "Отправлен",
+    Delivered: "Завершен",
+    IncorrectData: "Неверные данные",
+    Canceled: "Отменен"
+}
+
+export const shopOrderItemsText = {
+    creatred:'Создан',
+    updated: 'Изменен',
+    summary: 'Итого',
+    moreAbout: 'Подробней',
+
+}
+
+export const shopProductListAreaLabel = 'Список товаров'
+
+export const shopButtonScrollUpAreaLabel = 'На верх'
+
+export const shopDiscountTagText = "Скидка !"
+  

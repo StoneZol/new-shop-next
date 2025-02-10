@@ -18,7 +18,7 @@
 
 }
 
-.nutritionalBox {
+.nutritional_box {
     display: flex;
     height: 56px;
     gap: 15px;
@@ -29,7 +29,7 @@
 
 .skeleton {
     user-select: none;
-    .nutritionalBox {
+    .nutritional_box {
         span {
             padding: 10px;
         }

@@ -8,6 +8,7 @@ import IconPlus from '@/shared/icons/plus-icon';
 import IconMinus from '@/shared/icons/minus-icon';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { shopBuyBlock } from '@/shared/shop.сonfig';
 
 
 export default function BuyPageBlock({product, link=false}) {
@@ -27,11 +28,11 @@ const basket = useSelector(state=>state.basket.basket)
   return (
     <section className={styles.section}>
     {isZero ?
-    (<button onClick={addBasket}> <LetsIconsBasketAlt3/> Купить</button>)
+    (<button onClick={addBasket}> <LetsIconsBasketAlt3/> {shopBuyBlock.buy}</button>)
     :
-    (<div className={styles.ifInBasket}>
-        {link ? (<Link href={'/basket'}>В корзину</Link>):(<></>)}
-        <button aria-label="Уменьшить 1" onClick={removeBasket}><IconMinus/></button>
+    (<div className={styles.if_in_basket}>
+        {link ? (<Link href={'/basket'}>{shopBuyBlock.inBasket}</Link>):(<></>)}
+        <button aria-label={shopBuyBlock.removeOne} onClick={removeBasket}><IconMinus/></button>
         <input 
         ref={inputRef}
         type="number"
@@ -40,7 +41,7 @@ const basket = useSelector(state=>state.basket.basket)
         max={999}
         onChange={handleInputBasket}
         onClick={handleSelect}/>
-        <button aria-label="Добавить 1" onClick={addBasket}><IconPlus/></button>
+        <button aria-label={shopBuyBlock.addBasket} onClick={addBasket}><IconPlus/></button>
     </div>)}
 </section>
   )

@@ -10,7 +10,7 @@ export default function NutritionalValue({values}) {
     return (
         <section className={styles.section}>
             <h3>{nutritionalText.head}</h3>
-            <div className={styles.nutritionalBox}>
+            <div className={styles.nutritional_box}>
                 <div>
                     <span className={styles.value}>{values.protein}</span><br/>
                     <span className={styles.text}>{nutritionalText.protein}</span>

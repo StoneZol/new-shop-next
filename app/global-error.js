@@ -2,6 +2,7 @@
 import SomethingWrong from '@/shared/icons/loaders/something-wrong';
 import styles from './page.module.scss'
 import Link from 'next/link';
+import { shopError} from '@/shared/shop.сonfig';
 
 export default function GlobalError({error, reset}) {
     console.error(error.message)
@@ -13,13 +14,13 @@ export default function GlobalError({error, reset}) {
                         <SomethingWrong/>
                     </div>
                     <div className={styles.error__right_side}>
-                        <h2>Упс! Что-то пошло не так.</h2>
+                        <h2>{shopError.text}</h2>
                         <div>
-                            <button onClick={reset}>Попробовать снова</button>
+                            <button onClick={reset}>{shopError.buttonResetText}</button>
                             <span>
-                                или
+                                {shopError.or}
                             </span>
-                            <Link href={'/'}>Вернутся на главную</Link>
+                            <Link href={shopError.link}>{shopError.linkText}</Link>
                         </div>
                     </div>
                 </div>

@@ -13,16 +13,16 @@ export default function Footer() {
         <footer className={styles.footer}>
             <div className={styles.leftSide}>
                 <section className={styles.contacts}>
-                    <h4>Наши контакты:</h4>
-                    <p>Телефон:
+                    <h4>{shopContacts.ourContacts}:</h4>
+                    <p>{shopContacts.phoneText}:
                         <Link href={`tel:${shopContacts.phone}`}> {shopContacts.phone}</Link>
                     </p>
-                    <p>email:
+                    <p>{shopContacts.emailText}:
                         <Link href={`mailto:${shopContacts.email}`}> {shopContacts.email}</Link>
                     </p>
                 </section>
                 <section className={styles.socials}>
-                    <h4>Следите за нами в соцсетях!</h4>
+                    <h4>{shopContacts.visitOur}</h4>
                     <div className={styles.icons}>
                         {shopSocialContacts.vk.length > 0 && <Vk url={shopSocialContacts.vk}/>}
                         {shopSocialContacts.ok.length > 0 && <Ok url={shopSocialContacts.ok}/>}

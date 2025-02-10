@@ -4,13 +4,14 @@ import Link from 'next/link'
 import LetsIconsBasketAlt3 from '@/shared/icons/navigation/lets-icons-basket-alt3'
 import IconUser from '@/shared/icons/navigation/user'
 import PointBasketLength from '@/shared/point-basket-length/ui/point-basket-length'
+import { shopMobileNav } from '@/shared/shop.сonfig'
 
 export default function MobileNavigator() {
   return (
     <section className={styles.navigator}>
-        <div><Link href={'/'} aria-label='На главную'><IconHome/></Link></div>
-        {/* <div><Link href={'#'}aria-label=''><IconUser/></Link></div> */}
-        <div><Link href={'/basket'} aria-label='В корзину'><LetsIconsBasketAlt3/></Link><PointBasketLength/></div>
+        <div><Link href={'/'} aria-label={shopMobileNav.onGeneralLabel}><IconHome/></Link></div>
+        {/* <div><Link href={'#'}aria-label={shopMobileNav.inProfileLabel}><IconUser/></Link></div> */}
+        <div><Link href={'/basket'} aria-label={shopMobileNav.inBasketLabel}><LetsIconsBasketAlt3/></Link><PointBasketLength/></div>
     </section>
   )
 }

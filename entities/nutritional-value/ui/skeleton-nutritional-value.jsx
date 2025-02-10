@@ -5,7 +5,7 @@ export default function SkeletonNutritionalValue() {
     return (
         <section className={styles.skeleton}>
             <h3><Skeleton/></h3>
-            <div className={styles.nutritionalBox}>
+            <div className={styles.nutritional_box}>
                 <Skeleton width={40} height={36}/>  
                 <Skeleton width={40} height={36}/>
                 <Skeleton width={40} height={36}/>

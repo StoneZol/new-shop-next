@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './button-scroll-to-top.module.scss';
 import IconScrollUp from '@/shared/icons/navigation/scroll-up';
 import scrollToTop from '@/shared/public-func/scroll-to-top';
+import { shopButtonScrollUpAreaLabel } from '@/shared/shop.сonfig';
 
 export default function ButtonScrollTop({limit = 300}) {
   const [visibility, setVisibility] = useState(false);
@@ -26,7 +27,7 @@ export default function ButtonScrollTop({limit = 300}) {
     <button
       className={`${styles.button} ${!visibility ? styles.hidden : ''}`}
       onClick={scrollToTop}
-      aria-label="На верх">
+      aria-label={shopButtonScrollUpAreaLabel}>
       <IconScrollUp />
     </button>
   );

@@ -7,7 +7,9 @@ export default async function SearchPage({params}) {
 
     return (
     <>
-        <div className={styles.search_result_text}>{shopSearchText.resultText} <span>{decodeURIComponent(searchParams)}</span></div>
+        <div className={styles.search_result_text}>{shopSearchText.resultText} 
+            <span>{decodeURIComponent(searchParams)}</span>
+        </div>
         {searchParams ? <GetterSearchData/>: null}
     </>);
 }

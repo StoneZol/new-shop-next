@@ -8,7 +8,7 @@ export default function GetterSearchData({}) {
     const {searchProducts, searchLoaderFlag, isError} = useSearchProductData();
 
     if (isError) {
-        throw new Error("Не удалось загрузить продукты");
+        throw new Error("Error");
     }
 
   return (
