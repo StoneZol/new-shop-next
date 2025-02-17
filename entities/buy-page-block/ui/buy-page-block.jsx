@@ -1,48 +1,75 @@
 'use client'
-import { useBasket } from '@/shared/custom-hooks/use-basket';
 import styles from './buy-page-block.module.scss'
 import handleSelect from '@/shared/public-func/handle-select';
 import LetsIconsBasketAlt3 from '@/shared/icons/navigation/lets-icons-basket-alt3';
 import Link from 'next/link';
 import IconPlus from '@/shared/icons/plus-icon';
 import IconMinus from '@/shared/icons/minus-icon';
-import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { shopBuyBlock } from '@/shared/shop.сonfig';
+import { shopBuyBlock } from '@/shared/shop.config';
+import useBuyPageBlock from '../hooks/use-buy-page-block';
 
+function BasketLink({link}) {
+    if (link) {
+        return <Link href={'/basket'}>{shopBuyBlock.inBasket}</Link>
+    }
+    return null
+}
 
-export default function BuyPageBlock({product, link=false}) {
+function ZeroStateBlock({onClick}) {
+    return (
+        <button onClick={onClick}>
+            <LetsIconsBasketAlt3/> {shopBuyBlock.buy}</button>
+    )
+}
 
-const { count,setCount , isZero, inputRef, addBasket, removeBasket, handleInputBasket } = useBasket(product);
+function NotZeroStateBlock({
+    link,
+    inputRef,
+    count,
+    onChange,
+    removeBasket,
+    addBasket
+}) {
+    return (
+        <div className={styles.if_in_basket}>
+            <BasketLink link={link}/>
+            <button aria-label={shopBuyBlock.removeOne} onClick={removeBasket}><IconMinus/></button>
+            <input
+                ref={inputRef}
+                type="number"
+                value={count}
+                min={0}
+                max={999}
+                onChange={onChange}
+                onClick={handleSelect}/>
+            <button aria-label={shopBuyBlock.addBasket} onClick={addBasket}><IconPlus/></button>
+        </div>
+    )
+}
 
-const basket = useSelector(state=>state.basket.basket)
+export default function BuyPageBlock({product, link = false}) {
 
- useEffect(() => {
-   const current = basket.find((item)=>item.id ===product.id)
-   if (current){
-    setCount(current.count)
-   }
- }, [basket, product.id])
- 
+  const { count, 
+          isZero, 
+          inputRef, 
+          addBasket, 
+          removeBasket, 
+          handleInputBasket 
+        } = useBuyPageBlock(product);
+
+  const BlockComponent = isZero ? ZeroStateBlock : NotZeroStateBlock;
 
   return (
     <section className={styles.section}>
-    {isZero ?
-    (<button onClick={addBasket}> <LetsIconsBasketAlt3/> {shopBuyBlock.buy}</button>)
-    :
-    (<div className={styles.if_in_basket}>
-        {link ? (<Link href={'/basket'}>{shopBuyBlock.inBasket}</Link>):(<></>)}
-        <button aria-label={shopBuyBlock.removeOne} onClick={removeBasket}><IconMinus/></button>
-        <input 
-        ref={inputRef}
-        type="number"
-        value={count}
-        min={0}
-        max={999}
+      <BlockComponent
+        link={link}
+        inputRef={inputRef}
+        count={count}
         onChange={handleInputBasket}
-        onClick={handleSelect}/>
-        <button aria-label={shopBuyBlock.addBasket} onClick={addBasket}><IconPlus/></button>
-    </div>)}
-</section>
-  )
+        removeBasket={removeBasket}
+        addBasket={addBasket}
+        onClick={addBasket}
+      />
+    </section>
+  );
 }

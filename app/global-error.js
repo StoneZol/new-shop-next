@@ -2,7 +2,7 @@
 import SomethingWrong from '@/shared/icons/loaders/something-wrong';
 import styles from './page.module.scss'
 import Link from 'next/link';
-import { shopError} from '@/shared/shop.сonfig';
+import { shopError} from '@/shared/shop.config';
 
 export default function GlobalError({error, reset}) {
     console.error(error.message)

@@ -1,6 +1,6 @@
 import GetterSearchData from "@/widgets/getter-search-data/ui/getter-search-data";
 import styles from './page.module.scss'
-import { shopSearchText } from "@/shared/shop.сonfig";
+import { shopSearchText } from "@/shared/shop.config";
 
 export default async function SearchPage({params}) {
     const {searchParams} = await params;

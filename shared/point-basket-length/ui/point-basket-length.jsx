@@ -1,15 +1,10 @@
 'use client'
-import React, { useEffect, useState } from 'react'
 import styles from './point-basket-length.module.scss'
-import {useSelector} from 'react-redux'
+import usePointBasketLength from '../hooks/use-point-basket-length'
 
 export default function PointBasketLength() {
-    const basket = useSelector(state => state.basket.basket)
-    const [isClient, setIsClient] = useState(false);
 
-    useEffect(() => {
-        setIsClient(true);
-    }, []);
+    const {basket, isClient} = usePointBasketLength();
 
     if (!isClient) {
         return null;

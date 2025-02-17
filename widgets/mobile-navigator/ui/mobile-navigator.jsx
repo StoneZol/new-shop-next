@@ -4,7 +4,7 @@ import Link from 'next/link'
 import LetsIconsBasketAlt3 from '@/shared/icons/navigation/lets-icons-basket-alt3'
 import IconUser from '@/shared/icons/navigation/user'
 import PointBasketLength from '@/shared/point-basket-length/ui/point-basket-length'
-import { shopMobileNav } from '@/shared/shop.сonfig'
+import { shopMobileNav } from '@/shared/shop.config'
 
 export default function MobileNavigator() {
   return (

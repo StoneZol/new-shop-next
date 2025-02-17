@@ -3,7 +3,7 @@ import SomethingWrong from '@/shared/icons/loaders/something-wrong';
 import styles from './page.module.scss'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { shopError } from '@/shared/shop.сonfig';
+import { shopError } from '@/shared/shop.config';
 
 export default function Error({error, reset}) {
     const path = usePathname()

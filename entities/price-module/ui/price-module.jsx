@@ -1,4 +1,4 @@
-import { shop } from '@/shared/shop.сonfig'
+import { shop } from '@/shared/shop.config'
 import React, { memo } from 'react'
 import styles from './price-module.module.scss'
 

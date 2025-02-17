@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styles from './more.module.scss'
-import { shopSomeTranslate } from '@/shared/shop.сonfig'
+import { shopSomeTranslate } from '@/shared/shop.config'
 
 export default function More({data = [], category = ''}) {
     return (

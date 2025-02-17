@@ -5,7 +5,7 @@ import { getData, updateItem } from '@/shared/fetch-methods/fetch-methods'
 import { updateItemBasket } from '@/store-redux/slices/basket-slice'
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { shopBasket } from './../../../shared/shop.сonfig';
+import { shopBasket } from '../../../shared/shop.config';
 import Link from 'next/link'
 import styles from './basket-widget.module.scss'
 

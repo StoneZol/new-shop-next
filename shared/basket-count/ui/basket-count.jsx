@@ -1,14 +1,12 @@
 'use client'
 import styles from './basket-count.module.scss'
-import {shop, shopBasket} from '@/shared/shop.сonfig'
-import React, {useEffect, useState} from 'react'
+import {shop, shopBasket} from '@/shared/shop.config'
+import useBasketCount from '../hooks/use-basket-count'
 
 export default function BasketCount({basket, zeroStateTaxt=''}) {
-    const [basketCount, setBasketCount] = useState(null)
-    useEffect(() => {
-        const totalCount = basket.reduce((acc, item) => acc + item.totalPrice * item.count, 0)
-        setBasketCount(totalCount)
-    }, [basket])
+    
+    const {basketCount} = useBasketCount(basket)
+
     return (
         <div className={styles.basket_count}>
             {basketCount> 0 ? 

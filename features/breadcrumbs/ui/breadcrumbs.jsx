@@ -2,7 +2,7 @@
 import React from 'react'
 import styles from './breadcrumbs.module.scss'
 import Link from 'next/link'
-import { shopBreadcrumbs} from '@/shared/shop.сonfig'
+import { shopBreadcrumbs} from '@/shared/shop.config'
 import { IconShareBreadcrumbs } from '@/shared/icons/breadcrumbs/share'
 import { IconCopyBreadcrumbs } from '@/shared/icons/breadcrumbs/copy'
 import { IconHomeBreadcrumbs } from '@/shared/icons/breadcrumbs/home'

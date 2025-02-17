@@ -2,7 +2,7 @@ import localFont from "next/font/local";
 // import './favicon.ico'
 import "./globals.css";
 import StoreProvider from "@/store-redux/store-provider";
-import { shop, shopUrl } from "@/shared/shop.сonfig";
+import { shop, shopUrl } from "@/shared/shop.config";
 import Header from "@/widgets/header/ui/header";
 import Footer from "@/widgets/footer/ui/footer";
 import MobileNavigator from "@/widgets/mobile-navigator/ui/mobile-navigator";

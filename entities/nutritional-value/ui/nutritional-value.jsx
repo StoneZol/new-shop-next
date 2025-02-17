@@ -1,4 +1,4 @@
-import { nutritionalText } from '@/shared/shop.сonfig'
+import { nutritionalText } from '@/shared/shop.config'
 import styles from './nutritional-value.module.scss'
 
 export default function NutritionalValue({values}) {

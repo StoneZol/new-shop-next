@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import styles from './product-search-story.module.scss'
 import {DeleteStoryLine} from '@/shared/icons/delete-story-line'
-import {shopSearchText} from '@/shared/shop.сonfig'
+import {shopSearchText} from '@/shared/shop.config'
 
 export default function ProductSearchStory({data, func, delfunc, delAllfunc}) {
     return (

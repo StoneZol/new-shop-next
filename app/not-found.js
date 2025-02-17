@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from './page.module.scss'
-import { shop404 } from "@/shared/shop.сonfig";
+import { shop404 } from "@/shared/shop.config";
 
 export default function NotFound() {
     return (

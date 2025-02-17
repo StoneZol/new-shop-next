@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './footer.module.scss'
-import {shopContacts, shopLocation, shopSocialContacts} from '@/shared/shop.сonfig'
+import {shopContacts, shopLocation, shopSocialContacts} from '@/shared/shop.config'
 import Link from 'next/link'
 import Image from 'next/image'
 import Vk from '@/shared/icons/social/vk'

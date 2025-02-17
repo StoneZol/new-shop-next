@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './product-search.module.scss'
 import SymbolsSearch from '@/shared/icons/symbol-search'
-import { shopSearchText } from '@/shared/shop.сonfig'
+import { shopSearchText } from '@/shared/shop.config'
 import Skeleton from 'react-loading-skeleton'
 import { usePathname, useRouter } from 'next/navigation'
 import { useDispatch, useSelector } from 'react-redux'

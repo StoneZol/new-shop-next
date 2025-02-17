@@ -2,7 +2,7 @@
 
 import {useState} from 'react';
 import styles from './about-product.module.scss';
-import { shopNavAboutProduct } from '@/shared/shop.сonfig';
+import { shopNavAboutProduct } from '@/shared/shop.config';
 
 export default function NavigationInAboutProduct() {
     const [active, setActive] = useState('about');
