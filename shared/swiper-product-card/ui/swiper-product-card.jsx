@@ -36,7 +36,7 @@ export default function SwiperProductCard({width, height, content, imageQuality,
                                 onClick={(e) => {!productLink && e.preventDefault();}}>
                             <Image
                                 src={imageUrl}
-                                alt={''}
+                                alt={imageUrl}
                                 quality={imageQuality ? imageQuality : 75}
                                 width={width}
                                 height={height}/>

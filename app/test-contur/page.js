@@ -7,12 +7,13 @@ import AboutProduct from "@/entities/about-product/ui/about-product";
 import Breadcrumbs from "@/features/breadcrumbs/ui/breadcrumbs";
 import loading from './../loading';
 import SkeletonPromoBanners from "@/widgets/promo-banners/ui/skeleton-promo-banners";
+import PromoMainAction from "@/entities/promo-main-action/ui/promo-main-action";
 
 export default function TestPage() {
 
     return (
-        <><Breadcrumbs category={'Ijhrjkf'} sku="343434343"/>
-        <SkeletonPromoBanners/>
+        <>
+        <PromoMainAction/>
         </>
     )
 }
