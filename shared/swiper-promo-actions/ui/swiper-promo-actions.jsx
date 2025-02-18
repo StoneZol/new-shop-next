@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 
 export default function SwiperPromoActions({content, redirect = true}) {
 
-    const [width, setWidth] = useState(1140); // Начальная ширина
+    const [width, setWidth] = useState(1140);
     const [height, setHeight] = useState(140); 
 
     useEffect(() => {

@@ -16,7 +16,7 @@ function ProductCard({product}) {
         </figure>
         <header className={styles.header}>
             <Link href={`/product/${product.id}`}>
-                <h2>{product.name}</h2>
+                <h3>{product.name}</h3>
             </Link>
         </header>
         <TagBlock>

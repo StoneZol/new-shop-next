@@ -8,8 +8,8 @@ import { IconCopyBreadcrumbs } from '@/shared/icons/breadcrumbs/copy'
 import { IconHomeBreadcrumbs } from '@/shared/icons/breadcrumbs/home'
 import { IconCategoryBreadcrumbs } from '@/shared/icons/breadcrumbs/category'
 import { IconPointBreadcrumbs } from '@/shared/icons/breadcrumbs/point'
-import copy from '../api/copy'
-import useFullUrl from '../api/useFullUrl'
+import copy from '../libs/copy'
+import useFullUrl from '../hooks/useFullUrl'
 
 export default function Breadcrumbs({category, sku = ''}) {
 

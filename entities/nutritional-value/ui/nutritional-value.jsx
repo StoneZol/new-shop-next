@@ -2,13 +2,10 @@ import { nutritionalText } from '@/shared/shop.config'
 import styles from './nutritional-value.module.scss'
 
 export default function NutritionalValue({values}) {
-    // if (Object.keys(values).length === 0) {
-    //     return  null
-    // }
 
-    if(values !==null && values !==undefined){
-    return (
-        <section className={styles.section}>
+    function BodyNutrition(){
+        return(
+            <section className={styles.section}>
             <h3>{nutritionalText.head}</h3>
             <div className={styles.nutritional_box}>
                 <div>
@@ -29,6 +26,11 @@ export default function NutritionalValue({values}) {
                 </div>
             </div>
         </section>
-    )
-} else return null
+        )
+    }
+
+    if( values !== null && values !== undefined ){
+    return ( <BodyNutrition/> )
+    }
+    return null
 }

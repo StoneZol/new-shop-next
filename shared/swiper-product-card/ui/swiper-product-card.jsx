@@ -10,9 +10,6 @@ import Link from 'next/link';
 /**
  * Компонент SwiperProductCard
  * 
- * Отображает карусель изображений с возможностью перелистывания и клика на изображения.
- * Использует библиотеку Swiper для реализации функционала слайдера.
- * 
  * @param {Object} props - Свойства компонента.
  * @param {number} props.width - Ширина изображения в пикселях.
  * @param {number} props.height - Высота изображения в пикселях.
@@ -29,6 +26,7 @@ export default function SwiperProductCard({width, height, content, imageQuality,
                 dynamicBullets: true,
             }}
             loop={content.length > 1 ? true : false}
+            lazyPreloadPrevNext={true}
             mousewheel={mousewheel}
             modules={[Pagination, Mousewheel]}
             className={styles.swiper}>
