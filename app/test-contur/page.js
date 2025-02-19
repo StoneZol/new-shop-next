@@ -8,12 +8,14 @@ import Breadcrumbs from "@/features/breadcrumbs/ui/breadcrumbs";
 import loading from './../loading';
 import SkeletonPromoBanners from "@/widgets/promo-banners/ui/skeleton-promo-banners";
 import PromoMainAction from "@/entities/promo-main-action/ui/promo-main-action";
+import LoginForm from "@/features/auth/login-form/ui/login-form";
 
 export default function TestPage() {
 
     return (
         <>
         <PromoMainAction/>
+        <LoginForm/>
         </>
     )
 }

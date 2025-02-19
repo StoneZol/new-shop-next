@@ -11,22 +11,7 @@ import {getProductUrlApi} from '@/shared/api-endpoint/api-endpoint';
 import Breadcrumbs from '@/features/breadcrumbs/ui/breadcrumbs';
 import SkeletonBreadcrumbs from '@/features/breadcrumbs/ui/skeleton-breadcrumbs';
 
-export async function generateStaticParams() {
-    try {
-        const response = await fetch(`${getProductUrlApi}?Page=1&PageLimit=50`);
-        if (!response.ok) {
-            console.error('Failed to fetch data from the server:', response.statusText);
-            return [];
-        }
-        const products = await response.json();
-        return products.items.map(product => ({
-            id: product.id.toString(),
-        }));
-    } catch (error) {
-        console.error('Error while fetching static params:', error.message);
-        return [];
-    }
-}
+export const dynamic = "force-dynamic";
 
 export default async function ProductPage({params}) {
     const {id} = await params

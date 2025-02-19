@@ -2,8 +2,6 @@ import formatForSEO from "@/shared/public-func/format-seo";
 import { notFound } from "next/navigation";
 import { getProductUrlApi } from '@/shared/api-endpoint/api-endpoint';
 
-export const revalidate = 360
-
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const { id } = resolvedParams;
