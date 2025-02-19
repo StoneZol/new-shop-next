@@ -9,6 +9,7 @@ export default function LoginForm() {
     const fields = [
         {name: 'username', label: 'Логин', type: 'text', requared: true},
         {name: 'password', label: 'Пароль', type: 'password', requared: true},
+        {name: 'passwor', label: 'Парол', type: 'file', requared: true},
     ]
   return <FormBuilder fields={fields} onSubmitHandler={onSubmit} submitText={'submit it'}/>
 }

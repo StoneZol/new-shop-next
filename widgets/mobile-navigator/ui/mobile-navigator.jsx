@@ -3,8 +3,8 @@ import styles from './mobile-navigator.module.scss'
 import Link from 'next/link'
 import LetsIconsBasketAlt3 from '@/shared/icons/navigation/lets-icons-basket-alt3'
 import IconUser from '@/shared/icons/navigation/user'
-import PointBasketLength from '@/shared/point-basket-length/ui/point-basket-length'
 import { shopMobileNav } from '@/shared/shop.config'
+import PointBasketLength from '@/shared/mini-components/point-basket-length/ui/point-basket-length'
 
 export default function MobileNavigator() {
   return (
