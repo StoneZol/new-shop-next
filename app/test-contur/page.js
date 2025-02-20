@@ -6,16 +6,21 @@ import SkeletonBuyPriceWidget from "@/widgets/buy-price-widget/ui/skeleton-buy-p
 import AboutProduct from "@/entities/about-product/ui/about-product";
 import Breadcrumbs from "@/features/breadcrumbs/ui/breadcrumbs";
 import loading from './../loading';
-import SkeletonPromoBanners from "@/widgets/promo-banners/ui/skeleton-promo-banners";
-import PromoMainAction from "@/entities/promo-main-action/ui/promo-main-action";
 import LoginForm from "@/features/auth/login-form/ui/login-form";
+import TopRatedGoods from "@/widgets/top-rated-goods/ui/top-rated-goods";
+import PromoActions from "@/entities/promo-actions/ui/promo-actions";
 
 export default function TestPage() {
 
     return (
         <>
-        <PromoMainAction/>
-        <LoginForm/>
+        <PromoActions/><br/><br/>
+        {/* <LoginForm/> */}
+        <TopRatedGoods/><br/><br/>
+
+        <br/><br/>
+
+        <SkeletonAboutProduct/>
         </>
     )
 }

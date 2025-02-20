@@ -18,8 +18,9 @@
 
 .content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 10px;
+    gap: 10px;
     div {
         h1,
         h2,
@@ -70,17 +71,9 @@
     color: colors.$text-active;
 }
 
-.not_active {
-    user-select: none;
-}
-
 .active_zone {
     width: 100%;
     display: block;
-}
-
-.hidden_zone {
-    display: none;
 }
 
 @media (max-width: 1130px) {

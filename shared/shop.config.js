@@ -119,4 +119,9 @@ export const shopProductListAreaLabel = 'Список товаров'
 export const shopButtonScrollUpAreaLabel = 'На верх'
 
 export const shopDiscountTagText = "Скидка !"
+
+export const shopTopRatedGoods = {
+    h3: 'Популярные товары',
+    linkText: 'Смотреть все'
+}
   
