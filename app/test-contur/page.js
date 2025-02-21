@@ -9,10 +9,10 @@ import loading from './../loading';
 import LoginForm from "@/features/auth/login-form/ui/login-form";
 import TopRatedGoods from "@/widgets/top-rated-goods/ui/top-rated-goods";
 import PromoActions from "@/entities/promo-actions/ui/promo-actions";
-import About from "@/entities/about-product/ui/about";
+import About from '@/entities/about-product/ui/about/ui/about';
 
 export default function TestPage() {
- const testAbout = '#Шоколадный фондан с жидкой начинкой# Фондан – это десерт, который покоряет с первого укуса. '+
+ const testAbout = '#Шоколадный фондан с жидкой начинкой#\n\nФондан – это десерт, который покоряет с первого укуса. '+
     'Хрустящая корочка скрывает внутри \nгустую жидкую начинку из темного шоколада. \n\n![Alt text](5/1)(https://random-image-pepebigotes.vercel.app/api/skeleton-random-image) '+
     '\n #Подача# Подается с шариком ванильного мороженого, который подчеркивает глубину шоколадного вкуса. Настоящий шедевр для ценителей сладкого.'+
     '![Alt text](16/1)(https://random-image-pepebigotes.vercel.app/api/skeleton-random-image)'

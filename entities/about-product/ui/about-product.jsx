@@ -1,6 +1,6 @@
 import styles from './about-product.module.scss'
-import About from './about'
-import More from './more'
+import About from './about/ui/about';
+import More from './more/ui/more'
 
 export default function AboutProduct({data={}, category=''}) {
     return (

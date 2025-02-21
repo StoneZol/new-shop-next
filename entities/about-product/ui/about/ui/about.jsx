@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import styles from './about-product.module.scss'
-import parseFormat from '../libs/parse-format';
+import styles from '../../about-product.module.scss'
+import parseFormat from '../../../libs/parse-format';
 
 export default function About({ data = '' }) {
     const parsedData = parseFormat(data);
