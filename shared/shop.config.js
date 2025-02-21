@@ -4,7 +4,7 @@ export const  shop = {
     lang:'ru',
     currency: '₽',
     name: 'Наши вкусняшки',
-    shortName: 'Наши кусняшки', 
+    shortName: '', 
     description: 'Магазин кондитерских изделий',
     basketLinkText: 'Корзина'
 }
@@ -123,5 +123,9 @@ export const shopDiscountTagText = "Скидка !"
 export const shopTopRatedGoods = {
     h3: 'Популярные товары',
     linkText: 'Смотреть все'
+}
+
+export const shopAdLegalView = {
+    available: true,
 }
   

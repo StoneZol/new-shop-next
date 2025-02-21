@@ -9,19 +9,31 @@ import {Pagination,Navigation} from 'swiper/modules';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperRight from '@/shared/icons/navigation/swiper-right';
 import SwiperLeft from '@/shared/icons/navigation/swiper-left';
+import AdLegalView from '@/shared/mini-components/ad-legal-view/ui/ad-legal-view';
 
 const dataMock = [
     {
         promoUrl: '#',
-        imageUrl: 'https://www.mirf.ru/backend/wp-content/uploads/2025/01/dRIjyCzQYBWzhJZQERFGEVORJ0ncGbkdrqgmHjWT/x1536-y0.webp'
+        imageUrl: 'https://bogatyr.club/uploads/posts/2024-05/79576/1715179436_bogatyr-club-e96l-p-zvezdnoe-ditya-oboi-143.jpg',
+        ad: {
+            legalPerson: 'OOO Cigane',
+            inn: '8800553535',
+            erid: 'fkj4kjw5hryhe6yu5'
+        }
     },
     {
         promoUrl: '#',
-        imageUrl: 'https://www.mirf.ru/backend/wp-content/uploads/2025/01/dRIjyCzQYBWzhJZQERFGEVORJ0ncGbkdrqgmHjWT/x1536-y0.webp'
+        imageUrl: 'https://bogatyr.club/uploads/posts/2024-05/79576/1715179387_bogatyr-club-5jad-p-zvezdnoe-ditya-oboi-10.jpg',
+        ad: {
+            legalPerson: 'OOO koni',
+            inn: 'who are you',
+            erid: 'hjjgfj65757'
+        }
     },
     {
         promoUrl: '#',
-        imageUrl: 'https://www.mirf.ru/backend/wp-content/uploads/2025/01/dRIjyCzQYBWzhJZQERFGEVORJ0ncGbkdrqgmHjWT/x1536-y0.webp'
+        imageUrl: 'https://bogatyr.club/uploads/posts/2024-05/79576/1715179435_bogatyr-club-f38r-p-zvezdnoe-ditya-oboi-149.jpg',
+        ad: null,
     }
 ]
 
@@ -67,13 +79,14 @@ function BannerBlock({data}){
             <Image
                 src={data.imageUrl}
                 fill={true}
-                sizes="(max-width: 690px) 100vw, 100vw"
+                sizes="(max-width: 690px) 70vw, 100vw"
                 alt={data.promoUrl}
                 quality={100}
                 style={{
                     objectFit: "cover"
                 }}/>
         </Link>
+        <AdLegalView data={data.ad}/>
     </div>
     )
 }

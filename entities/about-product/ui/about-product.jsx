@@ -1,7 +1,6 @@
 import styles from './about-product.module.scss'
 import About from './about'
 import More from './more'
-import NavigationInAboutProduct from './navigation-about-product';
 
 export default function AboutProduct({data={}, category=''}) {
     return (

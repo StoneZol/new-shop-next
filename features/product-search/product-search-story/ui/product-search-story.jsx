@@ -4,9 +4,9 @@ import styles from './product-search-story.module.scss'
 import {DeleteStoryLine} from '@/shared/icons/delete-story-line'
 import {shopSearchText} from '@/shared/shop.config'
 
-function UserStoryLine({content, index, delfunc, func}) {
+function UserStoryLine({content, delfunc, func}) {
     return (
-        <div className={styles.story_box} key={index}>
+        <div className={styles.story_box}>
             <Link
                 className={styles.story_link}
                 href={`/search/${content}`}
@@ -33,7 +33,7 @@ export default function ProductSearchStory({data, func, delfunc, delAllfunc}) {
             </div>
               {
                 data.map((content, index) => (
-                    <UserStoryLine content={content} index={index} delfunc={delfunc} func={func}/>
+                    <UserStoryLine content={content} key={index} delfunc={delfunc} func={func}/>
                 ))
               }
         </div>

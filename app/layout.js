@@ -22,7 +22,7 @@ const geistMono = localFont({
 export const metadata = {
   title: {
     default:shop.name,
-    template:`${shop.shortName}- %s`
+    template:`${shop.shortName} %s`
   },
   description: shop.description,
   canonical: `${shopUrl}`,

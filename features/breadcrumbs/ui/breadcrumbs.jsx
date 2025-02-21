@@ -8,8 +8,8 @@ import { IconCopyBreadcrumbs } from '@/shared/icons/breadcrumbs/copy'
 import { IconHomeBreadcrumbs } from '@/shared/icons/breadcrumbs/home'
 import { IconCategoryBreadcrumbs } from '@/shared/icons/breadcrumbs/category'
 import { IconPointBreadcrumbs } from '@/shared/icons/breadcrumbs/point'
-import copy from '../libs/copy'
-import useFullUrl from '../hooks/useFullUrl'
+import copyBreadcrumbs from '../libs/copyBreadcrumbs'
+import useFullUrl from '../hooks/use-breafcrumbs'
 
 export default function Breadcrumbs({category, sku = ''}) {
 
@@ -22,10 +22,10 @@ export default function Breadcrumbs({category, sku = ''}) {
         <IconPointBreadcrumbs/>
         <Link className={styles.crumbs_buttons} href={`/category/${category}`}><IconCategoryBreadcrumbs/>{category}</Link>
         <IconPointBreadcrumbs/>
-        <button className={styles.crumbs_buttons} onClick={() => copy(sku, shopBreadcrumbs.skuCopy)}><IconCopyBreadcrumbs/>{shopBreadcrumbs.skuName}{sku}</button>
+        <button className={styles.crumbs_buttons} onClick={() => copyBreadcrumbs(sku, shopBreadcrumbs.skuCopy)}><IconCopyBreadcrumbs/>{shopBreadcrumbs.skuName}{sku}</button>
       </div>
       <div className={styles.right_side}>
-        <button className={styles.crumbs_buttons} onClick = {()=> copy(fullUrl, shopBreadcrumbs.linkCopy)}><IconShareBreadcrumbs/> Поделиться</button>
+        <button className={styles.crumbs_buttons} onClick = {()=> copyBreadcrumbs(fullUrl, shopBreadcrumbs.linkCopy)}><IconShareBreadcrumbs/> Поделиться</button>
       </div>
     </div>
   )
