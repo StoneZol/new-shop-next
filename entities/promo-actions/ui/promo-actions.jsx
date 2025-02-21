@@ -79,8 +79,9 @@ function BannerBlock({data}){
             <Image
                 src={data.imageUrl}
                 fill={true}
-                sizes="(max-width: 690px) 70vw, 100vw"
+                sizes="(max-width: 770px) 70vw, 100vw"
                 alt={data.promoUrl}
+                priority
                 quality={100}
                 style={{
                     objectFit: "cover"

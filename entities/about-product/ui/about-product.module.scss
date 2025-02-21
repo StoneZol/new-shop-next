@@ -67,6 +67,11 @@
     }
 }
 
+.image_block{
+    position: relative;
+    width: 100%;
+}
+
 .active {
     color: colors.$text-active;
 }
