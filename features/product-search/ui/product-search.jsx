@@ -1,60 +1,26 @@
 'use client'
-import React, { useEffect, useRef, useState } from 'react'
 import styles from './product-search.module.scss'
 import SymbolsSearch from '@/shared/icons/symbol-search'
-import { shopSearchText } from '@/shared/shop.config'
-import Skeleton from 'react-loading-skeleton'
-import { usePathname, useRouter } from 'next/navigation'
-import { useDispatch, useSelector } from 'react-redux'
-import { zeroStateSearch } from '@/store-redux/slices/search-products-slice'
-import { addQueries, removeAllQueries, removeOneQuery } from '@/store-redux/slices/search-queries-slice'
+import { shopSearchText, shopSomeTranslate } from '@/shared/shop.config'
+import { removeAllQueries, removeOneQuery } from '@/store-redux/slices/search-queries-slice'
 import ProductSearchStory from '../product-search-story/ui/product-search-story'
 import { DeleteInputText } from '@/shared/icons/delete-input-text'
-
+import useProductSearch from '../hooks/use-product-search'
 
 export default function ProductSearch() {
-    const [visibleBG, setVisibleBG] = useState(false)
-    const [searchQuery, setSearchQuery] = useState('');
 
-    const searchQueries = useSelector((state) => state.searchQueries.searchQueries); 
-
-    const dispatch = useDispatch();
-
-    const inputRef = useRef(null)
-    const path = usePathname();
-    
-    const router = useRouter();
-
-    const handleSearch = () => {
-        if (searchQuery.trim()) {
-            router.push(`/search/${searchQuery}`);
-        }
-        setVisibleBG(false)
-        dispatch(addQueries([searchQuery]))
-    };
-
-    const handleLinkClick = (query) =>{
-        setVisibleBG(false)
-        dispatch(addQueries([query]))
-    }
-
-    const nullInput = () =>{
-        inputRef.current.value = ''
-        setSearchQuery('')
-        inputRef.current?.focus()
-        setVisibleBG(true)
-    }
-
-    useEffect(() => {
-      if (path !=='/search'){
-        inputRef.current.value = ''
-        setSearchQuery('')
-      }
-      if (path.indexOf('/search/') > -1) {
-        inputRef.current.value = decodeURIComponent(path.replace('/search/', ''))
-        setSearchQuery(decodeURIComponent(path.replace('/search/', '')))
-      }
-    }, [path])
+    const { visibleBG,
+            searchQuery,
+            searchQueries,
+            inputRef,
+            nullInput,
+            handleLinkClick,
+            handleSearch,
+            setVisibleBG,
+            setSearchQuery,
+            delFunc,
+            delAllfunc,
+        } = useProductSearch();
     
     return (
         <>
@@ -68,7 +34,8 @@ export default function ProductSearch() {
                 onChange={(e) => setSearchQuery(e.target.value)} 
                 onClick={()=>setVisibleBG(true)}/>
             <button className={styles.button} 
-                    onClick={handleSearch}>
+                    onClick={handleSearch}
+                    aria-label={shopSomeTranslate.search}>
                         <SymbolsSearch/>
             </button>
             {
@@ -82,8 +49,8 @@ export default function ProductSearch() {
                 <ProductSearchStory 
                     data={searchQueries.slice().reverse()} 
                     func={handleLinkClick}
-                    delfunc={(query)=>dispatch(removeOneQuery(query))}
-                    delAllfunc={()=> dispatch(removeAllQueries())}/>
+                    delfunc={(query) =>delFunc(query)}
+                    delAllfunc={() => delAllfunc()}/>
             }
         </div>
         {visibleBG && 

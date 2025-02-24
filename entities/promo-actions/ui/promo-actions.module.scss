@@ -19,6 +19,14 @@
         }
     }
 }
+
+.skeleton {
+    width: 100%;
+    background-color: colors.$bg;
+    max-width: 1200px;
+    @include mixins.grandBorderRadius();
+    overflow: hidden;
+}
 @media (hover: none) {
     .swiper_navigation {
         display: none;
@@ -96,6 +104,10 @@
 
 @media (max-width: 1199px) {
     .section{
+        @include mixins.grandBorderRadius(0);
+    }
+
+    .skeleton {
         @include mixins.grandBorderRadius(0);
     }
     .swiper {

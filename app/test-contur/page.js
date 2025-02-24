@@ -1,32 +1,40 @@
-import SkeletonAboutProduct from "@/entities/about-product/ui/skeleton-about-product";
-import SkeletonNutritionalValue from "@/entities/nutritional-value/ui/skeleton-nutritional-value";
-import Skeleton from "react-loading-skeleton";
 import styles from './page.module.scss'
-import SkeletonBuyPriceWidget from "@/widgets/buy-price-widget/ui/skeleton-buy-price-widget";
-import AboutProduct from "@/entities/about-product/ui/about-product";
-import Breadcrumbs from "@/features/breadcrumbs/ui/breadcrumbs";
-import loading from './../loading';
-import LoginForm from "@/features/auth/login-form/ui/login-form";
-import TopRatedGoods from "@/widgets/top-rated-goods/ui/top-rated-goods";
-import PromoActions from "@/entities/promo-actions/ui/promo-actions";
-import About from '@/entities/about-product/ui/about/ui/about';
+import SkeletoPromoActions from "@/entities/promo-actions/ui/skeleton-promo-actions";
+import SkeletonVariableGoods from "@/widgets/variable-groups-goods/ui/skeleton-variable-goods";
+
+const mockPromo = [
+    {
+        promoUrl: '#',
+        imageUrl: 'https://bogatyr.club/uploads/posts/2024-05/79576/1715179436_bogatyr-club-e96l-p-zvezdnoe-ditya-oboi-143.jpg',
+        ad: {
+            legalPerson: 'OOO Cigane',
+            inn: '8800553535',
+            erid: 'fkj4kjw5hryhe6yu5'
+        }
+    },
+    {
+        promoUrl: '#',
+        imageUrl: 'https://bogatyr.club/uploads/posts/2024-05/79576/1715179387_bogatyr-club-5jad-p-zvezdnoe-ditya-oboi-10.jpg',
+        ad: {
+            legalPerson: 'OOO koni',
+            inn: 'who are you',
+            erid: 'hjjgfj65757'
+        }
+    },
+    {
+        promoUrl: '#',
+        imageUrl: 'https://bogatyr.club/uploads/posts/2024-05/79576/1715179435_bogatyr-club-f38r-p-zvezdnoe-ditya-oboi-149.jpg',
+        ad: null,
+    }
+]
+
 
 export default function TestPage() {
- const testAbout = '#Шоколадный фондан с жидкой начинкой#\n\nФондан – это десерт, который покоряет с первого укуса. '+
-    'Хрустящая корочка скрывает внутри \nгустую жидкую начинку из темного шоколада. \n\n![Alt text](5/1)(https://random-image-pepebigotes.vercel.app/api/skeleton-random-image) '+
-    '\n #Подача# Подается с шариком ванильного мороженого, который подчеркивает глубину шоколадного вкуса. Настоящий шедевр для ценителей сладкого.'+
-    '![Alt text](16/1)(https://random-image-pepebigotes.vercel.app/api/skeleton-random-image)'
     return (
-        <>
-        <PromoActions/><br/><br/>
-        {/* <LoginForm/> */}
-        <TopRatedGoods/><br/><br/>
-
-        <br/><br/>
-
-        <SkeletonAboutProduct/>
-
-        <About data={testAbout}/>
-        </>
+        <div className={styles.index_page}>
+            <SkeletoPromoActions/>
+            <SkeletonVariableGoods/>
+            <SkeletonVariableGoods length={8}/>
+      </div>
     )
 }

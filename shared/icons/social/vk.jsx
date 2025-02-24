@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
 
-export default function Vk({url, props}) {
+export default function Vk({url,label='', props}) {
     return (
-        <Link href={url}>
+        <Link href={url} aria-label={label}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={32}

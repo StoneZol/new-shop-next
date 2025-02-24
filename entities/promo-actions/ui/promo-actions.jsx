@@ -39,6 +39,8 @@ function SwiperPromo ({content, children}) {
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
             }}
+            lazyPreloadPrevNext={true}
+            lazy="true"
             slidesPerView= {1}
             modules={[Pagination,Navigation,Autoplay]}
             className={styles.swiper}>
@@ -60,8 +62,8 @@ function BannerBlock({data}){
                 fill={true}
                 sizes="(max-width: 770px) 70vw, 100vw"
                 alt={data.promoUrl}
-                priority
                 quality={100}
+                loading='lazy'
                 style={{
                     objectFit: "cover"
                 }}/>

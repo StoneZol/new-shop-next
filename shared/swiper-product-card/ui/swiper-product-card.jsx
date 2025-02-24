@@ -27,6 +27,7 @@ export default function SwiperProductCard({width, height, content, imageQuality,
             }}
             loop={content.length > 1 ? true : false}
             lazyPreloadPrevNext={true}
+            lazy="true"
             mousewheel={mousewheel}
             modules={[Pagination, Mousewheel]}
             className={styles.swiper}>

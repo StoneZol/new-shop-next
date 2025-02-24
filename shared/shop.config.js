@@ -31,6 +31,7 @@ export const shopSearchText ={
 
 export const shopSomeTranslate ={
     category: 'Категория',
+    search: 'Найти'
 }
 
 export const shopContacts = {
@@ -118,11 +119,16 @@ export const shopProductListAreaLabel = 'Список товаров'
 
 export const shopButtonScrollUpAreaLabel = 'На верх'
 
-export const shopDiscountTagText = "Скидка !"
+export const shopDiscountTagText = ""
 
 export const shopTopRatedGoods = {
     h3: 'Популярные товары',
     linkText: 'Смотреть все'
+}
+
+export const shopSpecForYou = {
+    h3: 'Специально для вас',
+    linkText: 'Еще'
 }
 
 export const shopAdLegalView = {

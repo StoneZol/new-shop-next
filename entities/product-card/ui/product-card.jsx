@@ -12,7 +12,7 @@ function ProductCard({product}) {
   return (
     <article className={styles.article}>
         <figure className={styles.figure}>
-            <SwiperProductCard width={180} height={180} content={product.imageUrls} productID={product.id} productLink={`/product/${product.id}`}/>
+            <SwiperProductCard width={180} height={180} content={product.imageUrls} imageQuality={60} productID={product.id} productLink={`/product/${product.id}`}/>
         </figure>
         <header className={styles.header}>
             <Link href={`/product/${product.id}`}>

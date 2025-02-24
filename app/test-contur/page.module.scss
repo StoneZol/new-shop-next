@@ -1,3 +1,14 @@
+.index_page {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10vh;
+    margin-top: 15px;
+}
+
 .pageBox{
     width: 100%;
     display: flex;

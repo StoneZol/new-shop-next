@@ -24,10 +24,10 @@ export default function Footer() {
                 <section className={styles.socials}>
                     <h4>{shopContacts.visitOur}</h4>
                     <div className={styles.icons}>
-                        {shopSocialContacts.vk.length > 0 && <Vk url={shopSocialContacts.vk}/>}
-                        {shopSocialContacts.ok.length > 0 && <Ok url={shopSocialContacts.ok}/>}
-                        {shopSocialContacts.tg.length > 0 && <Tg url={shopSocialContacts.tg}/>}
-                        {shopSocialContacts.insta.length > 0 && <Insta url={shopSocialContacts.insta}/>}
+                        {shopSocialContacts.vk.length > 0 && <Vk url={shopSocialContacts.vk} label='vk'/>}
+                        {shopSocialContacts.ok.length > 0 && <Ok url={shopSocialContacts.ok} label='ok'/>}
+                        {shopSocialContacts.tg.length > 0 && <Tg url={shopSocialContacts.tg} label='tg'/>}
+                        {shopSocialContacts.insta.length > 0 && <Insta url={shopSocialContacts.insta} label='inst'/>}
                     </div>
                 </section>
             </div>
