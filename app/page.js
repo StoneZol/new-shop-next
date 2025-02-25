@@ -1,10 +1,10 @@
-import GetterStartData from "@/widgets/getter-start-data/ui/getter-start-data";
 import styles from "./page.module.scss";
-import PromoBanners from "@/widgets/promo-banners/ui/promo-banners";
 import PromoActions from "@/entities/promo-actions/ui/promo-actions";
-import VariableGroupsGoods from "@/widgets/variable-groups-goods/ui/variable-groups-goods";
 import { shopSpecForYou, shopTopRatedGoods } from "@/shared/shop.config";
 import { getProductUrlApi } from "@/shared/api-endpoint/api-endpoint";
+import SpecialForU from "@/entities/any-variable-groups/ui/special-for-u/ui/special-for-u";
+import MostPopular from "@/entities/any-variable-groups/ui/most-popular/ui/most-popular";
+import PopularCategories from "@/entities/any-variable-groups/ui/popular-categories/ui/popular-categories";
 
 export const dynamic = "force-dynamic";
 
@@ -34,6 +34,44 @@ const mockPromo = [
   }
 ]
 
+const mockCategory = [
+  {
+      name: 'Выпечка',
+      imageUrl: 'https://buloshnaya.org/wp-content/uploads/2018/05/Food_Bread.jpg'
+  },
+  {
+      name: 'Шоколад',
+      imageUrl: 'https://www.depo.ua/uploads/281064/conversions/c707b05547e42354cc489518c0746a3d-wide-big.jpg'
+  },
+  {
+      name: 'Торты',
+      imageUrl: 'https://static.vkusnyblog.com/full/uploads/2025/01/hazelnut-chocolate-cake-300x400.jpg'
+  },
+  {
+      name: 'Мармелад',
+      imageUrl: 'https://piratmarmelad.ru/catalog/product/zhevatelnyj-marmelad-frukty-4d-100gr-w800-h800.jpg'
+  },
+  {
+      name: 'Шоколад',
+      imageUrl: 'https://www.depo.ua/uploads/281064/conversions/c707b05547e42354cc489518c0746a3d-wide-big.jpg'
+  },
+  {
+      name: 'Выпечка',
+      imageUrl: 'https://buloshnaya.org/wp-content/uploads/2018/05/Food_Bread.jpg'
+  },
+  {
+      name: 'Мармелад',
+      imageUrl: 'https://piratmarmelad.ru/catalog/product/zhevatelnyj-marmelad-frukty-4d-100gr-w800-h800.jpg'
+  },
+  {
+      name: 'Торты',
+      imageUrl: 'https://static.vkusnyblog.com/full/uploads/2025/01/hazelnut-chocolate-cake-300x400.jpg'
+  },    {
+      name: 'Выпечка',
+      imageUrl: 'https://buloshnaya.org/wp-content/uploads/2018/05/Food_Bread.jpg'
+  },
+]
+
 export default async function Home() {
 
   const mostPopularResult = await fetch(`${getProductUrlApi}?Sort=0&Page=1&PageLimit=12`)
@@ -48,8 +86,9 @@ export default async function Home() {
   return (
     <div className={styles.index_page}>
       <PromoActions dataPromo={mockPromo}/>
-      <VariableGroupsGoods text={shopTopRatedGoods} data={mostPopular.items}/>
-      <VariableGroupsGoods text={shopSpecForYou} data={specialForYou.items} lenght={8}/>
+      <MostPopular data={mostPopular.items}/>
+      <PopularCategories data={mockCategory}/>
+      <SpecialForU data={specialForYou.items}/>
     </div>
   );
 }

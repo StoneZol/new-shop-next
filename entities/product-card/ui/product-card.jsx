@@ -1,5 +1,4 @@
 import styles from './product-card.module.scss'
-import { shop } from '@/shared/shop.config'
 import Link from 'next/link'
 import SwiperProductCard from '@/shared/swiper-product-card/ui/swiper-product-card'
 import TagBlock from '@/shared/mini-components/tag-block/ui/tag-block'

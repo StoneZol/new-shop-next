@@ -34,6 +34,10 @@ export const shopSomeTranslate ={
     search: 'Найти'
 }
 
+export const shopCategoriesPage = {
+    h2: 'Все категории'
+}
+
 export const shopContacts = {
     ourContacts: 'Наши контакты',
     phoneText: 'Телефон',
@@ -131,7 +135,4 @@ export const shopSpecForYou = {
     linkText: 'Еще'
 }
 
-export const shopAdLegalView = {
-    available: true,
-}
   
