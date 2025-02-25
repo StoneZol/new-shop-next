@@ -12,7 +12,7 @@ export default function CategoryCard({ name = null, imageUrl = null }) {
                 <Image
                     className={styles.img}
                     src={imageUrl}
-                    alt='name'
+                    alt={name}
                     width={170}
                     height={170}
                     style={{

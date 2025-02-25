@@ -6,6 +6,7 @@ import Copy from '@/shared/icons/navigation/copy';
 import copyAd from '../libs/copy-ad';
 import useAdLegalView from '../hooks/use-ad-legal-view';
 import CloseIcon from '@/shared/icons/close-icon';
+import { shopAdLegalView } from '@/shared/shop-flags.config';
 
 function AdViewDialog({ data, onClose, refprop}) {
     return (
@@ -22,6 +23,7 @@ function AdViewDialog({ data, onClose, refprop}) {
 }
 
 export default function AdLegalView({ data = null }) {
+    if (!shopAdLegalView.available) return null
     if (!data) return null;
 
     const {isOpen, dialogRef, clickDialog} = useAdLegalView()

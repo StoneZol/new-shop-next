@@ -1,3 +1,3 @@
 export const shopAdLegalView = {
-    available: true,
+    available: true
 }

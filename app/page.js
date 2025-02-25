@@ -86,9 +86,9 @@ export default async function Home() {
   return (
     <div className={styles.index_page}>
       <PromoActions dataPromo={mockPromo}/>
-      <MostPopular data={mostPopular.items}/>
-      <PopularCategories data={mockCategory}/>
       <SpecialForU data={specialForYou.items}/>
+      <PopularCategories data={mockCategory}/>
+      <MostPopular data={mostPopular.items}/>
     </div>
   );
 }
