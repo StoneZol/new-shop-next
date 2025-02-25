@@ -1,4 +1,4 @@
-
+import React from 'react'
 import VariableGroupsRender from '@/shared/variable-groups-render/ui/variable-groubs-render'
 import styles from './most-popular.module.scss'
 import ProductCard from '@/entities/product-card/ui/product-card'
