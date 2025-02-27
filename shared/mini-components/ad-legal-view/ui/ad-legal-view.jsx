@@ -7,6 +7,7 @@ import copyAd from '../libs/copy-ad';
 import useAdLegalView from '../hooks/use-ad-legal-view';
 import CloseIcon from '@/shared/icons/close-icon';
 import { shopAdLegalView } from '@/shared/shop-flags.config';
+import { shopDefaultAriaLabels } from '@/shared/shop-module-translate';
 
 function AdViewDialog({ data, onClose, refprop}) {
     return (
@@ -16,7 +17,7 @@ function AdViewDialog({ data, onClose, refprop}) {
                 <li onClick={() => copyAd(data.legalPerson)}>{data.legalPerson} <Copy/></li>
                 <li onClick={() => copyAd(data.inn)}>ИНН {data.inn} <Copy/></li>
                 <li onClick={() => copyAd(data.erid)}>ЕРИД {data.erid} <Copy/></li>
-                <button aria-label='Закрыть'  className={styles.button_close} onClick={onClose}><CloseIcon/></button>
+                <button aria-label={shopDefaultAriaLabels.close}  className={styles.button_close} onClick={onClose}><CloseIcon/></button>
             </ul>
         </dialog>
     );

@@ -2,6 +2,7 @@
 @use '/shared/configured-styles/mixins' as mixins;
 
 .section {
+    user-select: none;
     position: relative;
     display: flex;
     flex-direction: column;

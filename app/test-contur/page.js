@@ -4,6 +4,7 @@ import PopularCategories from '@/entities/any-variable-groups/ui/popular-categor
 import SkeletonPopularCategories from '@/entities/any-variable-groups/ui/popular-categories/ui/skeleton-popular-categories';
 import SkeletonMostPopular from '@/entities/any-variable-groups/ui/most-popular/ui/skeleton-most-popular';
 import SkeletonSpecialForU from '@/entities/any-variable-groups/ui/special-for-u/ui/skeleton-special-for-u';
+import SkeletonSimilarGoods from '@/entities/any-variable-groups/ui/similar-goods/ui/skeleton-similar-goods';
 
 const mockPromo = [
     {
@@ -81,10 +82,11 @@ export default function TestPage() {
     return (
         <div className={styles.index_page}>
             <SkeletoPromoActions/>
-            <PopularCategories data={mockCategory.slice(0,8)}/>
+            <PopularCategories data={mockCategory.slice(0,3)}/>
             <SkeletonPopularCategories data={new Array(8).fill(null)}/>
-            <SkeletonMostPopular data={new Array(12).fill(null)}/>
-            <SkeletonSpecialForU data={new Array(8).fill(null)}/>
+            <SkeletonMostPopular data={new Array(10).fill(null)}/>
+            <SkeletonSpecialForU data={new Array(5).fill(null)}/>
+            <SkeletonSimilarGoods data={new Array(5).fill(null)}/>
         </div>
     )
 }

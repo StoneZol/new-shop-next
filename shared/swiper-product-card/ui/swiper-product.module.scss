@@ -9,6 +9,7 @@
     overflow: hidden;
     @include mixins.grandBorderRadius();
     img {
+        cursor: pointer;
         object-fit: cover;
     }
     :global(.swiper-pagination-bullet-active) {

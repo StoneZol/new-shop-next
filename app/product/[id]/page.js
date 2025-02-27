@@ -10,6 +10,7 @@ import {notFound} from 'next/navigation';
 import {getProductUrlApi} from '@/shared/api-endpoint/api-endpoint';
 import Breadcrumbs from '@/features/breadcrumbs/ui/breadcrumbs';
 import SkeletonBreadcrumbs from '@/features/breadcrumbs/ui/skeleton-breadcrumbs';
+import ImageViewer from './../../../shared/image-viewer/ui/image-viewer';
 
 export const dynamic = "force-dynamic";
 
@@ -27,11 +28,10 @@ export default async function ProductPage({params}) {
             <section className={styles.page}>
                 <div className={styles.left_side}>
                     <SwiperProductCard
-                        width={340}
-                        height={340}
                         imageQuality={100}
                         content={productData.imageUrls}
-                        mousewheel={true}/>
+                        mousewheel={true}
+                        viewer={true}/>
                     <TagBlock>
                         <DiscountTagLine discount={productData.discount}/>
                         <PromoTagLine promoTag={productData.promotionTag}/>

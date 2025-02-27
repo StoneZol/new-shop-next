@@ -7,18 +7,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import {Pagination,Navigation,Autoplay} from 'swiper/modules';
 import {Swiper, SwiperSlide} from 'swiper/react';
-import SwiperRight from '@/shared/icons/navigation/swiper-right';
-import SwiperLeft from '@/shared/icons/navigation/swiper-left';
 import AdLegalView from '@/shared/mini-components/ad-legal-view/ui/ad-legal-view';
+import SwiperNavigator from '@/shared/swiper-navigator/ui/swiper-navigator';
 
-function PromoNavigation(){
-    return(
-        <div className={styles.swiper_navigation}>
-            <div className="prev_section"><SwiperLeft/></div>
-            <div className="next_section"><SwiperRight/></div>
-        </div>
-    )
-}
 
 function SwiperPromo ({content, children}) {
 
@@ -76,7 +67,7 @@ function BannerBlock({data}){
 export default function PromoActions({ dataPromo = []}) {
     return (
         <section className={styles.section}>
-            <PromoNavigation/>
+            <SwiperNavigator prevClassName='prev_section' nextClassName='next_section' swiper_nav_hook={styles.swiper_navigation}/>
             <SwiperPromo content={dataPromo}>
                 {(item)=> <BannerBlock data={item}/>}
             </SwiperPromo>

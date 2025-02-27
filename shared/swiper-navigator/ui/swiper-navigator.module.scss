@@ -1,0 +1,41 @@
+@use '/shared/configured-styles/colors' as colors;
+@use '/shared/configured-styles/mixins' as mixins;
+
+.swiper_navigation {
+    padding: 0 15px;
+    color: white;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: calc(50% - 14px);
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 310;
+        cursor: pointer;
+        padding: 10px;
+        background-color: colors.$bg-transparent;
+        opacity: 0;
+        @include mixins.grandTransition('opacity');
+        @include mixins.grandBorderRadius(50px);
+        svg{
+            @include mixins.grandTransition('opacity');
+            opacity: 0.3;
+            width: 1.4rem;
+            height: 1.4rem;
+        }
+
+        &:first-child{
+            padding-left: 10px;
+        }
+
+        &:hover{
+            opacity: 1 !important;
+            svg{
+                opacity: 1;
+            }
+        }
+    }
+}

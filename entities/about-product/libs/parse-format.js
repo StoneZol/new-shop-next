@@ -1,8 +1,6 @@
 export default function parseFormat(text) {
     const regex = /#(.*?)#|!\[(.*?)\]\((\d+\/\d+)\)\((.*?)\)|([^#\n!]+)/g;
     const matches = [...text.matchAll(regex)];
-    console.log(text)
-    console.log(matches)
 
     return matches.map((match) => {
         if (match[1]) {

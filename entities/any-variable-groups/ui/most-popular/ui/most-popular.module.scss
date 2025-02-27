@@ -14,6 +14,7 @@
 @media (max-width: 1200px){
     .list{
         grid-template-columns: repeat(4, auto);
+        grid-template-rows: repeat(3, 1fr);
     }
 
     .correct_height{
@@ -25,9 +26,6 @@
     .list{
         grid-template-columns: repeat(3, auto);
     }
-    // .correct_height{
-    //     max-height: 345px;
-    // }
 }
 
 @media (max-width: 570px){

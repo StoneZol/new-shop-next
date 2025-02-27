@@ -59,7 +59,7 @@ const rootReducer = combineReducers({
     basket: persistedBasket,
     products: persistedProducts,
     searchProducts: persistedSearchProducts,
-    searchQueries: persistedSearchQuery
+    searchQueries: persistedSearchQuery,
 })
 
 export const store = configureStore({
