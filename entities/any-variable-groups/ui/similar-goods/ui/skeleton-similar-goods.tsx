@@ -1,7 +1,7 @@
 import React from "react"
 import SkeletonProductCard from "@/entities/product-card/ui/skeleton-product-card"
 import VariableGroupsRender from "@/shared/variable-groups-render/ui/variable-groubs-render"
-import styles from './special-for-u.module.scss'
+import styles from './similar-goods.module.scss'
 
 const texts ={
     h3: 'Похожие товары',

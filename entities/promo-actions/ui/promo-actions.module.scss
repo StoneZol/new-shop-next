@@ -27,18 +27,18 @@
     @include mixins.grandBorderRadius();
     overflow: hidden;
 }
-@media (hover: none) {
-    .swiper_navigation {
-        display: none;
-    }
-    .section{
-        &:hover{
-            .swiper_navigation {
-                display: none;;
-            }
-        }
-    }
-}
+// @media (hover: none) {
+//     .swiper_navigation {
+//         display: none;
+//     }
+//     .section{
+//         &:hover{
+//             .swiper_navigation {
+//                 display: none;;
+//             }
+//         }
+//     }
+// }
 
 .image_block{
     position: relative;

@@ -9,18 +9,19 @@ import BuyPriceWidget from '@/widgets/buy-price-widget/ui/buy-price-widget';
 import {notFound} from 'next/navigation';
 import {getProductUrlApi} from '@/shared/api-endpoint/api-endpoint';
 import Breadcrumbs from '@/features/breadcrumbs/ui/breadcrumbs';
-import SkeletonBreadcrumbs from '@/features/breadcrumbs/ui/skeleton-breadcrumbs';
-import ImageViewer from './../../../shared/image-viewer/ui/image-viewer';
+import SimilarGoods from '@/entities/any-variable-groups/ui/similar-goods/ui/similar-goods.';
 
 export const dynamic = "force-dynamic";
 
 export default async function ProductPage({params}) {
     const {id} = await params
     const res = await fetch(`${getProductUrlApi}/${id}`);
+    const similarGoods = await fetch(`${getProductUrlApi}?Sort=0&Page=2&PageLimit=8`)
     if (!res.ok) {
         notFound();
     }
     const productData = await res.json();
+    const similarGoodsData = await similarGoods.json()
 
     return (
         <div className={styles.page_box}>
@@ -47,6 +48,7 @@ export default async function ProductPage({params}) {
                     <NutritionalValue values={productData.description.foodValue}/>
                 </div>
             </section>
+            <SimilarGoods data={similarGoodsData.items}/>
         </div>
     );
 }

@@ -1,7 +1,7 @@
 import React from "react"
 import ProductCard from "@/entities/product-card/ui/product-card"
 import VariableGroupsRender from "@/shared/variable-groups-render/ui/variable-groubs-render"
-import styles from './special-for-u.module.scss'
+import styles from './similar-goods.module.scss'
 
 const texts ={
     h3: 'Похожие товары',
@@ -19,6 +19,7 @@ interface SimilarGoodsProps<T extends idInclude>{
 }
 
 export default function SimilarGoods<T extends idInclude>({data}:SimilarGoodsProps<T>) {
+    console.log(data)
     return (
         <VariableGroupsRender
             data={data}
