@@ -19,7 +19,6 @@ interface SimilarGoodsProps<T extends idInclude>{
 }
 
 export default function SimilarGoods<T extends idInclude>({data}:SimilarGoodsProps<T>) {
-    console.log(data)
     return (
         <VariableGroupsRender
             data={data}

@@ -3,9 +3,9 @@
 
 .block {
     width: 100%;
-    flex: 1;
-    max-width: 690px;
-    min-width: 340px;
+    // flex: 1;
+    // min-width: 340px;
+    height: 1200px; //! geinj bk.[f ;jgf ktybdfz
     background-color: colors.$bg;
     padding: 10px;
     @include mixins.grandBorderRadius();

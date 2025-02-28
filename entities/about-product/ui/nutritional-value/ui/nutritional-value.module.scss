@@ -1,16 +1,11 @@
 @use '/shared/configured-styles/colors' as colors;
+@use '/shared/configured-styles/mixins' as mixins;
 
 .section,
 .skeleton {
     width: 340px;
     padding: 10px;
     height: 112px;
-    background-color: colors.$bg;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
     h3 {
         font-size: 0.9rem;
         padding: 10px;
@@ -22,6 +17,8 @@
     display: flex;
     height: 56px;
     gap: 15px;
+    border-top: 2px solid colors.$line-aboutProduct;
+    border-bottom: 2px solid colors.$line-aboutProduct;
     div {
         padding: 10px;
     }
