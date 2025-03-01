@@ -1,6 +1,6 @@
+import styles from './page.module.scss'
 import SkeletonAboutProduct from "@/entities/about-product/ui/skeleton-about-product";
 import Skeleton from "react-loading-skeleton";
-import styles from './page.module.scss'
 import SkeletonBuyPriceWidget from "@/widgets/buy-price-widget/ui/skeleton-buy-price-widget";
 import SkeletonBreadcrumbs from "@/features/breadcrumbs/ui/skeleton-breadcrumbs";
 import SkeletonSimilarGoods from '@/entities/any-variable-groups/ui/similar-goods/ui/skeleton-similar-goods';
@@ -15,7 +15,7 @@ export default function loading() {
                 <div className={styles.interactive_block}>
                     <div className={styles.interactive_sticky}>
                         <div className={styles.image_block}>
-                            <Skeleton width={360} height={360}/>
+                            <Skeleton height={'100%'}/>
                         </div>
                         <SkeletonBuyPriceWidget/>
                     </div>

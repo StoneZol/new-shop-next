@@ -1,65 +1,4 @@
-// .index_page {
-//     width: 100%;
-//     display: flex;
-//     gap: 15px;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-//     margin-bottom: 10vh;
-//     margin-top: 15px;
-// }
-
-// .pageBox{
-//     width: 100%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-// }
-
-// .page{
-//     padding: 60px 0;
-//     width: 90%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: start;
-//      gap: 10px;
-// }
-
-// .sliderBox{
-//     position: relative;
-//     width: 340px;
-//     height: 340px;
-// }
-// .h2{
-//     text-align: start;
-//     width: auto;
-//     word-wrap: break-word;
-// }
-
-// .aboutBox{
-//     width: 100%;
-//     display: flex;
-//     flex-direction: column;
-//     gap: 10px;
-//     max-width: 690px;
-// }
-
-// @media (max-width: 1130px){
-//     .page{
-//         flex-wrap: wrap;
-//         align-items:start;
-//         justify-content: center;
-//     }
-//     .aboutBox{
-//         order: 1;
-//     }
-// }
-// @media (max-width: 784px){
-//     .aboutBox{
-//         width: 340px;
-//     }
-// }
+@use '/shared/configured-styles/mixins' as mixins;
 
 .page_box{
     width: 100%;
@@ -108,6 +47,8 @@
     position: relative;
     width: 360px;
     aspect-ratio: 1;
+    @include mixins.grandBorderRadius();
+    overflow: hidden;
 }
 
 .discription{
@@ -119,9 +60,6 @@
 }
 
 @media (max-width: 1200px){
-    .interactive_block{
-        width: 100%;
-    }
     .interactive_sticky{
         align-items: center;
     }
@@ -132,6 +70,13 @@
 }
 
 @media (max-width: 770px){
+    .image_block{
+        width: 100%;
+        max-width: 770px;
+    }
+    .interactive_block{
+        width: 100%;
+    }
     .content_block{
         flex-direction: column;
     }

@@ -8,6 +8,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useImageViewer } from './../../image-viewer/hooks/use-image-viewer';
 import ImageViewer from '@/shared/image-viewer/ui/image-viewer';
+import React ,{ memo }from 'react'
+
 
 function SlideHasLink({ children, productLink}){
     if (!productLink) return children
@@ -18,7 +20,7 @@ function SlideHasLink({ children, productLink}){
     )
 }
 
-function ImageHasSizes({width, height, imageUrl, imageQuality}){
+const ImageHasSizes = memo(function ImageHasSizes({width, height, imageUrl, imageQuality}){
     if (!width || !height) {
         return(
             <Image
@@ -39,7 +41,7 @@ function ImageHasSizes({width, height, imageUrl, imageQuality}){
             height={height}
         />
     )
-}
+})
 
 /**
  * Компонент SwiperProductCard

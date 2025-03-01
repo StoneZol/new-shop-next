@@ -1,3 +1,5 @@
+@use '/shared/configured-styles/mixins' as mixins;
+
 .page_box{
     width: 100%;
     max-width: 1200px;
@@ -45,6 +47,12 @@
     position: relative;
     width: 360px;
     aspect-ratio: 1;
+    @include mixins.grandBorderRadius();
+    overflow: hidden;
+}
+
+.discription{
+    width: 100%;
 }
 
 .another_blocks{
@@ -52,9 +60,6 @@
 }
 
 @media (max-width: 1200px){
-    .interactive_block{
-        width: 100%;
-    }
     .interactive_sticky{
         align-items: center;
     }
@@ -65,6 +70,13 @@
 }
 
 @media (max-width: 770px){
+    .image_block{
+        width: 100%;
+        max-width: 770px;
+    }
+    .interactive_block{
+        width: 100%;
+    }
     .content_block{
         flex-direction: column;
     }

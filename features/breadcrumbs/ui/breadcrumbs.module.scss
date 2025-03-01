@@ -43,12 +43,10 @@
     .breadcrumbs, .skeleton {
         span {
             gap: 2px;
-            font-size: 0.9rem;
             svg {
                 width: 0.7rem;
                 height: 0.7rem;
             }
-
         }
     }
     .right_side {
@@ -64,6 +62,12 @@
         justify-content: center;
         align-items: center;
         gap: 10px;
+        span{
+            font-size: 0.8rem;
+        }
+    }
+    .crumbs_buttons {
+        font-size: 0.8rem;
     }
 }
 

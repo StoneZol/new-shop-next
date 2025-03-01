@@ -36,8 +36,7 @@ export const useBasket = (product) =>{
     useEffect(() => {
         setIsZero(count === 0);
 
-      }, [count]);
-
+      }, [count, isZero]);
       return{
         count,setCount,isZero, inputRef,addBasket, removeBasket,handleInputBasket
       }
