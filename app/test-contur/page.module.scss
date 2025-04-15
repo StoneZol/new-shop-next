@@ -1,62 +1,90 @@
-.index_page {
+@use '/shared/configured-styles/mixins' as mixins;
+
+.page_box{
     width: 100%;
+    max-width: 1200px;
     display: flex;
-    gap: 15px;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 10vh;
-    margin-top: 15px;
+    gap: 10px;
+    padding: 0 0 60px 0;
 }
 
-.pageBox{
+.page_navigator{
     width: 100%;
+    padding: 20px 20px 10px;
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+.content_block{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.interactive_block{
+    width: 360px;
+    display: flex;
     flex-direction: column;
+    gap: 10px;
+    align-items: end;
 }
 
-.page{
-    padding: 60px 0;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-     gap: 10px;
-}
-
-.sliderBox{
-    position: relative;
-    width: 340px;
-    height: 340px;
-}
-.h2{
-    text-align: start;
-    width: auto;
-    word-wrap: break-word;
-}
-
-.aboutBox{
+.interactive_sticky{
+    position: sticky;
+    top: 80px;
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 690px;
 }
 
-@media (max-width: 1130px){
-    .page{
-        flex-wrap: wrap;
-        align-items:start;
-        justify-content: center;
+.image_block{
+    position: relative;
+    width: 360px;
+    aspect-ratio: 1;
+    @include mixins.grandBorderRadius();
+    overflow: hidden;
+}
+
+.discription{
+    width: 100%;
+}
+
+.another_blocks{
+    width: 100%;
+}
+
+@media (max-width: 1200px){
+    .interactive_sticky{
+        align-items: center;
     }
-    .aboutBox{
-        order: 1;
+
+    .content_block{
+        padding: 0 5px;
     }
 }
-@media (max-width: 784px){
-    .aboutBox{
-        width: 340px;
+
+@media (max-width: 770px){
+    .image_block{
+        width: 100%;
+        max-width: 770px;
+    }
+    .interactive_block{
+        width: 100%;
+    }
+    .content_block{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 570px){
+    .page_navigator{
+        width: 100%;
+        padding: 20px 5px 10px;
     }
 }

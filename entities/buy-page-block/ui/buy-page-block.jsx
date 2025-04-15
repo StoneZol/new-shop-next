@@ -22,31 +22,6 @@ function ZeroStateBlock({onClick}) {
     )
 }
 
-function NotZeroStateBlock({
-    link,
-    inputRef,
-    count,
-    onChange,
-    removeBasket,
-    addBasket
-}) {
-    return (
-        <div className={styles.if_in_basket}>
-            <BasketLink link={link}/>
-            <button aria-label={shopBuyBlock.removeOne} onClick={removeBasket}><IconMinus/></button>
-            <input
-                ref={inputRef}
-                type="number"
-                value={count}
-                min={0}
-                max={999}
-                onChange={onChange}
-                onClick={handleSelect}/>
-            <button aria-label={shopBuyBlock.addBasket} onClick={addBasket}><IconPlus/></button>
-        </div>
-    )
-}
-
 export default function BuyPageBlock({product, link = false}) {
 
   const { count, 
@@ -57,19 +32,23 @@ export default function BuyPageBlock({product, link = false}) {
           handleInputBasket 
         } = useBuyPageBlock(product);
 
-  const BlockComponent = isZero ? ZeroStateBlock : NotZeroStateBlock;
+  if (isZero || count === 0) return <section className={styles.section}><ZeroStateBlock onClick={addBasket}/></section>
 
   return (
     <section className={styles.section}>
-      <BlockComponent
-        link={link}
-        inputRef={inputRef}
-        count={count}
-        onChange={handleInputBasket}
-        removeBasket={removeBasket}
-        addBasket={addBasket}
-        onClick={addBasket}
-      />
+      <div className={styles.if_in_basket}>
+            <BasketLink link={link}/>
+            <button aria-label={shopBuyBlock.removeOne} onClick={removeBasket}><IconMinus/></button>
+            <input
+                ref={inputRef}
+                type="number"
+                value={count}
+                min={0}
+                max={999}
+                onChange={handleInputBasket}
+                onClick={handleSelect}/>
+            <button aria-label={shopBuyBlock.addBasket} onClick={addBasket}><IconPlus/></button>
+        </div>
     </section>
   );
 }

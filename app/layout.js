@@ -32,7 +32,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ru">
       <head>
+      <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/x-icon" href="./icon.ico" key='icon'/>
+        <meta name="theme-color" content="#000000" />
       </head>
         <StoreProvider>
           <body className={`${geistSans.variable} ${geistMono.variable}`}>

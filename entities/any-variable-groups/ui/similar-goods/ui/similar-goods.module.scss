@@ -3,6 +3,7 @@
     width: auto;
     display: grid;
     grid-template-columns: repeat(6, auto);
+    justify-content: center;
     flex-wrap: wrap; 
     gap: 10px;
 }
@@ -34,7 +35,6 @@
     }
 
     .correct_height{
-        height:  765px;
         max-height: 765px;
     }
 }

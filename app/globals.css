@@ -30,17 +30,35 @@ input[type="number"]:focus {
   display: none;
 } */
 
-html:has(input[type='number']:hover:focus) {
-  overflow-y: hidden;
-}
-
-/* html{ 
- } */
-
 body {
   max-width: 100vw;
   scrollbar-gutter: stable;
 }
+
+body:has(input[type='number']:hover:focus) {
+  overflow-y: hidden;
+  padding-right: 17px;
+}
+
+@media (hover: none) {
+  body:has(input[type='number']:hover:focus) {
+    overflow-y: hidden;
+    padding-right: 0;
+  }
+}
+
+@supports not (scrollbar-gutter: stable) {
+  :root {
+    --scrollbar-width: 17px;
+  }
+}
+/* 
+body:has(input[type='number']:hover:focus) {
+  overflow-y: hidden;
+} */
+
+/* html{ 
+ } */
 
 body {
   overflow-x: hidden;
