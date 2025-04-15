@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 New Shop Next
 
-## Getting Started
+**New Shop Next** — это личный pet-проект интернет-магазина, созданный для отработки современных инструментов и технологий фронтенд-разработки. В проекте реализоваваются базовые функции e-commerce платформы с акцентом на производительность, адаптивность и расширяемость.
 
-First, run the development server:
+![hero](https://i.ibb.co/ZbTJqcW/nextshophero-1.webp)
+![item](https://i.ibb.co/G4XqC9CH/nextshop1.webp)
+
+## 🚀 Технологии
+
+- **Next.js** — серверный рендеринг, ISR (Incremental Static Regeneration)
+- **React 18** — компонентный UI
+- **React-error-boundary** — отлов ошибок приложения
+- **Redux Toolkit + Redux Persist** — глобальное состояние и его сохранение
+- **SASS (SCSS Modules)** — стилизация компонентов
+- **Jest + Testing Library** — юнит и интерактивное тестирование
+- **Storybook** — изолированная разработка UI компонентов
+- **Swiper** — слайдеры
+- **SweetAlert2** — алерты и всплывающие окна
+- **React Hook Form** — валидация форм
+- **next-pwa** — подготовка к PWA
+
+## 📦 Возможности
+
+- Уникальные страницы для каждого товара
+- История поиска
+- Доступ к результатам поиска  по ссылке
+- Обработка ошибок при неожмданном поведении
+- Реализовано SEO и микроразметка
+- Поддержка ISR (обновление страниц на лету)
+- Слайдеры и пагинация
+- Глобальные и модульные стили
+- Интерактивные формы
+- Базовая архитектура с Feature-Sliced Design
+
+![error](https://i.ibb.co/ZzRVPBD8/nextshopsearch.webp)
+![error](https://i.ibb.co/qLtz9y5N/nextshoperror.webp)
+
+## 📜 Скрипты
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+npm run dev              # Запуск в режиме разработки
+npm run build            # Сборка проекта
+npm run start            # Запуск продакшен-сборки
+npm run lint             # Проверка линтером
+npm run test             # Запуск тестов
+npm run test:watch       # Запуск тестов в watch-режиме
+npm run storybook        # Запуск Storybook
+npm run build-storybook  # Сборка Storybook
