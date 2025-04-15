@@ -1,2 +1,109 @@
 {
+    "folderTemplates.templateNotation": {
+        "start": ["<", "["],
+        "end": [">", "]"]
+      },
+      "folderTemplates.fileTemplates": {
+        "ComponentIndex":[
+          "export {default as <FTName>} from './<FTName>';",
+          "export type { <FTName>Props } from './<FTName>.types';"
+        ],
+        "Component": [
+          "import styles from './<FTName>.module.scss';",
+          "import { <FTName>Props } from './<FTName>.types';",
+          "",
+          "const <FTName> = () => {",
+          "  return (",
+          "    <>",
+          "       ",
+          "    </>",
+          "  );",
+          "};",
+          "",
+          "export default <FTName>;"
+        ],
+        "ComponentsModule": [
+          "@use '@styles/mixins' as mixins;"
+        ],
+        "ComponentsHooks":[
+          "import { <FTName>Props } from './<FTName>.types';",
+          "",
+          "const use<FTName | capitalize>Hook = () => {",
+          "   ",
+          "}",
+          "",
+          "export default use<FTName | capitalize>Hook",
+        ],
+        "ComponentTypes": [
+          "export type <FTName>Props = {",
+          "",
+          "}",
+        ],
+        "ComponentStory":[
+          "import type { Meta, StoryObj } from '@storybook/react';",
+          "import { action } from '@storybook/addon-actions';",
+          "import { play } from './<FTName>.test';",
+          "import <FTName> from './<FTName>';",
+          "",
+          "const meta: Meta<typeof <FTName>> = {",
+          "   component: <FTName>,",
+          "   title: '?',",
+          "   tags: ['autodocs'],",
+          "parameters: {",
+          "   layout: 'centered'",
+          "   }",
+          "};",
+          "",
+          "export default meta;",
+          "",
+          "type Story = StoryObj<typeof <FTName>>;",
+          "",
+          "//export const Primary: Story = {",
+          "//   args: {",
+          "//       ",
+          "//   }",
+          "//}",
+          "",
+          "//export const Test: Story = {",
+          "//    args: {",
+          "//         ",
+          "//    }",
+          "//    play: play,",
+          "//}",
+        ]
+      },
+      "folderTemplates.structures": [
+        {
+          "name": "Component Template",
+          "omitParentDirectory": false,
+          "structure": [
+            {
+              "fileName": "index.ts",
+              "template": "ComponentIndex"
+            },
+            {
+              "fileName": "<FTName>.tsx",
+              "template": "Component"
+            },
+            {
+              "fileName": "<FTName>.module.scss",
+              "template": "ComponentsModule"
+            },
+            {
+              "fileName": "<FTName>.hooks.ts",
+              "template": "ComponentsHooks"
+            },
+            {
+              "fileName": "<FTName>.types.ts",
+              "template": "ComponentTypes"
+            },
+            {
+              "fileName": "<FTName>.stories.ts",
+              "template": "ComponentStory",
+            },
+          ]
+        }
+      ]
 }
+
+//! https://marketplace.visualstudio.com/items?itemName=Huuums.vscode-fast-folder-structure
