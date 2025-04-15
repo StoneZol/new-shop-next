@@ -1,7 +1,7 @@
 @use '/shared/configured-styles/colors' as colors;
 @use '/shared/configured-styles/mixins' as mixins;
 .section {
-    width: 340px;
+    width: 100%;
     padding: 10px;
     display: flex;
     flex-direction: column;

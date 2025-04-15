@@ -1,10 +1,18 @@
+import React from 'react'
+
 import Image from 'next/image';
-import styles from '../../about-product.module.scss'
-import parseFormat from '../../../libs/parse-format';
+import styles from '../../about-product.module.scss';
+import parseFormat from '../libs/parse-format';
 
-export default function About({ data = '' }) {
+export interface AboutProps{
+    data: string
+}
+
+export default function About({ data }:AboutProps) {
+
     const parsedData = parseFormat(data);
-
+    if (!data) return null
+    
     return (
         <div>
             {parsedData.map((block, index) => {

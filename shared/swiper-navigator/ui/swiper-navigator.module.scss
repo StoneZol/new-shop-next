@@ -10,6 +10,8 @@
     justify-content: space-between;
     top: calc(50% - 14px);
     div {
+        user-select: none;
+        outline: none;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -37,5 +39,11 @@
                 opacity: 1;
             }
         }
+    }
+}
+
+@media (hover: none) {
+    .swiper_navigation {
+        display: none;
     }
 }

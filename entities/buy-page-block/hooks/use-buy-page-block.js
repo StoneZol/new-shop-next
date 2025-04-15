@@ -12,7 +12,9 @@ export default function useBuyPageBlock(product) {
         const current = basket.find((item) => item.id === product.id)
         if (current) {
             basketProps.setCount(current.count)
+            return
         }
+        basketProps.setCount(0);
     }, [basket, product.id])
 
     return basketProps
